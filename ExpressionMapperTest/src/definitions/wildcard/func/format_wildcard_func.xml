@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="func_oneLevelFieldFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(oneLevelFieldIColl$*,'_concat')" to="oneLevelFieldIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oneLevelKCollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTNumberFunctions.numberToString(oneLevelKCollIColl$*$testBigInteger)" to="oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oneLevelKCollFmtNested">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(functs_BTTStringFunctions.concat(oneLevelKCollIColl$*$testString, oneLevelKCollIColl$*$testKColl2$testField), oneLevelKCollIColl$*$testBigInteger)" to="oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_twoLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTNumberFunctions.add(twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger, 12)" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger"/>
+			<map fromExpression="functs_BTTStringFunctions.concat(twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField, '_concat')" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_twoLevelIColl_twoParamsFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger, twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField)" to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_fiveLevelICollFieldFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(fiveLevelIColl$*$*$testIColl$*$testIColl$*$testIColl$*$testKColl2$testField, '_concat')" to="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

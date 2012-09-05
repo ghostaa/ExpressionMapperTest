@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<field id="PlainField" />
+	<data id="StringField" refType="String" />
+	<data id="BDField" refType="BigDecimal" />
+	<data id="BIField" refType="BigInteger" />
+	<data id="XMLGCField" refType="XMLGregorianCalendar" />
+	<data id="BAField" refType="ByteArray" />
+	<data id="IntegerField" refType="Integer" />
+
+	<kColl id="TypedDataRec">
+		<refData refId="PlainField" />
+		<refData refId="StringField" />
+		<refData refId="BDField" />
+		<refData refId="BIField" />
+		<refData refId="XMLGCField" />
+		<refData refId="BAField" />
+		<refData refId="TypedDataInnerKColl" />
+		<refData refId="TypedDataInnerIColl" />
+		<refData refId="IntegerField" />
+	</kColl>
+
+	<kColl id="SrcTypedDataRec">
+		<refData refId="PlainField" alias="SrcPlainField" />
+		<refData refId="StringField" alias="SrcStringField" />
+		<refData refId="BDField" alias="SrcBDField" />
+		<refData refId="BIField" alias="SrcBIField" />
+		<refData refId="XMLGCField" alias="SrcXMLGCField" />
+		<refData refId="BAField" alias="SrcBAField" />
+		<refData refId="TypedDataInnerKColl" />
+		<refData refId="TypedDataInnerIColl" />
+		<refData refId="IntegerField" alias="SrcIntegerField" />
+		<refData refId="XMLGCField" alias="SrcXMLGCFieldFrom" />
+		<refData refId="XMLGCField" alias="SrcXMLGCFieldTo" />
+	</kColl>
+	<iColl id="TypedDataInnerIColl" size="0">
+		<refData refId="TypedDataInnerKColl" />
+	</iColl>
+	<kColl id="TypedDataInnerKColl">
+		<refData refId="StringField" />
+		<refData refId="XMLGCField" />
+		<refData refId="BDField" />
+		<refData refId="BIField" />
+		<refData refId="BAField" />
+	</kColl>
+
+	<kColl id="ExtrDataRec">
+		<kColl id="SimpleKColl">
+			<field id="SimpleField" />
+			<data id="DateField" refType="Date" />
+		</kColl>
+		<iColl id="SimpleIColl" size="0">
+			<kColl id="aKColl">
+				<field id="SimpleField" />
+				<data id="DateField" refType="Date" />
+			</kColl>
+		</iColl>
+		<data id="SimpleTypedRec" refType="SavingAccount" />
+		<data id="SimpleTypedList" refType="SavingAccountList" />
+	</kColl>
+
+	<kColl id="SrcExtrDataRec">
+		<kColl id="SrcSimpleKColl">
+			<field id="SimpleField" />
+			<data id="DateField" refType="Date" />
+		</kColl>
+		<iColl id="SrcSimpleIColl" size="0">
+			<kColl id="aSrcKColl">
+				<field id="SimpleField" />
+				<data id="DateField" refType="Date" />
+			</kColl>
+		</iColl>
+		<data id="SrcSimpleTypedRec" refType="SavingAccount" />
+		<data id="SrcSimpleTypedList" refType="SavingAccountList" />
+	</kColl>
+
+	<iColl id="SrcOneLvlIColl" size="0">
+		<refData refId="SrcTypedDataRec" />
+	</iColl>
+
+	<iColl id="DestOneLvlIColl" size="0">
+		<refData refId="TypedDataRec" />
+	</iColl>
+
+	<iColl id="SrcTwoLvlIColl" size="0">
+		<kColl id="SrcNestKColl">
+			<refData refId="XMLGCField" alias="SrcXMLGCField" />
+			<refData refId="XMLGCField" alias="SrcXMLGCFieldFrom" />
+			<refData refId="XMLGCField" alias="SrcXMLGCFieldTo" />
+			<refData refId="StringField" alias="SrcStringField" />
+			<refData refId="BDField" alias="SrcBDField" />
+			<refData refId="IntegerField" alias="SrcIntegerField" />
+			<iColl id="SrcNestIColl" size="0">
+				<refData refId="SrcTypedDataRec" />
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="DestTwoLvlIColl" size="0">
+		<kColl id="NestKColl">
+			<refData refId="StringField" />
+			<refData refId="BDField" />
+			<refData refId="BIField" />
+			<refData refId="XMLGCField" />
+			<refData refId="BAField" />
+			<iColl id="NestIColl" size="0">
+				<refData refId="TypedDataRec" />
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="SrcThreeLvlIColl" size="0">
+		<kColl id="SrcNestKColl">
+			<refData refId="XMLGCField" alias="SrcXMLGCField" />
+			<refData refId="StringField" alias="SrcStringField" />
+			<refData refId="BDField" alias="SrcBDField" />
+			<iColl id="SrcNestIColl" size="0">
+				<kColl id="SrcInnerNestKColl">
+					<refData refId="StringField" alias="SrcInnerStringField" />
+					<refData refId="BDField" alias="SrcInnerBDField" />
+					<refData refId="XMLGCField" alias="SrcInnerXMLGCField" />
+					<refData refId="BAField" alias="SrcInnerBAField" />
+					<iColl id="SrcInnerNestIColl" size="0">
+						<refData refId="SrcTypedDataRec" />
+					</iColl>
+				</kColl>
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="DestThreeLvlIColl" size="0">
+		<kColl id="NestKColl">
+			<refData refId="StringField" />
+			<refData refId="BDField" />
+			<refData refId="BIField" />
+			<refData refId="XMLGCField" />
+			<refData refId="BAField" />
+			<iColl id="NestIColl" size="0">
+				<kColl id="InnerNestKColl">
+					<refData refId="PlainField" alias="InnerPlainField" />
+					<refData refId="BDField" alias="InnerBDField" />
+					<refData refId="BAField" alias="InnerBAField" />
+					<iColl id="InnerNestIColl" size="0">
+						<refData refId="TypedDataRec" />
+					</iColl>
+				</kColl>
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="L1IColl" size="0">
+		<kColl id="L1Kcoll">
+			<refData refId="StringField" />
+			<iColl id="L2IColl" size="0">
+				<kColl id="L2Kcoll">
+					<refData refId="BDField" />
+					<iColl id="L3IColl" size="0">
+						<kColl id="L3Kcoll">
+							<refData refId="BIField" />
+							<iColl id="L4IColl" size="0">
+								<kColl id="L4Kcoll">
+									<refData refId="BIField" />
+									<iColl id="L5IColl" size="0">
+										<kColl id="L5Kcoll">
+											<refData refId="PlainField" />
+											<iColl id="L6IColl" size="0">
+												<refData refId="BDField" />
+											</iColl>
+										</kColl>
+									</iColl>
+								</kColl>
+							</iColl>
+						</kColl>
+					</iColl>
+				</kColl>
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="SrcL1IColl" size="0">
+		<kColl id="SrcL1Kcoll" dynamic="true">
+			<refData refId="StringField" alias="SrcStringField" />
+			<iColl id="SrcL2IColl" size="0">
+				<kColl id="SrcL2Kcoll" dynamic="true">
+					<refData refId="BDField" alias="SrcBDField" />
+					<iColl id="SrcL3IColl" size="0">
+						<kColl id="SrcL3Kcoll" dynamic="true">
+							<refData refId="BIField" alias="SrcBIField" />
+							<iColl id="SrcL4IColl" size="0">
+								<kColl id="SrcL4Kcoll" dynamic="true">
+									<refData refId="BIField" alias="SrcBIField" />
+									<iColl id="SrcL5IColl" size="0">
+										<kColl id="SrcL5Kcoll" dynamic="true">
+											<refData refId="PlainField" alias="SrcPlainField" />
+											<iColl id="SrcL6IColl" size="0">
+												<refData refId="BDField" alias="SrcBDField" />
+											</iColl>
+										</kColl>
+									</iColl>
+								</kColl>
+							</iColl>
+						</kColl>
+					</iColl>
+				</kColl>
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<iColl id="FiveDimensionalMatrix" size="0">
+		<iColl id="SecondDimension" size="0">
+			<iColl id="ThirdDimension" size="0">
+				<iColl id="ForthDimension" size="0">
+					<iColl id="FirfthDimension" size="0">
+						<refData refId="TypedDataRec" />
+					</iColl>
+				</iColl>
+			</iColl>
+		</iColl>
+	</iColl>
+
+	<iColl id="SrcFiveDimensionalMatrix" size="0">
+		<iColl id="SrcSecondDimension" size="0">
+			<iColl id="SrcThirdDimension" size="0">
+				<iColl id="SrcForthDimension" size="0">
+					<iColl id="SrcFirfthDimension" size="0">
+						<refData refId="TypedDataRec" />
+					</iColl>
+				</iColl>
+			</iColl>
+		</iColl>
+	</iColl>
+
+	<!-- context KColl -->
+	<kColl id="SrcOneLvlICollKColl">
+		<refData refId="SrcOneLvlIColl" />
+		<refData refId="StringField" alias="SrcStringField" />
+		<refData refId="IntegerField" alias="SrcIntegerField" />
+		<refData refId="XMLGCField" alias="SrcXMLGCField" />
+		<refData refId="OperatorOneLevelKColl" alias="SrcOperatorOneLevelKColl" />
+		
+	</kColl>
+
+	<kColl id="DestOneLvlICollKColl">
+		<refData refId="DestOneLvlIColl" />
+	</kColl>
+
+	<kColl id="SrcThreeLvlICollKColl">
+		<refData refId="SrcThreeLvlIColl" />
+	</kColl>
+
+	<kColl id="DestThreeLvlICollKColl">
+		<refData refId="DestThreeLvlIColl" />
+	</kColl>
+
+
+
+	<iColl id="SrcExtrOneLvlIColl" size="0">
+		<refData refId="SrcExtrDataRec" />
+	</iColl>
+
+	<iColl id="DestExtrOneLvlIColl" size="0">
+		<refData refId="ExtrDataRec" />
+	</iColl>
+
+	<kColl id="CollectionDataLeafKColl">
+		<refData refId="SrcExtrOneLvlIColl" />
+		<refData refId="DestExtrOneLvlIColl" />
+	</kColl>
+
+	<kColl id="ThreeLevelICollCtxtKColl">
+		<refData refId="SrcThreeLvlIColl" alias="SrcIColl" />
+		<refData refId="SrcThreeLvlIColl" alias="DestIColl" />
+	</kColl>
+
+	<kColl id="SixLevelICollCtxtKColl">
+		<refData refId="SrcL1IColl" alias="SrcIColl" />
+		<refData refId="L1IColl" />
+		<refData refId="IntegerField" alias="SrcIntegerField" />
+	</kColl>
+
+	<kColl id="FiveDimensionalMatrixCtxtKColl">
+		<refData refId="SrcFiveDimensionalMatrix" />
+		<refData refId="FiveDimensionalMatrix" />
+	</kColl>
+
+	<kColl id="LeafDataNotMatchCtxtKColl">
+		<iColl id="L1IK" size="3">
+			<kColl id="KC1">
+				<field id="F1" value="X" />
+				<data id="S1" value="XX" refType="String" />
+			</kColl>
+		</iColl>
+		<iColl id="L1IF" size="3">
+			<field id="F1" value="X" />
+		</iColl>
+		<iColl id="L1II" size="3">
+			<iColl id="L2IF" size="3">
+				<field id="F2" value="X" />
+			</iColl>
+		</iColl>
+	</kColl>
+</data.xml>

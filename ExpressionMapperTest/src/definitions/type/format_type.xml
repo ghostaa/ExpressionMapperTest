@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="typeRootFmt">
+		<mapperConverterExpression>
+			<map from="*" to="testICollType.1"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="typeRootFmtReverse">
+		<mapperConverterExpression>
+			<map from="testKCollType" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="typeICollFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*" to="testICollType.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="typeICollFmtReverse">
+		<mapperConverterExpression>
+			<map from="testICollType.*" to="oneLevelKCollIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="typeICollFieldFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*.testKColl2.testField" to="testICollType.*.testString"/>
+			<map from="oneLevelKCollIColl.*.testKColl2.testDate" to="testICollType.*.testField"/>
+			<map from="oneLevelKCollIColl.*.testBigInteger" to="testICollType.*.testBigInteger"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="typeICollFieldFmtReverse">
+		<mapperConverterExpression>
+			<map to="oneLevelKCollIColl.*.testKColl2.testField" from="testICollType.*.testString"/>
+			<map to="oneLevelKCollIColl.*.testBigInteger" from="testICollType.*.testBigInteger"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

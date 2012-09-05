@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<fmtDef id="oneLevelFieldRootFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fieldDataRootFmt">
+		<mapperConverterExpression>
+			<map from="*" to="fieldData"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fieldDataRootFmtReverse">
+		<mapperConverterExpression>
+			<map from="fieldData" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oneLevelFieldFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelFieldIColl.*" to="oneLevelFieldIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oneLevelKCollFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*.testBigInteger" to="oneLevelKCollIColl.*.testBigInteger"/>
+			<map from="oneLevelKCollIColl.*.testKColl2.testDate" to="oneLevelKCollIColl.*.testKColl2.testDate"/>
+			<map from="oneLevelKCollIColl.*.testKColl2.testField" to="oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oneLevelKCollFmtWildcard">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*" to="oneLevelKCollIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="twoLevelICollFmt">
+		<mapperConverterExpression>
+			<map from="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger" to="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger"/>
+			<map from="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField" to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="twoLevelICollFmtWildcard">
+		<mapperConverterExpression>
+			<map from="twoLevelIColl.*.oneLevelKCollIColl.*" to="twoLevelIColl.*.oneLevelKCollIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="twoLevelICollFmtWildcardNested">
+		<mapperConverterExpression>
+			<map from="twoLevelIColl.*" to="twoLevelIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fiveLevelICollFieldFmt">
+		<mapperConverterExpression>
+			<map from="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*.testKColl2.testField" to="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fiveLevelICollFieldFmtWildcard">
+		<mapperConverterExpression>
+			<map from="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*" to="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fiveLevelICollFieldFmtWildcardNested">
+		<mapperConverterExpression>
+			<map from="fiveLevelIColl.*" to="fiveLevelIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

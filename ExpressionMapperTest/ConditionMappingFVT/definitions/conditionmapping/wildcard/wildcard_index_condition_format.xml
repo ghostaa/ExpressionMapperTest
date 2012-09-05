@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	
+	<!-- wildcard and index  -->
+	<fmtDef id="wildcardAndIndexFromDifferentICollFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20">
+					<mapIf expression="(HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt; 10) && (dse_index &lt; 2) ">
+						<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger + HaveNotSizeIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					</mapIf>
+					<mapElse>
+						<map fromExpression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					</mapElse>
+				</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardConditionIndexMappingFmt">
+		<mapperConverterExpression>
+			<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 100">
+				<map fromExpression="dse_index" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexConditionWildcardMappingFmt">
+		<mapperConverterExpression>
+			<mapIf expression="dse_index &lt; 5">
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexWildcardConditionWildcardMappingFmt">
+		<mapperConverterExpression>
+			<mapIf expression="(OneIColl$*$conditionInnerKColl$testInteger &lt; 3) && (dse_index &lt; 5)">
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="wildcardConditionIndexildcardMappingFmt">
+		<mapperConverterExpression>
+			<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger  + dse_index " to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexConditionAndIndexMappingFmt">
+		<mapperConverterExpression>
+			<mapIf expression="dse_index &lt; 3">
+				<map fromExpression="dse_index" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

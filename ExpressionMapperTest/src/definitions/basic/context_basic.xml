@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<context id="singleFieldCtx" type="op" >
+		<refKColl refId="singleField" />
+	</context>
+	
+	<context id="fieldDataCtx" type="op" >
+		<refKColl refId="fieldData" />
+	</context>
+	
+	<context id="embeddedKCollCtx" type="op" >
+		<refKColl refId="embeddedKColl" />
+	</context>
+	
+	<context id="dateKCollCtx" type="op" >
+		<refKColl refId="dateKColl" />
+	</context>
+	
+	<context id="embeddedFieldICollCtx" type="op">
+		<refKColl refId="embeddedFieldIColl" />
+	</context>
+	
+	<context id="embeddedKCollICollCtx" type="op">
+		<refKColl refId="embeddedKCollIColl" />
+	</context>
+	
+</context.xml>

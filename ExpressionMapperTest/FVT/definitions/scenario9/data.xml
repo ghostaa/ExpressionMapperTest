@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+
+	<kColl id="ComputerCtxtKColl" dynamic="false">
+		<refData refId="brand" />
+		<refData refId="cpuFreq" />
+		<refData refId="memSize" />
+		<refData refId="comPrice" />
+		<refData refId="comDiscount" />
+		<refData refId="comQuantity" />
+		<refData refId="comComments" />
+		<kColl id="ComputerKColl" dynamic="false">
+			<refData refId="brand" />
+			<refData refId="cpuFreq" />
+			<refData refId="memSize" />
+			<refData refId="comPrice" />
+			<refData refId="comDiscount" />
+			<refData refId="comQuantity" />
+			<refData refId="comComments" />
+		</kColl>
+	</kColl>
+
+</data.xml>

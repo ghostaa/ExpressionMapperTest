@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	
+	<fmtDef id="testImportTestFmt">
+		<mapperConverterExpression>
+			<map fromExpression="OneIColl$*$TwoIColl$*$ThreeIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.TwoIColl.*.ThreeIColl.*.conditionInnerKColl.testBigInteger" />
+			<map fromExpression="OneIColl$*$TwoIColl$*$conditionInnerKColl$testShort" to="OneIColl.*.TwoIColl.*.conditionInnerKColl.testShort" />
+			<mapIf  expression="conditionInnerKColl$testBoolean">
+				<map fromExpression="1" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapIf>
+			<mapElseIf expression="conditionInnerKColl$testBoolean !=true && conditionInnerKColl$testLong &gt; 10 ">
+				<map fromExpression="2" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="3" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapElse>
+			<map fromExpression="OneIColl$*$TwoIColl$*$ThreeIColl$*$conditionInnerKColl$testNumber" to="OneIColl.*.TwoIColl.*.ThreeIColl.*.conditionInnerKColl.testNumber" />
+			<map fromExpression="OneIColl$*$TwoIColl$*$conditionInnerKColl$testFloat" to="OneIColl.*.TwoIColl.*.conditionInnerKColl.testFloat" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

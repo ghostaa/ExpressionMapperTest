@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+
+	<context id="OperatorsUsedCtxt" type="test">
+		<refKColl refId="OperatorsUsedCtxtKColl" />
+	</context>
+
+	<context id="OperSixLevelICollCtxKCollCtx" type="Scenario5" >
+		<refKColl refId="OperSixLevelICollCtxKColl"/>
+	</context>
+</context.xml>

@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- source and target have same type definitions including the parameters of data and type -->
+	<fmtDef id="TypeDataDefFmt1">
+		<mapperConverterExpression>
+			<map from="mixedRec.dateMinus" to="mixedRec.dateMinus" />
+			<map from="mixedRec.numberData.deepNumberData.numberDP3" to="mixedRec.numberData.deepNumberData.numberDP3" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- source and target have same type definitions, but the parameters of data are different -->
+	<fmtDef id="TypeDataDefFmt2">
+		<mapperConverterExpression>
+			<map from="mixedRec.dateMinus" to="dateSlash" />
+			<map from="mixedRec.numberData.numberDP9" to="mixedRec.numberData.deepNumberData.numberDP3" />
+			<map from="dateSlash" to="str1" />
+			<map from="mixedRec.numberData.deepNumberData.numberDP3" to="str2" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- type mismatch mapping -->
+	<fmtDef id="TypeDataDefFmt3">
+		<mapperConverterExpression>
+			<map from="dateSlash" to="str1" />
+			<map from="mixedRec.numberData.deepNumberData.numberDP3" to="str2" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- the form attribute is not used -->
+	<fmtDef id="TypeDataDefFmtExpressionError">
+		<mapperConverterExpression>
+			<map fromExpression="mixedRec.numberData.deepNumberData.numberDP3" to="mixedRec.numberData.deepNumberData.numberDP3" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- from KCOLL to KCOLL mapping (full auto match dataName) -->
+	<fmtDef id="KeyedCollectionTypeDataDefFmt">
+		<mapperConverterExpression>
+			<map from="KCOLLDATA.ccAcctData" to="KCOLLDATA.ccAcctData" />
+			<map from="KCOLLDATA.svAcctData" to="KCOLLDATA.svAcctData" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- from KCOLL to KCOLL mapping (part auto match dataName) -->
+	<fmtDef id="KeyedCollectionTypeDataDefCrossMatchFmt">
+		<mapperConverterExpression>
+			<map from="KCOLLDATA.svAcctData" to="KCOLLDATA.ccAcctData" />
+			<map from="KCOLLDATA.ccAcctData" to="KCOLLDATA.svAcctData" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- from detailed fields to detailed fields (detail specified) -->
+	<fmtDef id="KeyedCollectionTypeDataDefCrossMatchDetailedFmt">
+		<mapperConverterExpression>
+			<map from="KCOLLDATA.ccAcctData.acctId" to="KCOLLDATA.svAcctData.acctId" />
+			<map from="KCOLLDATA.ccAcctData.viceAcct.acctAlias" to="KCOLLDATA.svAcctData.acctAlias" />
+			<map from="KCOLLDATA.ccAcctData.acctType" to="KCOLLDATA.svAcctData.acctType" />
+			<map from="KCOLLDATA.ccAcctData.acctBalance" to="KCOLLDATA.svAcctData.acctBalance" />
+			<map from="KCOLLDATA.ccAcctData.acctBillDate" to="KCOLLDATA.svAcctData.acctOpenDate" />
+			<map from="KCOLLDATA.svAcctData.acctAlias" to="KCOLLDATA.ccAcctData.viceAcct.acctAlias" />
+			<map from="KCOLLDATA.svAcctData.acctOpenDate" to="KCOLLDATA.ccAcctData.acctBillDate" />
+			<map from="KCOLLDATA.svAcctData.acctBalance" to="KCOLLDATA.ccAcctData.acctBalance" />
+			<map from="KCOLLDATA.svAcctData.acctType" to="KCOLLDATA.ccAcctData.viceAcct.acctType" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+
+	<fmtDef id="testKCollDataToKCollDataFmt">
+		<mapperConverterExpression>
+			<map from="OneLevelKColl.TwoLevelKColl.ThirdLevelKColl.FourthLevelKColl.testField" to="OneLevelKColl.TwoLevelKColl.ThirdLevelKColl.FourthLevelKColl.testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollDataToICollDataFmt">
+		<mapperConverterExpression>
+			<map from="OneLevelIColl.0.0" to="OneLevelIColl.0.0" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollDataToDataFmt">
+		<mapperConverterExpression>
+			<map from="TwoLevelIColl.0" to="TwoLevelIColl.0" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testFieldDataToICollFmt">
+		<mapperConverterExpression>
+			<map from="testField" to="TwoLevelIColl.0" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testKCollToKCollFmt">
+		<mapperConverterExpression>
+			<map from="OneLevelKColl" to="OneLevelKColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testKCollAToKCollBFmt">
+		<mapperConverterExpression>
+			<map from="OneLevelKCollA" to="OneLevelKCollB" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testSameElementKCollAAToKCollBBFmt">
+		<mapperConverterExpression>
+			<map from="OneLevelKCollAA" to="OneLevelKCollBB" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAppendDefaultFmt">
+		<mapperConverterExpression>
+			<map from="testOneLevelIColl" to="testOneLevelIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAppendTrueFmt">
+		<mapperConverterExpression>
+			<map from="testOneLevelIColl" to="testOneLevelIColl" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAppendFalseFmt">
+		<mapperConverterExpression>
+			<map from="testOneLevelIColl" to="testOneLevelIColl" append="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAppendDefaultDiffNameFmt">
+		<mapperConverterExpression>
+			<map from="testOneLevelIColl" to="NewIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAppendTrueIgnoreFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl.*.testInteger1" to="testPartOfBIColl.*.testInteger1" append="true" />
+			<map from="testPartOfAIColl.*.testInteger2" to="testPartOfBIColl.*.testInteger3" append="ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testICollToICollAppendTrueTrueFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl.*.testInteger1" to="testPartOfBIColl.*.testInteger1" append="true" />
+			<map from="testPartOfAIColl.*.testInteger2" to="testPartOfBIColl.*.testInteger3" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testICollToICollAppendFalseIgnoreFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl.*.testInteger1" to="testPartOfBIColl.*.testInteger1" append="false" />
+			<map from="testPartOfAIColl.*.testInteger2" to="testPartOfBIColl.*.testInteger3" append="ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testICollToICollAppendFalseFalseFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl.*.testInteger1" to="testPartOfBIColl.*.testInteger1" append="false" />
+			<map from="testPartOfAIColl.*.testInteger2" to="testPartOfBIColl.*.testInteger3" append="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testICollToICollAliasFmt">
+		<mapperConverterExpression>
+			<map from="IColl1" to="IColl4" append="true" />
+			<map from="IColl2" to="IColl5" append="true" />
+			<map from="IColl3" to="IColl6" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testPartOfICollAppendTrueFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl" to="testPartOfBIColl" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testEndlessLoopICollFmt">
+		<mapperConverterExpression>
+			<map from="testPartOfAIColl" to="testPartOfAIColl" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testExceptionDatafieldToKCollFmt">
+		<mapperConverterExpression>
+			<map from="testField" to="OneLevelKColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<!-- from ICOLL to ICOLL mapping (full auto match dataName) -->
+	<fmtDef id="IndexedCollectionTypeDataDefFmt">
+		<mapperConverterExpression>
+			<map from="ICOLLDATA.ccAcctList" to="ICOLLDATA.ccAcctList" />
+			<map from="ICOLLDATA.svAcctList" to="ICOLLDATA.svAcctList" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- from ICOLL to ICOLL mapping (part auto match dataName) -->
+	<fmtDef id="IndexedCollectionTypeDataDefCrossMatchFmt">
+		<mapperConverterExpression>
+			<map from="ICOLLDATA.ccAcctList.0.acctId" to="ICOLLDATA.svAcctList.0.acctId" />
+			<map from="ICOLLDATA.ccAcctList.0.viceAcct.acctAlias" to="ICOLLDATA.svAcctList.0.acctAlias" />
+			<map from="ICOLLDATA.ccAcctList.1.acctType" to="ICOLLDATA.svAcctList.0.acctType" />
+			<map from="ICOLLDATA.ccAcctList.1.acctBalance" to="ICOLLDATA.svAcctList.1.acctBalance" />
+			<map from="ICOLLDATA.ccAcctList.1.acctBillDate" to="ICOLLDATA.svAcctList.1.acctOpenDate" />
+			<map from="ICOLLDATA.svAcctList.0.acctAlias" to="ICOLLDATA.ccAcctList.1.viceAcct.acctAlias" />
+			<map from="ICOLLDATA.svAcctList.0.acctOpenDate" to="ICOLLDATA.ccAcctList.1.acctBillDate" />
+			<map from="ICOLLDATA.svAcctList.1.acctBalance" to="ICOLLDATA.ccAcctList.0.acctBalance" />
+			<map from="ICOLLDATA.svAcctList.1.acctType" to="ICOLLDATA.ccAcctList.0.viceAcct.acctType" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- mapping typed data field to record -->
+	<fmtDef id="USPT_DataEleTypeMissMatchFmt">
+		<mapperConverterExpression>
+			<map from="mixedRec.dateMinus" to="mixedRec.numberData" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- mapping typed data to a different typed data-->
+	<fmtDef id="USPT_DataEleTypeMissMatchFmt2">
+		<mapperConverterExpression>
+			<map from="KCOLLDATA.ccAcctData" to="ICOLLDATA.ccAcctList" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

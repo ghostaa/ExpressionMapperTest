@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<kColl id="testTypedKColl">
+		<data id="testKCollType" refType="KCollType"/>
+		<data id="testICollType" refType="ICollType"/>
+	</kColl>
+</data.xml>

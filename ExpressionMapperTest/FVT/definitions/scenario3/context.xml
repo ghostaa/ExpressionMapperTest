@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+
+	<context id="SrcOneLvlICollKCollCtx" type="Scenario3" >
+		<refKColl refId="SrcOneLvlICollKColl"/>
+	</context>
+	<context id="DestOneLvlICollKCollCtx" type="Scenario3" >
+		<refKColl refId="DestOneLvlICollKColl"/>
+	</context>
+	
+	<context id="SrcThreeLvlICollKCollCtx" type="Scenario3" >
+		<refKColl refId="SrcThreeLvlICollKColl"/>
+	</context>
+	<context id="DestThreeLvlICollKCollCtx" type="Scenario3" >
+		<refKColl refId="DestThreeLvlICollKColl"/>
+	</context>
+
+	<context id="CollectionDataLeafCtxt" type="test">
+		<refKColl refId="CollectionDataLeafKColl" />
+	</context>
+	
+	<context id="ThreeLevelICollCtxt" type="test">
+		<refKColl refId="ThreeLevelICollCtxtKColl" />
+	</context>
+	
+	<context id="SixLevelICollCtxt" type="test">
+		<refKColl refId="SixLevelICollCtxtKColl" />
+	</context>
+	
+	<context id="FiveDimensionalMatrixCtxt" type="test">
+		<refKColl refId="FiveDimensionalMatrixCtxtKColl" />
+	</context>
+	
+	<context id="LeafDataNotMatchCtxt" type="test">
+		<refKColl refId="LeafDataNotMatchCtxtKColl" />
+	</context>
+
+</context.xml>

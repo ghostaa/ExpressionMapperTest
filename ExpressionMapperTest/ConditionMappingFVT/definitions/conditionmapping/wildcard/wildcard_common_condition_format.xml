@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="toDifferentICollConditionFmtC">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="{cond=commonConToDifferentICollCondition;OneIColl$*$conditionInnerKColl$testInteger}">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	
+	<fmtDef id="toDifferentICollConditionFmt3C">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="{cond=commonConToDifferentICollCondition3a;OneIColl$*$conditionInnerKColl$testInteger}">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElseIf expression="({cond=commonConToDifferentICollCondition3b;OneIColl$*$conditionInnerKColl$testInteger}) &amp;&amp;  ({cond=commonConToDifferentICollCondition3c;OneIColl$*$conditionInnerKColl$testInteger})">
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="HaveNotSizeIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fromDifferentICollConditionFmtC">
+		<mapperConverterExpression>
+				<mapIf expression="{cond=commonConFromDifferentICollCondition;OneIColl$*$conditionInnerKColl$testInteger}">
+					<map fromExpression="VIPIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger"/>
+				</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromDifferentConditionFmtC">
+		<mapperConverterExpression>
+				<mapIf expression="{cond=commonConFromDifferentICollCondition;OneIColl$*$conditionInnerKColl$testInteger}">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="{cond=commonConFromDifferentICollConditionB;HaveNotSizeIColl$*$conditionInnerKColl$testInteger}">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testDse_indexInCommonConFmtC">
+		<mapperConverterExpression>
+				<mapIf expression="{cond=commonConFromDifferentICollCondition;dse_index}">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="dse_index" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testDse_indexInMappingFmtC">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testFloat &lt; 7.0">
+					<map fromExpression="{cond=commonConFromDifferentICollCondition;dse_index}" to="OneIColl.*.conditionInnerKColl.testBoolean" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="dse_index" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

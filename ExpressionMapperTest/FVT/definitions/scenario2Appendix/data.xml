@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<field id="testField" />
+	
+	<data id="testBigInteger" refType="BigInteger" />
+	<data id="testString" refType="String" />
+	<data id="testDate" refType="Date" />
+	<data id="testBigDecimal" refType="BigDecimal" />
+	<data id="testInteger" refType="Integer" />
+	<data id="testBoolean" refType="Boolean" />
+	<data id="testShort" refType="Short" />
+	<data id="testLong" refType="Long" />
+	<data id="testByte" refType="Byte" />
+	<data id="testNumber" refType="Number" />
+	<data id="testFloat" refType="Float" />
+	<data id="testDouble" refType="Double" />
+	<data id="testIntegerZero" refType="Integer" />
+	
+	
+	<data id="testStringBoolean" refType="Boolean" />
+	<data id="testIntegerBoolean" refType="Boolean" />
+	<data id="testBigIntegerBoolean" refType="Boolean" />
+	<data id="testBigDecimalBoolean" refType="Boolean" />
+	
+	
+	
+	<kColl id="targetBooleanData">
+		<refData refId="testStringBoolean" />
+		<refData refId="testIntegerBoolean" />
+		<refData refId="testBigIntegerBoolean" />
+		<refData refId="testBigDecimalBoolean" />
+	</kColl>
+	
+	
+	<kColl id="targetFieldData">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testField" />
+		<refData refId="testInteger" />
+		<refData refId="testBoolean" />
+		<refData refId="testShort" />
+		<refData refId="testLong" />
+		<refData refId="testDate" />
+		<refData refId="testByte" />
+		<refData refId="testNumber" />
+		<refData refId="testFloat" />
+		<refData refId="testDouble" />
+		<refData refId="testBigDecimal" />
+		<field id="testDateField" />
+	
+	</kColl>
+	
+	<kColl id="fieldData">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testField" />
+		<refData refId="testInteger" />
+		<refData refId="testBoolean" />
+		<refData refId="testShort" />
+		<refData refId="testLong" />
+		<refData refId="testDate" />
+		<refData refId="testByte" />
+		<refData refId="testNumber" />
+		<refData refId="testFloat" />
+		<refData refId="testDouble" />
+		<refData refId="testBigDecimal" />
+		<refData refId="testIntegerZero" />
+	</kColl>
+	
+	<kColl id="funcTestBasicSubKColl">
+		<refData refId="testBigDecimal"/>
+		<refData refId="fieldData"/>
+	</kColl>
+	
+	<kColl id="funcTestBasicKColl">
+		<refData refId="testBigInteger"/>
+		<refData refId="funcTestBasicSubKColl"/>
+	</kColl>
+</data.xml>

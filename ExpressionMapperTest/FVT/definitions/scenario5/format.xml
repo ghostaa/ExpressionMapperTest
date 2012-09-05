@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- ICOLL0.*.DataElement OPERATOR ICOLL0.*.DataElement  -->
+	<fmtDef id="OperatorOneLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + SrcOneLvlIColl$*$SrcStringField" to="SrcOneLvlIColl.*.SrcStringField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBIField - SrcOneLvlIColl$*$SrcBIField" to="SrcOneLvlIColl.*.SrcBIField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcIntegerField * SrcOneLvlIColl$*$SrcIntegerField" to="SrcOneLvlIColl.*.SrcIntegerField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBDField / SrcOneLvlIColl$*$SrcBDField" to="SrcOneLvlIColl.*.SrcBDField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + SrcOneLvlIColl$*$SrcStringField + SrcOneLvlIColl$*$SrcStringField" to="SrcOneLvlIColl.*.SrcPlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- ICOLL0.*.ICOLL2.*.DataElement OPERATOR ICOLL0.*.ICOLL2.*.DataElement -->
+	<fmtDef id="OperatorMultiLevelICollFmt">
+		<mapperConverterExpression>
+			<!-- a operator -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$StringFieldOne + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$StringFieldTwo" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.StringFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne - OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldTwo" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperatorTypedDataRec$IntegerFieldOne * OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperatorTypedDataRec$IntegerFieldTwo " to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperatorTypedDataRec$BDFieldOne / OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperatorTypedDataRec$BDFieldTwo" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperL4IColl.*.OperatorTypedDataRec.BDFieldResult" />
+			
+			<!-- two operators -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldOne + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldTwo + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.BIFieldResult" />
+			
+			<!-- mix operators -->
+			<map fromExpression=
+			" ((OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$BIFieldOne 
+			- OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$BIFieldTwo)	
+			/ OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$IntegerFieldOne
+			* OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$IntegerFieldTwo
+			+ OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$BDFieldTwo)
+			/ OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperL5IColl$*$OperatorTypedDataRec$BDFieldOne
+			" 
+			
+			to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperL4IColl.*.OperL5IColl.*.OperatorTypedDataRec.BDFieldResult" />
+			
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- ICOLL0.*.DataElement OPERATOR CONSTANT -->
+	<fmtDef id="OperatorOneLevelICollConstantFmt">
+		<mapperConverterExpression>
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + 'abc'" to="SrcOneLvlIColl.*.SrcStringField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBIField - 5" to="SrcOneLvlIColl.*.SrcBIField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcIntegerField * 5" to="SrcOneLvlIColl.*.SrcIntegerField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBDField / 5" to="SrcOneLvlIColl.*.SrcBDField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + 5 + 5" to="SrcOneLvlIColl.*.SrcPlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- ICOLL0.*.ICOLL2.*.DataElement OPERATOR CONSTANT -->
+	<fmtDef id="OperatorMultiLevelICollConstantFmt">
+		<mapperConverterExpression>
+			<!-- a operator -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$StringFieldOne + 'abc'" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.StringFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne - 5" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperatorTypedDataRec$IntegerFieldOne * 5" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperatorTypedDataRec$BDFieldOne / 3" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperL4IColl.*.OperatorTypedDataRec.BDFieldResult" />
+			
+			<!-- two operators -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldOne + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldTwo + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne + 5" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.BIFieldResult" />
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<!-- ICOLL0.*.DataElement OPERATOR DataElement -->
+	<fmtDef id="OperatorOneLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$StringFieldOne" to="SrcOneLvlIColl.*.SrcStringField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBIField - SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$BIFieldOne" to="SrcOneLvlIColl.*.SrcBIField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcIntegerField * SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$IntegerFieldOne" to="SrcOneLvlIColl.*.SrcIntegerField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcBDField / SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$BDFieldOne" to="SrcOneLvlIColl.*.SrcBDField" />
+			<map fromExpression="SrcOneLvlIColl$*$SrcStringField + SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$PlainFieldOne + 5" to="SrcOneLvlIColl.*.SrcPlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="OperatorMultiLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<!-- a operator -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$StringFieldOne + SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$StringFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.StringFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne - SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$BIFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperatorTypedDataRec$IntegerFieldOne * SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$IntegerFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperL3IColl$*$OperL4IColl$*$OperatorTypedDataRec$BDFieldOne / SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$BDFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperL4IColl.*.OperatorTypedDataRec.BDFieldResult" />
+			
+			<!-- two operators -->
+			<map fromExpression="OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldOne + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$BIFieldTwo + OperL1IColl$*$OperL2IColl$*$OperatorTypedDataRec$IntegerFieldOne + SrcOperatorOneLevelKColl$OperatorTwoLevelKColl$OperatorThreeLevelKColl$OperatorTypedDataRecCopy$PlainFieldOne" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.BIFieldResult" />
+			
+		</mapperConverterExpression>
+	</fmtDef>	
+	
+	<!-- operators for deep ICOLLs -->
+	<fmtDef id="DeepICollsWithMultipleOperators">
+		<mapperConverterExpression>
+			<map
+				fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str2Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str3Field"
+				to="L1OI.*.*.*.*.*.Str1Field" />
+			<!-- ByteField + (IntegerField - LongField) * DoubleField / BigIntegerField -->
+			<map
+				fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField"
+				to="L1OI.*.*.*.*.*.BigDecimalField" />
+			<map fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField &lt;= L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField" to="L1OI.*.*.*.*.*.BooleanField" />
+			<map fromExpression="!(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$BooleanField)" to="L1OI.*.*.*.*.*.AnotherBooleanField" />
+			<map fromExpression="!L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$BooleanField" to="L1OI.*.*.*.*.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<!-- source and target types are not match -->
+	<fmtDef id="USPT_OperatorsResultTypeAndTargetTypeNotMatchFmt">
+		<mapperConverterExpression>
+			<map
+				fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str2Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str3Field"
+				to="BigIntegerField" />
+		</mapperConverterExpression>
+	</fmtDef>
+		
+	<!-- wildcards between source and target are not match -->
+	<fmtDef id="USPT_OperatorsWildCardNotMatchFmt1">
+		<mapperConverterExpression>
+			<map
+				fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField"
+				to="MI.*.IMI.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- wildcards between expression factors are not match -->
+	<fmtDef id="USPT_OperatorsWildCardNotMatchFmt2">
+		<mapperConverterExpression>
+			<map
+				fromExpression="L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - MI$*$IMI$*$PlainField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField"
+				to="MI.*.IMI.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- factors are not from same icoll -->
+	<fmtDef id="USPT_OperatorsFactorsNotFromSameICollFmt">
+		<mapperConverterExpression>
+			<map
+				fromExpression="MI$*$IMI$*$PlainField + MI$*$IMI2$*$PlainField"
+				to="MI.*.IMI.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

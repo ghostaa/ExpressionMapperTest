@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	
+	<fmtDef id="testConditionFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInt &lt; 5">
+				<map fromExpression="1" to="testInt" />
+			</mapIf>
+			<mapElseIf expression="testInt &gt;= 5 &amp;&amp; testInt &lt; 10">
+				<map fromExpression="2" to="testInt" />
+			</mapElseIf>
+			<mapElse>
+				<mapIf expression="testInt &gt;= 10 &amp;&amp; testInt &lt; 15">
+					<map fromExpression="3" to="testInt" />
+				</mapIf>
+				<mapElse>
+					<map fromExpression="4" to="testInt" />
+				</mapElse>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testICollConditionFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="iCollA$*$testInt &lt; 10 &amp;&amp;  dse_index &lt; 10" >
+				<mapIf expression="iCollA$*$testInt &gt;= -999 &amp;&amp; iCollA$*$testInt &lt; 0">
+					<map fromExpression="-99" to="iCollB.*.testInt" />
+				</mapIf>
+				<mapElseIf expression="iCollA$*$testInt &gt;= 0 &amp;&amp; iCollA$*$testInt &lt; 2">
+					<map fromExpression="1" to="iCollB.*.testInt" />
+				</mapElseIf>
+				<mapElse>
+				    
+					<mapIf id="mapIf2inElse" expression="iCollA$*$testInt &gt;= 2 &amp;&amp; iCollA$*$testInt &lt; 5">
+						<map fromExpression="2" to="iCollB.*.testInt" />
+							<map fromExpression="6" to="iCollA.*.testInt" />
+						 <goto id="mapIf1"/>
+					</mapIf>
+					<mapElse>
+						<map fromExpression="iCollA$*$testInt" to="iCollB.*.testInt" />				
+					</mapElse>
+					
+					 <map fromExpression="666" to="iCollA.*.testInt" />		
+				</mapElse>
+			     
+			    <map fromExpression="dse_index" to="iCollA.*.testInt" />
+			    
+			</mapIf>
+			<mapElseIf expression="iCollA$*$testInt &gt;= 10 &amp;&amp; iCollA$*$testInt &lt; 15">
+				<map fromExpression="4" to="iCollB.*.testInt" />
+			</mapElseIf>
+			<mapElseIf expression="iCollA$*$testInt &gt;= 15 &amp;&amp; iCollA$*$testInt &lt; 20">
+				<map fromExpression="5" to="iCollB.*.testInt" />
+			</mapElseIf>
+			<mapElse>
+				
+				<map fromExpression="6" to="iCollB.*.testInt" />
+				
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testICollConditionFmt21">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="iCollA$*$testInt &lt; 50 " >
+				<mapIf id="test_index1" expression="(ICWrap$iCollC$*$testInt &gt;= 10 )    ">
+								<map fromExpression="iCollA$*$testInt + ICWrap$iCollC$*$testInt + iCollB$*$testInt " to="iCollA.*.testInt" />
+								
+				</mapIf>
+				<mapElse>
+							 	<map fromExpression="iCollA$*$testInt + iCollB$*$testInt" to="ICWrap.iCollC.*.testInt" />
+								<map fromExpression="666 + dse_index" to="testInt" />
+				</mapElse>
+		 
+			</mapIf>			 
+			<mapElse>				 				
+				 <mapIf id="test_index2" expression=" dse_index &lt; 1 ">
+								<map fromExpression="iCollB$*$testInt  + dse_index" to="iCollA.*.testInt" />
+				</mapIf>
+				<mapElse>
+							 	<map fromExpression="iCollA$*$testInt+ iCollB$*$testInt + dse_index" to="iCollA.*.testInt" />
+								 <goto id="test_index1"/> 
+				</mapElse>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

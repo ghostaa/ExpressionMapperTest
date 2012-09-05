@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<field id="testField"/>
+	<data id="testBigInteger" refType="BigInteger" />
+	<data id="testString" refType="String" />
+	<data id="testDate" refType="Date" />
+	
+	<kColl id="singleField">
+		<refData refId="testField" />
+	</kColl>
+	
+	<kColl id="fieldData">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testField" />
+	</kColl>
+	
+	<kColl id="dateKColl">
+		<refData refId="testDate" />
+		<refData refId="testField" />
+	</kColl>
+	
+	<iColl id="fieldIColl" size="2" >
+		<refData refId="testBigInteger" />
+	</iColl>
+	
+	<iColl id="kCollIColl" size="2" >
+		<refData refId="fieldData" />
+	</iColl>
+	
+	<kColl id="embeddedKColl">
+		<refData refId="fieldData" />
+	</kColl>
+	
+	<kColl id="embeddedFieldIColl">
+		<refData refId="fieldIColl"/>
+	</kColl>
+	
+	<kColl id="embeddedKCollIColl">
+		<refData refId="kCollIColl"/>
+	</kColl>
+	
+</data.xml>

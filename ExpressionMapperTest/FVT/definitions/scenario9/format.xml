@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- From * to * mapping -->
+	<fmtDef id="AsteriskToAsteriskMapingFmt">
+		<mapperConverterExpression>
+			<map from="*" to="*" byReference="true" convType="default" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- From * to KCOLL mapping -->
+	<fmtDef id="AsteriskToKCollMapingFmt">
+		<mapperConverterExpression>
+			<map from="*" to="ComputerKColl" byReference="false" convType="default" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- From KCOLL to * mapping -->
+	<fmtDef id="KCollToAsteriskMapingFmt">
+		<mapperConverterExpression>
+			<map from="ComputerKColl" to="*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- From KCOLL.* to * mapping -->
+	<fmtDef id="USPT_KCollAsteriskToAsteriskMapingFmt">
+		<mapperConverterExpression>
+			<map from="ComputerKColl.*" to="*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="StringFmt">
+		<fString dataName="brand" formatAs="uppercase" />
+	</fmtDef>
+
+	<!-- Referenced format is not valid -->
+	<fmtDef id="USPT_ReferencedFmtIsInvalidFmt">
+		<mapperConverterExpression>
+			<map from="brand" to="brand" byReference="true" />
+			<map from="comPrice" to="comPrice" convType="default" />
+			<map from="comComments" to="comComments" byReference="false" />
+			<refFmt refId="StringFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Value is NOT cloneable while byReference is false -->
+	<fmtDef id="USPT_ValueNotSupportCloneFmt">
+		<mapperConverterExpression>
+			<map from="brand" to="brand" byReference="true" />
+			<map from="comPrice" to="comPrice" convType="default" />
+			<map from="comComments" to="comComments" byReference="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Mapper format is not valid -->
+	<fmtDef id="USPT_MapperFmtIsInvalidFmt">
+		<mapperConverterExpression>
+			<map from1="brand" to2="brand" byReference3="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- From brand to ComputerKColl.brand1 mapping -->
+	<fmtDef id="NEG_DataElementNotExistFmt">
+		<mapperConverterExpression>
+			<map from="brand" to="ComputerKColl.brand1" />
+			<map from="ComputerKColl1brand" to="brand" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+</format.xml>

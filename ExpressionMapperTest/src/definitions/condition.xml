@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<condition.xml>
+
+	<cond id="commonCon" value="{0} == 'k'"/>
+	<cond id="commonConNumber" value="{0} == 100"/>
+	<cond id="commonConToDifferentICollCondition" value="{0} &gt; 20000"/>
+	
+	<cond id="commonConToDifferentICollCondition3a" value="{0} &gt; 2000"/>
+	<cond id="commonConToDifferentICollCondition3b" value="{0} &lt;= 2000"/>
+	<cond id="commonConToDifferentICollCondition3c" value="{0} &gt;= 500"/>
+	
+	<cond id="commonConFromDifferentICollCondition" value="{0} &lt; 5"/>
+	
+	<cond id="commonConFromDifferentICollConditionB" value="{0} &gt;= 70"/>
+</condition.xml>

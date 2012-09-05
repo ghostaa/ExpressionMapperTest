@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<context id="conditionCtx" type="op" >
+		<refKColl refId="conditionKColl" />
+	</context>
+	<context id="conditionCtx2" type="op" >
+		<refKColl refId="conditionKColl2" />
+	</context>
+	<context id="conditionCtx3" type="op" >
+		<refKColl refId="conditionKColl3" />
+	</context>
+</context.xml>

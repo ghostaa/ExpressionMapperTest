@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	
+	<data id="testInt" refType="Integer" />
+			
+	<kColl id="conditionKColl">
+		<refData refId="testInt" />
+		<iColl id="iColl">
+			<kColl id="embeddedKColl">
+				<refData refId="testInt" />
+			</kColl>
+		</iColl>
+	</kColl>
+	<kColl id="conditionKColl3">
+		<refData refId="testInt" />
+		 
+		<iColl id="iCollA" size="7">
+			<kColl id="embeddedKColl">
+				<refData refId="testInt"  />
+			</kColl>
+		</iColl>
+		
+		<iColl id="iCollB" size="7">
+			<kColl id="embeddedKColl">
+				<refData refId="testInt"  />
+			</kColl>
+		</iColl>
+		
+	</kColl>	
+	<kColl id="conditionKColl2">
+		<refData refId="testInt" />
+		 
+		<iColl id="iCollA" size="2">
+			<kColl id="embeddedKColl">
+				<refData refId="testInt"  />
+			</kColl>
+		</iColl>
+		
+		
+		<iColl id="iCollB" size="2">
+			<kColl id="embeddedKColl">
+				<refData refId="testInt"  />
+			</kColl>
+		</iColl>
+		
+		<kColl id="ICWrap">
+			<iColl id="iCollC" size="2">
+				<kColl id="embeddedKColl">
+					<refData refId="testInt"  />
+				</kColl>
+			</iColl>
+		</kColl>	 
+	</kColl>
+</data.xml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="FVT"/>
+	<classpathentry kind="src" path="ConditionMappingFVT"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
+	<classpathentry kind="lib" path="commons-logging-1.1.1.jar" sourcepath="C:/Users/stlv/Downloads/commons-logging-1.1.1/commons-logging-1.1.1-sources.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="C:/Users/IBM_ADMIN/Downloads/8011 0905/lib/bttcore.jar" sourcepath="C:/Users/IBM_ADMIN/Downloads/8011 0823/source/BTTCore.zip"/>
+	<classpathentry kind="lib" path="C:/Users/IBM_ADMIN/Downloads/8011 0823/lib/bttchannels.jar"/>
+	<classpathentry kind="lib" path="C:/Users/IBM_ADMIN/Downloads/8011 0823/lib/bttinvoker.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

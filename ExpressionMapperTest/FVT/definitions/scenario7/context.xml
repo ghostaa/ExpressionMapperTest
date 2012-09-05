@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<context id="WildcardToFieldCtxt" type="test">
+		<refKColl refId="WildcardToFieldCtxtKColl" />
+	</context>
+
+	<context id="BooksInCartCtxt" type="test">
+		<refKColl refId="BooksInCartCtxtKColl" />
+	</context>
+
+</context.xml>
