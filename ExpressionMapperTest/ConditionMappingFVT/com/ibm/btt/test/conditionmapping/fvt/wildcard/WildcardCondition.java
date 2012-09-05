@@ -14,6 +14,183 @@ import com.ibm.btt.test.fvt.common.CommonTestCase;
 public class WildcardCondition extends CommonTestCase {
 	
 	/**
+	 * 		<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+	 */
+	
+	@Test
+	public void testNormalConditionToDifferentList(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("normalConditionToDifferentListFmt");
+			from.getKeyedCollection().setDynamic(true);
+			from.setValueAt("testInteger",20000);
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",i);
+			}
+			format.mapContents(from, to);
+			
+			for (int i = 0; i < 10; i++) {
+				assertEquals(i,to.getValueAt("VIPIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			
+			from.setValueAt("testInteger",200);
+			to =  ContextFactory.createContext("WildcardConditionCtx");
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(i,to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	/**
+	 * 		<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="VIPIColl$*" to="OneIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="NormalIColl$*" to="OneIColl.*" append="false"/>
+			</mapElse>
+	 */
+	
+	@Test
+	public void testNormalConditionFromDifferentListFmt(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("normalConditionFromDifferentListFmt");
+			from.getKeyedCollection().setDynamic(true);
+			from.setValueAt("testInteger",20000);
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("VIPIColl."+i+".conditionInnerKColl.testString","vip"+i);
+				from.setValueAt("NormalIColl."+i+".conditionInnerKColl.testString","normal"+i);
+			}
+			format.mapContents(from, to);
+			
+			for (int i = 0; i < 10; i++) {
+				assertEquals("vip"+i,to.getValueAt("OneIColl."+i+".conditionInnerKColl.testString"));
+			}
+			
+			from.setValueAt("testInteger",200);
+			to =  ContextFactory.createContext("WildcardConditionCtx");
+			format.mapContents(from, to);
+			
+			for (int i = 0; i < 10; i++) {
+				assertEquals("normal"+i,to.getValueAt("OneIColl."+i+".conditionInnerKColl.testString"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	/**
+	 * 		<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+				<mapIf expression="testInteger &gt; 3">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+			</mapIf>
+	 */
+	
+	@Test
+	public void testNormalConditionAndWildcardMixedUseFmt1(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("normalConditionAndWildcardMixedUseFmt1");
+			from.getKeyedCollection().setDynamic(true);
+			//testInteger > 3
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",10000+i);
+			}
+			from.setValueAt("testInteger",5);
+			format.mapContents(from, to);
+			
+			for (int i = 0; i < 10; i++) {
+				assertEquals(10000+i,to.getValueAt("VIPIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			//testInteger < 3
+			to =  ContextFactory.createContext("WildcardConditionCtx");
+			from.setValueAt("testInteger",2);
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(10000+i,to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	/**
+	 * 		<mapIf expression="testInteger &gt; 3">
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+			</mapIf>
+	 */
+	
+	@Test
+	public void testNormalConditionAndWildcardMixedUseFmt3(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("normalConditionAndWildcardMixedUseFmt3");
+			from.getKeyedCollection().setDynamic(true);
+			from.setValueAt("testInteger",5);
+			//OneIColl$*$conditionInnerKColl$testInteger > 10000
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",10001+i);
+			}
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(10001+i,to.getValueAt("VIPIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			//OneIColl$*$conditionInnerKColl$testInteger <  10000
+			to =  ContextFactory.createContext("WildcardConditionCtx");
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",100+i);
+			}
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(100+i,to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			//OneIColl$*$conditionInnerKColl$testInteger &gt; or &lt;  10000
+			to =  ContextFactory.createContext("WildcardConditionCtx");
+			for (int i = 0; i < 10; i++,i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",10001+i);
+			}
+			for (int i = 1; i < 10; i++,i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",100+i);
+			}
+			format.mapContents(from, to);
+			for (int i = 0; i < 5; i++) {
+				assertEquals(10001+i+i,to.getValueAt("VIPIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			for (int i = 0; i < 5; i++) {
+				assertEquals(101+i+i,to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	/**
 	 * 		<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
 				<map fromExpression="OneIColl$*" to="VIPIColl.*" append = "false" />
 			</mapIf>

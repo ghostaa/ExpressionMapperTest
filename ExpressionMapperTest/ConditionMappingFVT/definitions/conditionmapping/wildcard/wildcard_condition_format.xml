@@ -3,6 +3,50 @@
 	<import file="conditionmapping\wildcard\wildcard_append_condition_format.xml"/>
 	<import file="conditionmapping\wildcard\wildcard_index_condition_format.xml"/>
 	<import file="conditionmapping\wildcard\wildcard_common_condition_format.xml"/>
+	<fmtDef id="normalConditionToDifferentListFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionFromDifferentListFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="VIPIColl$*" to="OneIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="NormalIColl$*" to="OneIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionAndWildcardMixedUseFmt1">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+				<mapIf expression="testInteger &gt; 3">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionAndWildcardMixedUseFmt3">
+		<mapperConverterExpression>
+			<mapIf expression="testInteger &gt; 3">
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
 	<fmtDef id="toDifferentICollConditionFmt">
 		<mapperConverterExpression>
 			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
