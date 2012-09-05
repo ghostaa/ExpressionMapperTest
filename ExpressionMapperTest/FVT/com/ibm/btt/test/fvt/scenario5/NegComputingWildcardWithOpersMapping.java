@@ -38,8 +38,8 @@ public class NegComputingWildcardWithOpersMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E010: incompatible type mapping: cannot map from 'L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field+L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str2Field+L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str3Field' of type 'untyped(DataField[java.lang.String])' to 'BigIntegerField' of type 'BigInteger'.";
-			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str2Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str3Field\" to=\"BigIntegerField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Cannot convert data L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field+L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str2Field+L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str3Field when using converType = default.";
+			String line0 = "#FUNC [ERROR]BTT-E010: incompatible type mapping: cannot map from 'L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field + L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str2Field + L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str3Field' of type 'untyped(DataField[java.lang.String])' to 'BigIntegerField' of type 'BigInteger'.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str2Field + L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str3Field\" to=\"BigIntegerField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Cannot convert data L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field + L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str2Field + L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str3Field when using converType = default.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -69,8 +69,8 @@ public class NegComputingWildcardWithOpersMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField+(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField-L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField)*L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField/BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
-			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField+(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField-L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField)*L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField/BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$LongField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -100,8 +100,8 @@ public class NegComputingWildcardWithOpersMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] and [MI.*.IMI.*] are not for the same IndexedCollection, expression: L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.ByteField+(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.IntegerField-MI.*.IMI.*.PlainField)*L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.DoubleField/BigIntegerField.";
-			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - MI$*$IMI$*$PlainField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] and [MI.*.IMI.*] are not for the same IndexedCollection, expression: L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.ByteField+(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.IntegerField-MI.*.IMI.*.PlainField)*L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.DoubleField/BigIntegerField.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - MI$*$IMI$*$PlainField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - MI$*$IMI$*$PlainField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Invalid mapping configuration, wildcard number in source [L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$ByteField + (L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$IntegerField - MI$*$IMI$*$PlainField) * L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DoubleField / BigIntegerField] and target [MI.*.IMI.*.PlainField] are not consistent.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -132,7 +132,7 @@ public class NegComputingWildcardWithOpersMapping extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard expression is invalid, the paths [MI.*.IMI.*] and [MI.*.IMI2.*] are not for the same IndexedCollection, expression: MI.*.IMI.*.PlainField+MI.*.IMI2.*.PlainField.";
-			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map fromExpression=\"MI$*$IMI$*$PlainField + MI$*$IMI2$*$PlainField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Wildcard expression is invalid, the paths [MI.*.IMI.*] and [MI.*.IMI2.*] are not for the same IndexedCollection, expression: MI.*.IMI.*.PlainField+MI.*.IMI2.*.PlainField.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"MI$*$IMI$*$PlainField + MI$*$IMI2$*$PlainField\" to=\"MI.*.IMI.*.PlainField\" />] from context [OperatorsUsedCtxt] to [OperatorsUsedCtxt]:Wildcard expression is invalid, the paths [MI.*.IMI.*] and [MI.*.IMI2.*] are not for the same IndexedCollection, expression: MI.*.IMI.*.PlainField+MI.*.IMI2.*.PlainField.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
