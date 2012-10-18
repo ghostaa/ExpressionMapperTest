@@ -213,4 +213,9 @@
 			<map fromExpression="functs_ConditionFunctions.sortByName(OneIColl, &apos;testDouble&apos;)" to="OneIColl"/>
 		</mapperConverterExpression>
 	</fmtDef>
+	<fmtDef id="testTreeModel">
+		<mapperConverterExpression>
+			<map from="root" to="root"/>
+		</mapperConverterExpression>
+	</fmtDef>
 </format.xml>

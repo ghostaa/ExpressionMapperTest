@@ -3,6 +3,7 @@ package com.ibm.btt.test.conditionmapping.fvt.wildcard;
 import static org.junit.Assert.assertEquals;
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.ibm.btt.base.Context;
@@ -816,6 +817,53 @@ public class WildcardCondition extends CommonTestCase {
 			assertEquals(5, to.getValueAt("HaveNotSizeIColl.2.conditionInnerKColl.testInteger"));
 			assertEquals(6, to.getValueAt("HaveNotSizeIColl.3.conditionInnerKColl.testInteger"));
 			assertEquals(8, to.getValueAt("HaveNotSizeIColl.4.conditionInnerKColl.testInteger"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	
+	@Ignore
+	public void testInnerConditionFromSameConditionFmtDefectFromLST(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("innerConditionFromSameConditionFmtDefectFromLST");
+			
+			from.setValueAt("OneIColl.0.conditionInnerKColl.testInteger",4);
+			from.setValueAt("OneIColl.1.conditionInnerKColl.testInteger",9);
+			from.setValueAt("OneIColl.2.conditionInnerKColl.testInteger",2);
+			from.setValueAt("OneIColl.3.conditionInnerKColl.testInteger",3);
+			from.setValueAt("OneIColl.4.conditionInnerKColl.testInteger",5);
+			from.setValueAt("OneIColl.5.conditionInnerKColl.testInteger",3);
+			from.setValueAt("OneIColl.6.conditionInnerKColl.testInteger",1);
+			from.setValueAt("OneIColl.7.conditionInnerKColl.testInteger",2);
+			from.setValueAt("OneIColl.8.conditionInnerKColl.testInteger",5);
+			from.setValueAt("OneIColl.9.conditionInnerKColl.testInteger",6);
+			from.setValueAt("OneIColl.10.conditionInnerKColl.testInteger",8);
+			for (int i = 0; i < 10; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testString",""+i);
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testFloat",3.0f);
+			}
+			
+			
+			format.mapContents(from, to);
+			assertEquals(4, to.getValueAt("OneIColl.0.conditionInnerKColl.testInteger"));
+			assertEquals(2, to.getValueAt("OneIColl.1.conditionInnerKColl.testInteger"));
+			assertEquals(3, to.getValueAt("OneIColl.2.conditionInnerKColl.testInteger"));
+			assertEquals(3, to.getValueAt("OneIColl.3.conditionInnerKColl.testInteger"));
+			assertEquals(1, to.getValueAt("OneIColl.4.conditionInnerKColl.testInteger"));
+			assertEquals(2, to.getValueAt("OneIColl.5.conditionInnerKColl.testInteger"));
+			
+			assertEquals("0", to.getValueAt("OneIColl.0.conditionInnerKColl.testString"));
+			assertEquals("2", to.getValueAt("OneIColl.1.conditionInnerKColl.testString"));
+			assertEquals("3", to.getValueAt("OneIColl.2.conditionInnerKColl.testString"));
+			assertEquals("5", to.getValueAt("OneIColl.3.conditionInnerKColl.testString"));
+			assertEquals("6", to.getValueAt("OneIColl.4.conditionInnerKColl.testString"));
+			assertEquals("7", to.getValueAt("OneIColl.5.conditionInnerKColl.testString"));
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Exception encountered while testing, detailed exception messages are: "

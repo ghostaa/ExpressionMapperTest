@@ -15,6 +15,7 @@ import com.ibm.btt.base.Context;
 import com.ibm.btt.base.ContextFactory;
 import com.ibm.btt.base.DataMapperFormat;
 import com.ibm.btt.base.FormatElement;
+import com.ibm.btt.dojo.model.TreeModel;
 import com.ibm.btt.test.fvt.common.CommonTestCase;
 import com.ibm.btt.test.fvt.common.TestingVerificationLogImpl;
 
@@ -540,6 +541,31 @@ public class TestNormalCondition extends CommonTestCase {
 				assertEquals(i*100d, to.getValueAt("OneIColl."+i+".testDouble"));
 				assertEquals(400-i*100f, to.getValueAt("OneIColl."+i+".conditionInnerKColl.testFloat"));
 			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	
+	@Ignore
+	public void testTreeModel(){
+		try {
+			Context from = ContextFactory.createContext("NormalConditionCtx");
+			Context to =  ContextFactory.createContext("NormalConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("testTreeModel");
+			TreeModel root = (TreeModel) from.getElementAt("root");
+			TreeModel level1_1 = new TreeModel("level1-1", "002", "Level1");
+			TreeModel level2_1 = new TreeModel("level2-1", "005", "Level2");
+			root.addChild(level1_1);
+			root.addChild(level2_1);
+			System.out.println(from.getElementAt("root"));
+			format.mapContents(from, to);
+			System.out.println(to.getKeyedCollection());
+			System.out.println(to.getElementAt("root"));
+			assertEquals(from.getElementAt("root"), to.getElementAt("root"));
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

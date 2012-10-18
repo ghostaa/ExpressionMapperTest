@@ -235,7 +235,21 @@
 				</mapElse>
 		</mapperConverterExpression>
 	</fmtDef>
-	
+	<fmtDef id="innerConditionFromSameConditionFmtDefectFromLST">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testString" to="OneIColl.*.conditionInnerKColl.testString" append="ignore"/>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testFloat == 3.0">
+						<map fromExpression="3.3" to="OneIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+					</mapIf>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testFloat == 2.0">
+						<map fromExpression="2.2" to="OneIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+					</mapIf>
+				</mapIf>
+				
+		</mapperConverterExpression>
+	</fmtDef>
 	
 	<fmtDef id="testUseCaseCM1Fmt">
 		<mapperConverterExpression>
