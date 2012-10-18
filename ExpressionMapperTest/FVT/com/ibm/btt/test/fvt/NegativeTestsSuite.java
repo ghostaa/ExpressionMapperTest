@@ -13,6 +13,7 @@ import com.ibm.btt.test.fvt.scenario4.NegComputingWildcardMapping;
 import com.ibm.btt.test.fvt.scenario5.NegComputingWildcardWithOpersMapping;
 import com.ibm.btt.test.fvt.scenario6.NegExpressionToWildcardMapping;
 import com.ibm.btt.test.fvt.scenario7.NegComputeWildcardWithFuncMapping;
+import com.ibm.btt.test.fvt.scenario8.NegInfiniteAppendMapping;
 import com.ibm.btt.test.fvt.scenario9.NegAsteriskToAsteriskMapping;
 
 @RunWith(Suite.class)
@@ -32,7 +33,7 @@ import com.ibm.btt.test.fvt.scenario9.NegAsteriskToAsteriskMapping;
 		// scenario 7
 		NegComputeWildcardWithFuncMapping.class,
 		// scenario 8 StackOverFlowError
-		// NegInfiniteAppendMapping.class
+		NegInfiniteAppendMapping.class,
 		// scenario 9
 		NegAsteriskToAsteriskMapping.class })
 public class NegativeTestsSuite {
