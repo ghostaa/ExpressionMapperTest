@@ -38,8 +38,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E011: failed to execute mapping expression 'Packages.com.ibm.btt.utils.GlobalFunctions.getRowByIndex(L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$L5I, 1)'. Check the expression for errors or invalid parameters to global functions.";
-			String lin11 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)] and target [L1IC.*.L2IC.*.L3IC.*] are not consistent.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)] and target [L1IC.*.L2IC.*.L3IC.*] are not consistent.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)\" to=\"L1IC.*.L2IC.*.L3IC.*\" append=\"T\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Invalid mapping configuration, wildcard number in source [functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)] and target [L1IC.*.L2IC.*.L3IC.*] are not consistent.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -69,8 +69,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E011: failed to execute mapping expression 'Packages.com.ibm.btt.utils.GlobalFunctions.replace(L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$L5I$_$$_$Str1Field, L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$Str2Field, L1I$_$$_$L2I$_$$_$L3I$_$$_$Str3Field)'. Check the expression for errors or invalid parameters to global functions.";
-			String lin11 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard number in source expression is not the same.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -101,8 +101,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E011: failed to execute mapping expression 'Packages.com.ibm.btt.utils.GlobalFunctions.replace(L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$L5I$_$$_$Str1Field, L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$Str2Field, L1I$_$$_$L2I$_$$_$L3I$_$$_$Str3Field)'. Check the expression for errors or invalid parameters to global functions.";
-			String lin11 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard number in source expression is not the same.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -133,8 +133,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E011: failed to execute mapping expression 'Packages.com.ibm.btt.utils.GlobalFunctions.getRowByIndex(L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$L5I, 1)'. Check the expression for errors or invalid parameters to global functions.";
-			String lin11 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'S4FuncTypedDataRec' with element type 'KeyedCollection' to 'FIELDDATA' with element type 'DataField'.";
+			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'S4FuncTypedDataRec' with element type 'KeyedCollection' to 'FIELDDATA' with element type 'DataField'.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)\" to=\"L1ICC.*.L2ICC.*.L3ICC.*.L4ICC.*\" append=\"T\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:From data element [S4FuncTypedDataRec](KeyedCollection) is not match with the To data element [FIELDDATA](DataField).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -164,8 +164,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E011: failed to execute mapping expression 'Packages.com.ibm.btt.utils.GlobalFunctions.parseDate(L1I$_$$_$L2I$_$$_$L3I$_$$_$L4I$_$$_$L5I$_$$_$DateStrField, 'yyyyMMdd')'. Check the expression for errors or invalid parameters to global functions.";
-			String lin11 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'functs_BTTDateFunctions.parseDate(L1I.0.L2I.0.L3I.0.L4I.0.L5I.0.DateStrField, 'yyyyMMdd')' with element type 'DataField' to 'S4FuncTypedDataRec' with element type 'KeyedCollection'.";
+			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'functs_BTTDateFunctions.parseDate(L1I.0.L2I.0.L3I.0.L4I.0.L5I.0.DateStrField, 'yyyyMMdd')' with element type 'DataField' to 'S4FuncTypedDataRec' with element type 'KeyedCollection'.";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTDateFunctions.parseDate(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DateStrField, 'yyyyMMdd')\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*\" append=\"T\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:From data element [functs_BTTDateFunctions.parseDate(L1I.0.L2I.0.L3I.0.L4I.0.L5I.0.DateStrField, 'yyyyMMdd')](DataField) is not match with the To data element [S4FuncTypedDataRec](KeyedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {

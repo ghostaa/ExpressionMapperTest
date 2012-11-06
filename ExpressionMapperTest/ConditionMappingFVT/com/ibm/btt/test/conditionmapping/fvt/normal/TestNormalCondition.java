@@ -535,7 +535,7 @@ public class TestNormalCondition extends CommonTestCase {
 			for(int i = 0; i < logContents.length; i++){
 			 sb. append(logContents[i]);
 			}
-			String line = "com.ibm.btt.base.ConditionalDataMapperFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"functs_ConditionFunctions.sortByName(OneIColl, 'testDouble')\" to=\"OneIColl\" />";
+			String line = "com.ibm.btt.base.DataMapperExpressionConverterFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"functs_ConditionFunctions.sortByName(OneIColl, 'testDouble')\" to=\"OneIColl\" />";
 			Assert.assertEquals(true,sb.toString().contains(line));
 			for (int i = 0; i < 5; i++) {
 				assertEquals(i*100d, to.getValueAt("OneIColl."+i+".testDouble"));
