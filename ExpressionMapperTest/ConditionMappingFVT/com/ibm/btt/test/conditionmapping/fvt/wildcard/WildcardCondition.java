@@ -824,7 +824,7 @@ public class WildcardCondition extends CommonTestCase {
 		}
 	}
 	
-	@Ignore
+	@Test
 	public void testInnerConditionFromSameConditionFmtDefectFromLST(){
 		try {
 			Context from = ContextFactory.createContext("WildcardConditionCtx");
@@ -844,7 +844,13 @@ public class WildcardCondition extends CommonTestCase {
 			from.setValueAt("OneIColl.10.conditionInnerKColl.testInteger",8);
 			for (int i = 0; i < 10; i++) {
 				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testString",""+i);
-				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testFloat",3.0f);
+				if (i%2==0) {
+					
+					from.setValueAt("OneIColl."+i+".conditionInnerKColl.testFloat",3.0f);
+				}else {
+					from.setValueAt("OneIColl."+i+".conditionInnerKColl.testFloat",2.0f);
+					
+				}
 			}
 			
 			
@@ -863,6 +869,13 @@ public class WildcardCondition extends CommonTestCase {
 			assertEquals("6", to.getValueAt("OneIColl.4.conditionInnerKColl.testString"));
 			assertEquals("7", to.getValueAt("OneIColl.5.conditionInnerKColl.testString"));
 			
+			assertEquals(3.3f, to.getValueAt("OneIColl.0.conditionInnerKColl.testFloat"));
+			assertEquals(3.3f, to.getValueAt("OneIColl.1.conditionInnerKColl.testFloat"));
+			assertEquals(2.2f, to.getValueAt("OneIColl.2.conditionInnerKColl.testFloat"));
+			assertEquals(2.2f, to.getValueAt("OneIColl.3.conditionInnerKColl.testFloat"));
+			assertEquals(3.3f, to.getValueAt("OneIColl.4.conditionInnerKColl.testFloat"));
+			assertEquals(2.2f, to.getValueAt("OneIColl.5.conditionInnerKColl.testFloat"));
+					
 			
 		} catch (Exception e) {
 			e.printStackTrace();
