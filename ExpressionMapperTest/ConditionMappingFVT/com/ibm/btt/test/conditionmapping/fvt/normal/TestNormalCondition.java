@@ -15,7 +15,7 @@ import com.ibm.btt.base.Context;
 import com.ibm.btt.base.ContextFactory;
 import com.ibm.btt.base.DataMapperFormat;
 import com.ibm.btt.base.FormatElement;
-import com.ibm.btt.dojo.model.TreeModel;
+//import com.ibm.btt.dojo.model.TreeModel;
 import com.ibm.btt.test.fvt.common.CommonTestCase;
 import com.ibm.btt.test.fvt.common.TestingVerificationLogImpl;
 
@@ -549,7 +549,7 @@ public class TestNormalCondition extends CommonTestCase {
 		}
 	}
 	
-	@Ignore
+	/*@Ignore
 	public void testTreeModel(){
 		try {
 			Context from = ContextFactory.createContext("NormalConditionCtx");
@@ -572,7 +572,7 @@ public class TestNormalCondition extends CommonTestCase {
 			Assert.fail("Exception encountered while testing, detailed exception messages are: "
 					+ e);
 		}
-	}
+	}*/
 	/*
 	@Test
 	public void test(){
