@@ -11,4 +11,7 @@
 	<context id="FuncsUsedCtxt" type="Scenario4" >
 		<refKColl refId="FuncsUsedCtxtKColl"/>
 	</context>
+	<context id="TestPMRKCollCtx" type="Scenario4" >
+		<refKColl refId="TestPMRKColl"/>
+	</context>
 </context.xml>

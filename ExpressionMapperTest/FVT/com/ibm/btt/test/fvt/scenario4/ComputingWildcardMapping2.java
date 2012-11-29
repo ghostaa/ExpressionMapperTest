@@ -134,4 +134,28 @@ public class ComputingWildcardMapping2 extends CommonTestCase {
 					+ "], detailed excaption messages are:\n" + e.getMessage());
 		}
 	}
+	// Test GlobalFunction(List.*.KCollA.KCollB.FieldA, List.*.KCollA.FieldA 
+	@Test
+	public void TestPMRKCollCtx() {
+		try {
+			Context source = getContextByName("TestPMRKCollCtx");
+			Context target = getContextByName("TestPMRKCollCtx");
+			DataMapperFormat fmt = getFormatByName("USPT_KCollDifferentLevelInIColl_Fmt");
+			source.getKeyedCollection().setDynamic(true);
+			for (int i = 0; i < 10; i++) {
+				source.setValueAt("List."+i+".KCollA.FieldA", "abc");
+				source.setValueAt("List."+i+".KCollA.KCollB.FieldB", "ef");
+			}
+			fmt.mapContents(source, target);
+			for (int i = 0; i < 10; i++) {
+				Assert.assertEquals("abcef", target.getValueAt("List."+i+".KCollA.BooleanA"));
+			}
+			
+							
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while executing test case [" + getClass().getSimpleName()
+					+ "], detailed excaption messages are:\n" + e.getMessage());
+		}
+	}
 }

@@ -6,6 +6,7 @@
 		<refData refId="StringField" alias="SrcStringField" />
 		<refData refId="IntegerField" alias="SrcIntegerField" />
 		<refData refId="XMLGCField" alias="SrcXMLGCField" />
+		
 	</kColl>
 
 	<kColl id="DestTwoLvlICollKColl">
@@ -84,5 +85,18 @@
 			</kColl>
 		</iColl>
 	</kColl>
-
+	<kColl id="TestPMRKColl">
+		<iColl id="List" size="10">
+			<kColl id="L1K" dynamic="true">
+				<kColl id="KCollA" dynamic="true">
+					<data id="FieldA" refType="String" />
+					<data id="BooleanA" refType="String" />
+					<kColl id="KCollB" dynamic="true">
+						<data id="FieldB" refType="String" />
+						<data id="BooleanB" refType="String" />
+					</kColl>
+				</kColl>
+			</kColl>
+		</iColl>
+	</kColl>
 </data.xml>

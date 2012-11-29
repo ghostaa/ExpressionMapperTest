@@ -147,5 +147,10 @@
 		</mapperConverterExpression>
 	</fmtDef>
 	
-	
+	<!-- Test GlobalFunction(List.*.KCollA.KCollB.FieldA, List.*.KCollA.FieldA -->
+	<fmtDef id="USPT_KCollDifferentLevelInIColl_Fmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(List$*$KCollA$FieldA, List$*$KCollA$KCollB$FieldB)" to="List.*.KCollA.BooleanA"/>
+		</mapperConverterExpression>
+	</fmtDef>
 </format.xml>
