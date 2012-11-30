@@ -69,8 +69,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard number in source expression is not the same.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*] and [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] are not for the same IndexedCollection, expression: functs_BTTStringFunctions.replace(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field, L1I.*.L2I.*.L3I.*.L4I.*.Str2Field, L1I.*.L2I.*.L3I.*.Str3Field).";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*] and [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] are not for the same IndexedCollection, expression: functs_BTTStringFunctions.replace(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field, L1I.*.L2I.*.L3I.*.L4I.*.Str2Field, L1I.*.L2I.*.L3I.*.Str3Field).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -101,8 +101,8 @@ public class NegComputingWildcardMapping extends CommonTestCase {
 			// check the logs, THERE WILL NOT BE EXCEPTIONS THROWN OUT ON CUSTOMER'S
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
-			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard number in source expression is not the same.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard number in source expression is not the same.";
+			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*] and [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] are not for the same IndexedCollection, expression: functs_BTTStringFunctions.replace(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field, L1I.*.L2I.*.L3I.*.L4I.*.Str2Field, L1I.*.L2I.*.L3I.*.Str3Field).";
+			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map fromExpression=\"functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)\" to=\"L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField\" append=\"true\" />] from context [FuncsUsedCtxt] to [FuncsUsedCtxt]:Wildcard expression is invalid, the paths [L1I.*.L2I.*.L3I.*.L4I.*] and [L1I.*.L2I.*.L3I.*.L4I.*.L5I.*] are not for the same IndexedCollection, expression: functs_BTTStringFunctions.replace(L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.Str1Field, L1I.*.L2I.*.L3I.*.L4I.*.Str2Field, L1I.*.L2I.*.L3I.*.Str3Field).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
