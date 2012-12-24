@@ -123,4 +123,10 @@
 			<map from="L1IK.*" to="L1II.*" />
 		</mapperConverterExpression>
 	</fmtDef>
+	
+	<fmtDef id="OneLvlICollAppendIgnoreFmt">
+		<mapperConverterExpression>
+			<map from="SrcOneLvlIColl.*.SrcPlainField" to="DestOneLvlIColl.*.PlainField" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
 </format.xml>

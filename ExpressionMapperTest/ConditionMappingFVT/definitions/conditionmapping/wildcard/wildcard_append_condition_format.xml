@@ -86,5 +86,27 @@
 				</mapElse>
 		</mapperConverterExpression>
 	</fmtDef>
-	
+	<fmtDef id="testAppendEntranceFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="true"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testInnerAppendFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					<mapIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt; 1 &amp;&amp; HaveNotSizeIColl$*$conditionInnerKColl$testInteger &lt; 3">
+						<map fromExpression="HaveNotSizeIColl$*$conditionInnerKColl$testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					</mapIf>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
 </format.xml>

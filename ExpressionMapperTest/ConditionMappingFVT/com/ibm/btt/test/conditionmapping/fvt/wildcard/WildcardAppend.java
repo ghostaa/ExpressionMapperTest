@@ -448,6 +448,52 @@ public class WildcardAppend extends CommonTestCase {
 					+ e);
 		}
 	}
+	@Test
+	public void testAppendEntrance(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("testAppendEntranceFmt");
+			
+			for (int i = 0; i < 20; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",i%2);
+				to.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",999);
+				
+			}
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(i%2, to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
+	@Test
+	public void testInnerAppend(){
+		try {
+			Context from = ContextFactory.createContext("WildcardConditionCtx");
+			Context to =  ContextFactory.createContext("WildcardConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("testInnerAppendFmt");
+			
+			for (int i = 0; i < 20; i++) {
+				from.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",i%2);
+				to.setValueAt("OneIColl."+i+".conditionInnerKColl.testInteger",999);
+				from.setValueAt("HaveNotSizeIColl."+i+".conditionInnerKColl.testInteger",i);
+				from.setValueAt("HaveNotSizeIColl."+i+".conditionInnerKColl.testString","jack"+i);
+			}
+			format.mapContents(from, to);
+			for (int i = 0; i < 10; i++) {
+				assertEquals(i%2, to.getValueAt("NormalIColl."+i+".conditionInnerKColl.testInteger"));
+			}
+			assertEquals("jack2", to.getValueAt("NormalIColl.2.conditionInnerKColl.testString"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
 	/*
 	@Test
 	public void test(){

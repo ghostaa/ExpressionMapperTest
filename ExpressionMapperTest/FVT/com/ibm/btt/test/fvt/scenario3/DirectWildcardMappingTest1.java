@@ -348,4 +348,39 @@ public class DirectWildcardMappingTest1 extends CommonTestCase {
 			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
 		}
 	}
+	@Test
+	public void testOneLvlICollAppendIngore() {
+		try {
+			Context from = ContextFactory.createContext("SrcOneLvlICollKCollCtx");
+			Context to = ContextFactory.createContext("DestOneLvlICollKCollCtx");
+			IndexedCollection iColl = (IndexedCollection) from.getElementAt("SrcOneLvlIColl");
+			IndexedCollection destOneLvlIColl = (IndexedCollection) to.getElementAt("DestOneLvlIColl");
+			for (int i = 0; i < 4; i++) {
+				KeyedCollection kColl = (KeyedCollection) DataElement.readObject("SrcTypedDataRec");
+				kColl.setValueAt("SrcPlainField", "this plain field"+i);
+				iColl.addElement(kColl);
+				
+			}
+			for (int i = 0; i < 10; i++) {
+				
+				KeyedCollection destOneLvlICollKColl = (KeyedCollection) DataElement.readObject("TypedDataRec");
+				destOneLvlICollKColl.setValueAt("PlainField", ""+i);
+				destOneLvlIColl.addElement(destOneLvlICollKColl);
+			}
+			DataMapperFormat fmt = (DataMapperFormat) FormatElement.readObject("OneLvlICollAppendIgnoreFmt");
+			fmt.mapContents(from, to);
+			for (int i = 0; i < 4; i++) {
+				
+				Assert.assertEquals("this plain field"+i, to.getValueAt("DestOneLvlIColl."+i+".PlainField"));
+			}
+			for (int i = 4; i < 10; i++) {
+				
+				Assert.assertEquals(""+i, to.getValueAt("DestOneLvlIColl."+i+".PlainField"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
 }
