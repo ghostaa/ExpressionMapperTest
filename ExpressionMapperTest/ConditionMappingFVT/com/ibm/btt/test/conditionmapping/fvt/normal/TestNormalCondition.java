@@ -549,6 +549,23 @@ public class TestNormalCondition extends CommonTestCase {
 		}
 	}
 	
+	
+	@Test
+	public void testConditionIsTrueOrTrue(){
+		try {
+			Context from = ContextFactory.createContext("NormalConditionCtx");
+			Context to =  ContextFactory.createContext("NormalConditionCtx");
+			DataMapperFormat format = (DataMapperFormat)FormatElement.readObject("testConditionIsTrueOrTrue");
+			
+			format.mapContents(from, to);
+			Assert.assertEquals("VIP2",to.getValueAt("testString"));
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: "
+					+ e);
+		}
+	}
 	/*@Ignore
 	public void testTreeModel(){
 		try {

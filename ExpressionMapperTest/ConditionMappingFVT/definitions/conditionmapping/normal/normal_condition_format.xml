@@ -218,4 +218,12 @@
 			<map from="root" to="root"/>
 		</mapperConverterExpression>
 	</fmtDef>
+	<fmtDef id="testConditionIsTrueOrTrue">
+		<mapperConverterExpression>
+			<mapIf expression="true == true">
+				<map fromExpression="&apos;VIP2&apos;" to="testString"/>
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
 </format.xml>
