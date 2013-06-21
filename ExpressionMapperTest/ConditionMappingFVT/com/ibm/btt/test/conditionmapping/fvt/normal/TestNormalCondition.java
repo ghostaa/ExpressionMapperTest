@@ -483,7 +483,8 @@ public class TestNormalCondition extends CommonTestCase {
 			for(int i = 0; i < logContents.length; i++){
 			 sb. append(logContents[i]);
 			}
-			String line = "com.ibm.btt.base.ConditionalDataMapperFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"testInteger\" to=\"testInteger\" />";
+			System.out.println(sb);
+			String line = "com.ibm.btt.base.DataMapperExpressionConverterFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"testInteger\" to=\"testInteger\" />";
 			Assert.assertEquals(true,sb.toString().contains(line));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -506,7 +507,8 @@ public class TestNormalCondition extends CommonTestCase {
 			for(int i = 0; i < logContents.length; i++){
 			 sb. append(logContents[i]);
 			}
-			String line = "com.ibm.btt.base.ConditionalDataMapperFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"OneIColl\" to=\"OneIColl\" />";
+			System.out.println(sb);
+			String line = "com.ibm.btt.base.DataMapperExpressionConverterFormat [INFO]############  Same instance of mapping from and to, just skip without calling map : <map fromExpression=\"OneIColl\" to=\"OneIColl\" />";
 			Assert.assertEquals(true,sb.toString().contains(line));
 			
 		} catch (Exception e) {
