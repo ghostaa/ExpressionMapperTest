@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- format file for basic mapping scenarios -->
+	<import file="jar:///definitions/basic/format_basic.xml"/>
+	<import file="jar:///definitions/error/format_error.xml"/>
+	<import file="jar:///definitions/expr/format_expr.xml"/>
+	<import file="jar:///definitions/expr/wildcardTarget/format_expr_wildcardTarget.xml"/>
+	<import file="jar:///definitions/type/format_type.xml"/>
+	<import file="jar:///definitions/wildcard/format_wildcard.xml"/>
+	<import file="jar:///definitions/wildcard/append/format_append.xml"/>
+	<import file="jar:///definitions/wildcard/func/format_wildcard_func.xml"/>
+	<import file="jar:///definitions/wildcard/operator/format_wildcard_operator.xml"/>
+	<import file="jar:///definitions/wildcard/fieldTarget/format_wildcard_fieldTarget.xml"/>
+	<import file="jar:///definitions/conditional/format_conditional.xml"/>
+	
+	<!-- ============91893============== -->
+	<!-- ============Scenario1========== -->
+	<import file="jar:///definitions/scenario1/format.xml"/>
+	<!-- ============Scenario2========== -->
+	<import file="jar:///definitions/scenario2/format.xml"/>
+	<!-- ============Scenario2Appendix========== -->
+	<import file="jar:///definitions/scenario2Appendix/format.xml"/>
+	<!-- ============Scenario3========== -->
+	<import file="jar:///definitions/scenario3/format.xml"/>
+	<!-- ============Scenario4========== -->
+	<import file="jar:///definitions/scenario4/format.xml"/>
+	<!-- ============Scenario5========== -->
+	<import file="jar:///definitions/scenario5/format.xml"/>
+	<!-- ============Scenario6========== -->
+	<import file="jar:///definitions/scenario6/format.xml"/>
+	<!-- ============Scenario7========== -->
+	<import file="jar:///definitions/scenario7/format.xml"/>
+	<!-- ============Scenario8========== -->
+	<import file="jar:///definitions/scenario8/format.xml"/>
+	<!-- ============Scenario9========== -->
+	<import file="jar:///definitions/scenario9/format.xml"/>
+	
+	
+	
+	<!-- ============Condition mapping========== -->
+	<import file="jar:///definitions/conditionmapping/normal/normal_condition_format.xml"/>
+	<import file="jar:///definitions/conditionmapping/wildcard/wildcard_condition_format.xml"/>
+	<import file="jar:///definitions/conditionmapping/index/index_condition_format.xml"/>
+</format.xml>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	
+	<fmtDef id="append_oneLevelFieldFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelFieldIColl.*" to="oneLevelFieldIColl.*" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_func_oneLevelFieldFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(oneLevelFieldIColl$*,'_concat')" to="oneLevelFieldIColl.*" append="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_oneLevelKCollFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*.testBigInteger" to="oneLevelKCollIColl.*.testBigInteger" append="true"/>
+			<map from="oneLevelKCollIColl.*.testKColl2.testDate" to="oneLevelKCollIColl.*.testKColl2.testDate" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_oneLevelKCollFmtReverse">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*.testKColl2.testDate" to="oneLevelKCollIColl.*.testKColl2.testDate" append="false" />
+			<map from="oneLevelKCollIColl.*.testBigInteger" to="oneLevelKCollIColl.*.testBigInteger" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_oneLevelKCollFmtIgnore">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*.testKColl2.testDate" to="oneLevelKCollIColl.*.testKColl2.testDate" append="false" />
+			<map from="oneLevelKCollIColl.*.testBigInteger" to="oneLevelKCollIColl.*.testBigInteger" append="ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_oper_twoLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger + 12" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger" append="false" />
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField + '_concat'" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="append_oper_twoLevelICollFmt_Max">
+		<mapperConverterExpression>
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger + 12" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger" append="true" />
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField + '_concat'" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField" append="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

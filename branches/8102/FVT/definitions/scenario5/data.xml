@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<kColl id="OperatorTypedDataRec">
+		<refData refId="PlainField" alias="PlainFieldOne" />
+		<refData refId="PlainField" alias="PlainFieldTwo" />
+		<refData refId="PlainField" alias="PlainFieldResult" />
+		<refData refId="StringField" alias="StringFieldOne" />
+		<refData refId="StringField" alias="StringFieldTwo" />
+		<refData refId="StringField" alias="StringFieldResult" />
+		<refData refId="BDField" alias="BDFieldOne" />
+		<refData refId="BDField" alias="BDFieldTwo" />
+		<refData refId="BDField" alias="BDFieldResult" />
+		<refData refId="BIField" alias="BIFieldOne" />
+		<refData refId="BIField" alias="BIFieldTwo" />
+		<refData refId="BIField" alias="BIFieldResult" />
+		<refData refId="IntegerField" alias="IntegerFieldOne" />
+		<refData refId="IntegerField" alias="IntegerFieldTwo" />
+		<refData refId="IntegerField" alias="IntegerFieldResult" />
+	</kColl>
+	<kColl id="OperatorOneLevelKColl">
+		<kColl id="OperatorTwoLevelKColl">
+			<kColl id="OperatorThreeLevelKColl">
+				<refData refId="OperatorTypedDataRec" alias="OperatorTypedDataRecCopy" />
+			</kColl>
+		</kColl>
+	</kColl>
+
+
+	<iColl id="OperL1IColl" size="0">
+		<kColl id="OperL1Kcoll">
+			<refData refId="OperatorTypedDataRec" />
+			<iColl id="OperL2IColl" size="0">
+				<kColl id="OperL2Kcoll">
+					<refData refId="OperatorTypedDataRec" />
+					<iColl id="OperL3IColl" size="0">
+						<kColl id="OperL3Kcoll">
+							<refData refId="OperatorTypedDataRec" />
+							<iColl id="OperL4IColl" size="0">
+								<kColl id="OperL4Kcoll">
+									<refData refId="OperatorTypedDataRec" />
+									<iColl id="OperL5IColl" size="0">
+										<kColl id="OperL5Kcoll">
+											<refData refId="OperatorTypedDataRec" />
+											<iColl id="OperL6IColl" size="0">
+												<kColl id="OperL6Kcoll">
+													<refData refId="OperatorTypedDataRec" />
+												</kColl>
+											</iColl>
+										</kColl>
+									</iColl>
+								</kColl>
+							</iColl>
+						</kColl>
+					</iColl>
+				</kColl>
+			</iColl>
+		</kColl>
+	</iColl>
+
+	<!-- contextKColl -->
+	<kColl id="OperSixLevelICollCtxKColl">
+		<refData refId="OperL1IColl" />
+		<refData refId="OperatorOneLevelKColl" alias="SrcOperatorOneLevelKColl" />
+	</kColl>
+
+
+	<kColl id="S5FuncTypedDataRec">
+		<refData alias="PlainField" refId="PlainField" />
+
+		<!-- for string operators -->
+		<refData alias="Str1Field" refId="StringField" />
+		<refData alias="Str2Field" refId="StringField" />
+		<refData alias="Str3Field" refId="StringField" />
+
+		<!-- for date operators -->
+		<data id="StringField" refType="String" />
+		<data id="DateField" refType="Date" />
+
+		<!-- for number operators -->
+		<data id="ByteField" refType="Byte" />
+		<data id="IntegerField" refType="Integer" />
+		<data id="LongField" refType="Long" />
+		<data id="DoubleField" refType="Double" />
+		<data id="BigDecimalField" refType="BigDecimal" />
+
+		<!-- for boolean operators -->
+		<data id="BooleanField" refType="Boolean" />
+		<data id="AnotherBooleanField" refType="Boolean" />
+	</kColl>
+
+	<kColl id="OperatorsUsedCtxtKColl" dynamic="false">
+		<data id="BigIntegerField" refType="BigInteger" />
+		<iColl id="L1I" size="0">
+			<kColl id="L1K" dynamic="true">
+				<iColl id="L2I" size="0">
+					<kColl id="L2K" dynamic="true">
+						<iColl id="L3I" size="0">
+							<kColl id="L3K" dynamic="true">
+								<iColl id="L4I" size="0">
+									<kColl id="L4K" dynamic="true">
+										<iColl id="L5I" size="0">
+											<refData refId="S5FuncTypedDataRec" />
+										</iColl>
+									</kColl>
+								</iColl>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+
+		<iColl id="L1OI" size="0">
+			<iColl id="L2OI" size="0">
+				<iColl id="L3OI" size="0">
+					<iColl id="L4OI" size="0">
+						<iColl id="L5OI" size="0">
+							<refData refId="S5FuncTypedDataRec" />
+						</iColl>
+					</iColl>
+				</iColl>
+			</iColl>
+		</iColl>
+
+		<iColl id="MI" size="0">
+			<kColl id="K" dynamic="true">
+				<iColl id="IMI" size="0">
+					<kColl id="IK" dynamic="true">
+						<refData alias="PlainField" refId="PlainField" />
+					</kColl>
+				</iColl>
+				<iColl id="IMI2" size="0">
+					<kColl id="IK" dynamic="true">
+						<refData alias="PlainField" refId="PlainField" />
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+	</kColl>
+</data.xml>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- Single level person statistical data format -->
+	<fmtDef id="SingleLevelS7PersonStatiscalDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.averageAge(S7PL1I$*$age)" to="groupedData.avgAge" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryPocketMoney(S7PL1I$*$moneyInPocket)" to="groupedData.sumPocketMoney" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryGender(S7PL1I$*$gender)" to="groupedData.genderSummary" />
+			<map fromExpression="functs_BTTS7PersonFunctions.minimumActiveTime(S7PL1I$*$activeSince)" to="groupedData.minActiveTime" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumLastName(S7PL1I$*$lastName)" to="groupedData.maxLastName" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumBirthDate(S7PL1I$*$birthDay)" to="groupedData.maxBirthYear" />
+			<map fromExpression="functs_BTTS7PersonFunctions.mostUsedBirthMonth(S7PL1I$*$birthDay)" to="groupedData.mostBirthMonth" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Three levels person statistical data format -->
+	<fmtDef id="ThreeLevelS7PersonStatiscalDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.averageAge(S7PL3I$*$S7PL2I$*$S7PL1I$*$age)" to="groupedData.avgAge" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryPocketMoney(S7PL3I$*$S7PL2I$*$S7PL1I$*$moneyInPocket)" to="groupedData.sumPocketMoney" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryGender(S7PL3I$*$S7PL2I$*$S7PL1I$*$gender)" to="groupedData.genderSummary" />
+			<map fromExpression="functs_BTTS7PersonFunctions.minimumActiveTime(S7PL3I$*$S7PL2I$*$S7PL1I$*$activeSince)" to="groupedData.minActiveTime" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumLastName(S7PL3I$*$S7PL2I$*$S7PL1I$*$lastName)" to="groupedData.maxLastName" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumBirthDate(S7PL3I$*$S7PL2I$*$S7PL1I$*$birthDay)" to="groupedData.maxBirthYear" />
+			<map fromExpression="functs_BTTS7PersonFunctions.mostUsedBirthMonth(S7PL3I$*$S7PL2I$*$S7PL1I$*$birthDay)" to="groupedData.mostBirthMonth" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Five levels person statistical data format -->
+	<fmtDef id="FiveLevelS7PersonStatiscalDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.averageAge(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$age)" to="groupedData.avgAge" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryPocketMoney(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$moneyInPocket)"
+				to="groupedData.sumPocketMoney" />
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryGender(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$gender)" to="groupedData.genderSummary" />
+			<map fromExpression="functs_BTTS7PersonFunctions.minimumActiveTime(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$activeSince)"
+				to="groupedData.minActiveTime" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumLastName(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$lastName)"
+				to="groupedData.maxLastName" />
+			<map fromExpression="functs_BTTS7PersonFunctions.maximumBirthDate(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$birthDay)"
+				to="groupedData.maxBirthYear" />
+			<map fromExpression="functs_BTTS7PersonFunctions.mostUsedBirthMonth(S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$birthDay)"
+				to="groupedData.mostBirthMonth" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Single level person statistical data format -->
+	<fmtDef id="SingleLevelS7PersonStatiscalFilterDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.summaryGenderWithFilter(S7PL1I$*$age,S7PL1I$*$gender,groupedData$genderSummary,29)"
+				to="groupedData.genderSummary" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Five levels person statistical data format -->
+	<fmtDef id="FiveLevelS7PersonStatiscalFilterDataFmt">
+		<mapperConverterExpression>
+			<map
+				fromExpression="functs_BTTS7PersonFunctions.summaryGenderWithFilter(
+					S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$age,
+					S7PL5I$*$S7PL4I$*$S7PL3I$*$S7PL2I$*$S7PL1I$*$gender,
+					groupedData$genderSummary,
+					16)"
+				to="groupedData.genderSummary" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Calculate the real sum amount of books bought -->
+	<fmtDef id="CalculateBookPayInfoFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.calculateSumQuantity(booksList$*$bookQuantity)" to="sumQuantity" />
+			<map fromExpression="functs_BTTS7PersonFunctions.calculateSumAmount(booksList$*$bookPrice,booksList$*$bookQuantity)" to="sumAmount" />
+			<map
+				fromExpression="functs_BTTS7PersonFunctions.calculateRealSumAmount(booksList$*$bookPrice,
+				booksList$*$bookQuantity,booksList$*$bookDiscount)"
+				to="realSumAmount" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Mapping field result to collection data -->
+	<fmtDef id="USPT_MapFieldResultToCollectionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTS7PersonFunctions.averageAge(S7PL1I$*$age)" to="groupedData" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

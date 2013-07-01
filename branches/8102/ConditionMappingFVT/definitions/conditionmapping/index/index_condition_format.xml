@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="indexToDifferentICollConditionAppendFalseFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="dse_index &lt; 3">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexToDifferentICollConditionAppendIgnoreFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="dse_index &lt; 3">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexToDifferentICollFieldConditionAppendFalseFmt">
+		<mapperConverterExpression>
+				<mapIf expression="dse_index &lt; 3">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexToDifferentICollFieldConditionAppendIgnoreFmt">
+		<mapperConverterExpression>
+				<mapIf expression="dse_index &lt; 3">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexToNestDifferentICollFieldConditionAppendFalseFmt">
+		<mapperConverterExpression>
+				<mapIf expression="dse_index &lt; 3">
+					<map from="testInteger" to="testInteger"/>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 10">
+						<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					</mapIf>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="indexToICollFieldNOConditionAppendFalseFmt">
+		<mapperConverterExpression>
+			<map fromExpression="dse_index" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+</format.xml>

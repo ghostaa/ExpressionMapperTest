@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ExpressionMapperTestingProject" default="ExpressionMapperTest" basedir=".">
+	<target name="ExpressionMapperTest">
+		<!-- Unit test cases -->
+		<TestUnitCase id="ExpressionMapperTest" jarProject="ExpressionMapperTest" category="fvt" jarsrc="src" testCaseClass="UnitTestCases" instrpath="bttcore.jar" jars="bttcore.jar" />
+		<!-- FVT positive test cases -->
+		<TestUnitCase id="ExpressionMapperTest" jarProject="ExpressionMapperTest" category="fvt" jarsrc="FVT" testCaseClass="PositiveTestsSuite" instrpath="bttcore.jar" jars="bttcore.jar" />
+		<!-- FVT negative test cases -->
+		<TestUnitCase id="ExpressionMapperTest" jarProject="ExpressionMapperTest" category="fvt" jarsrc="FVT" testCaseClass="NegativeTestsSuite" instrpath="bttcore.jar" jars="bttcore.jar" />
+	</target>
+</project>

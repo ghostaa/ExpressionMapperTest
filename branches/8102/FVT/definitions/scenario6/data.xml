@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	
+	<kColl id="MixICollKCollDataFaildKColl">
+		<refData refId="OperatorTypedDataRec"/>
+		<refData refId="OperL1IColl"/>
+		<refData refId="OperatorOneLevelKColl"/>
+	</kColl>
+	
+	<!-- context -->
+	<kColl id="MixICollKCollDataFaildForCtx">
+		<refData refId="MixICollKCollDataFaildKColl"/>
+	</kColl>
+	<kColl id="parentKC" dynamic="false">
+		<kColl id="K" dynamic="flase">
+			<kColl id="INK" dynamic="true">
+				<kColl id="TK" dynamic="true">
+					<refData refId="TypeDataDefRec" />
+				</kColl>
+			</kColl>
+		</kColl>
+		<iColl id="TDRI" size="0">
+			<refData refId="TypeDataDefRec" />
+		</iColl>
+		<iColl id="TDRIC" size="0">
+			<kColl id="DMK">
+				<field id="index" />
+				<refData refId="TypeDataDefRec" />
+			</kColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="FuncExprToWildcardCtxtKColl" dynamic="false">
+		<refData refId="parentKC" />
+	</kColl>
+</data.xml>

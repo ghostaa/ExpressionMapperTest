@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	
+	
+	<context id="funcFieldDataCtx" type="op" >
+		<refKColl refId="fieldData" />
+	</context>
+	
+	<context id="funcTargetFieldDataCtx" type="op" >
+		<refKColl refId="targetFieldData" />
+	</context>
+	
+	<context id="funcTargetBooleanDataCtx" type="op" >
+		<refKColl refId="targetBooleanData" />
+	</context>
+	
+</context.xml>

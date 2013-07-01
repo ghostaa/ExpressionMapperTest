@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="singleFieldFmt">
+		<mapperConverterExpression>
+			<map from="testField" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="fieldDataFmt">
+		<mapperConverterExpression>
+			<map from="testField" to="testBigInteger"/>
+			<map from="testBigInteger" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedKCollDataFmt">
+		<mapperConverterExpression>
+			<map from="fieldData.testField" to="testBigInteger"/>
+			<map from="fieldData.testBigInteger" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedKCollDataReverseFmt">
+		<mapperConverterExpression>
+			<map to="fieldData.testField" from="testBigInteger"/>
+			<map to="fieldData.testBigInteger" from="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="byReferenceFmt">
+		<mapperConverterExpression>
+			<map from="testDate" to="testDate" byReference="false"/>
+			<map from="testDate" to="testField" byReference="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="byReferenceFmt1">
+		<mapperConverterExpression>
+			<map from="testField" to="testDate" byReference="true"/>
+			<map from="testField" to="testField" byReference="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="byReferenceFmt2">
+		<mapperConverterExpression>
+			<map from="testField" to="testDate" byReference="false"/>
+			<map from="testField" to="testField" byReference="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="byReferenceFmt3">
+		<mapperConverterExpression>
+			<map from="testDate" to="testDate" byReference="true"/>
+			<map from="testDate" to="testField" byReference="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedFieldICollFmt">
+		<mapperConverterExpression>
+			<map from="fieldIColl.0" to="testBigInteger" />
+			<map from="fieldIColl.1" to="testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedFieldICollReverseFmt">
+		<mapperConverterExpression>
+			<map to="fieldIColl.0" from="testBigInteger" />
+			<map to="fieldIColl.1" from="testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedKCollICollFmt">
+		<mapperConverterExpression>
+			<map from="kCollIColl.0.testBigInteger" to="testBigInteger" />
+			<map from="kCollIColl.1.testField" to="testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="embeddedKCollICollReverseFmt">
+		<mapperConverterExpression>
+			<map to="kCollIColl.0.testBigInteger" from="testBigInteger" />
+			<map to="kCollIColl.1.testField" from="testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

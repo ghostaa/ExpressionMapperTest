@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+
+
+	<!-- ==================Scenario1.typedData======================== -->
+	<context id="TypeDataCtxt" type="test">
+		<refKColl refId="TypeDataDefRec" />
+	</context>
+	
+	<context id="CollectionTypeDataCtxt" type="test">
+		<refKColl refId="CollectionTypeDataDefRec" />
+	</context>
+	
+	<context id="testMultiLevelKCollCtx" type="globalfuncScenario1" >
+		<refKColl refId="MultiLevelKColl"/>
+	</context>
+	<!-- ==================Scenario1.others ======================== -->
+	<context id="testMultiLevelKCollACtx" type="globalfuncScenario1" >
+		<refKColl refId="MultiLevelKCollA"/>
+	</context>
+	<context id="testMultiLevelKCollBCtx" type="globalfuncScenario1" >
+		<refKColl refId="MultiLevelKCollB"/>
+	</context>	
+	<context id="testMultiLevelICollKCollCtx" type="globalfuncScenario1" >
+		<refKColl refId="MultiLevelICollKColl"/>
+	</context>	
+	
+	<context id="testThreeICollsInColl1Ctx" type="globalfuncScenario1" >
+		<refKColl refId="ThreeICollsInKColl1"/>
+	</context>
+	<context id="testThreeICollsInColl2Ctx" type="globalfuncScenario1" >
+		<refKColl refId="ThreeICollsInKColl2"/>
+	</context>
+	
+	
+	<context id="testPartOfAICollKCollCtx" type="globalfuncScenario1" >
+		<refKColl refId="PartOfAICollKColl"/>
+	</context>
+	<context id="testPartOfBICollKCollCtx" type="globalfuncScenario1" >
+		<refKColl refId="PartOfBICollKColl"/>
+	</context>
+</context.xml>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type.xml>
+	<type id="NfBigDecimal" implClass="com.ibm.btt.base.DataField">
+		<Descriptor id="typeDefault" implClass="com.ibm.btt.base.types.impl.SimplePropertyDescriptor">
+			<Converter convTypes="default" implClass="com.ibm.btt.base.types.impl.NumberFormatConverter">
+				<param value="bigDecimal" id="numberType" />
+				<param value="9" id="decimalPlaces" />
+			</Converter>
+			<Validator implClass="com.ibm.btt.base.types.impl.NumberValidator">
+				<param value="bigDecimal" id="numberType" />
+			</Validator>
+		</Descriptor>
+	</type>
+</type.xml>

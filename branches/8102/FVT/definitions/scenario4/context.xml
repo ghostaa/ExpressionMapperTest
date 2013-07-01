@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<context id="SrcTwoLvlICollKCollCtx" type="Scenario4" >
+		<refKColl refId="SrcTwoLvlICollKColl"/>
+	</context>
+	
+	<context id="DestTwoLvlICollKCollCtx" type="Scenario4" >
+		<refKColl refId="DestTwoLvlICollKColl"/>
+	</context>
+	
+	<context id="FuncsUsedCtxt" type="Scenario4" >
+		<refKColl refId="FuncsUsedCtxtKColl"/>
+	</context>
+	<context id="TestPMRKCollCtx" type="Scenario4" >
+		<refKColl refId="TestPMRKColl"/>
+	</context>
+</context.xml>

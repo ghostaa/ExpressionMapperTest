@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<fmtDef id="func_oper_string_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString + testInteger" to="testInteger" />
+			<map fromExpression="testString + testBigDecimal" to="testBigDecimal" />
+			<map fromExpression="testString + testDate" to="testDateField"
+				byReference="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="func_oper_string_subtractionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString - testBigInteger" to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="func_oper_string_multiplicationFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString * testBigDecimal" to="testBigDecimal" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="func_oper_string_divisionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString / testInteger" to="testInteger" />
+			<!-- <map fromExpression="testString / testIntegerZero" to="testInteger"/> -->
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="func_oper_string_doubleEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString == testInteger" to="testIntegerBoolean" />
+			<map fromExpression="testString == testBigInteger" to="testBigIntegerBoolean" />
+			<map fromExpression="testString == testBigDecimal" to="testBigDecimalBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_boolean_doubleEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBoolean == testInteger" to="testBoolean" />
+			<map fromExpression="testBoolean == testString" to="testField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_boolean_nonEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBoolean != testInteger" to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_boolean_notFmt">
+		<mapperConverterExpression>
+			<map fromExpression="!(testInteger &gt; testLong) " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_boolean_andandFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testString && testBoolean " to="testStringBoolean" />
+			<map fromExpression="testInteger && testBoolean " to="testIntegerBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_boolean_ororFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBoolean || testBoolean " to="testStringBoolean" />
+			<map fromExpression="testInteger || testBoolean " to="testIntegerBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="func_oper_number_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber + testByte " to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_number_subtractionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber - testShort " to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_number_multiplicationFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber * testShort " to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_number_divisionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber / testLong " to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_number_doubleEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber == testFloat " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_number_noEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber != testFloat " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_byte_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testByte + testInteger " to="testByte" />
+			<map fromExpression="testByte + testFloat " to="testFloat" />
+			<map fromExpression="testByte + testShort " to="testShort" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_byte_greaterThanFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testByte &gt; testDouble " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_short_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testShort + testInteger " to="testShort" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_short_lessThanFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testShort &lt; testLong " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_short_doubleEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testShort == testLong " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_integer_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testInteger + testFloat " to="testInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_integer_greaterThanEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testInteger &gt;= testFloat " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_integer_nonEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testInteger != testDouble " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_long_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testLong + testDouble " to="testLong" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_long_lessThanEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testLong &lt;= testDouble " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_float_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testFloat + testShort " to="testFloat" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_float_greaterThanEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testFloat &gt; testLong " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_double_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testDouble + testBigInteger " to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_double_lessThanFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testDouble &lt; testInteger " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="func_oper_bigInteger_addtionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBigInteger + testBigDecimal " to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="func_oper_bigInteger_greaterThanEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBigInteger &gt;= testInteger " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_oper_bigDecimal_lessThanEqualSignFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBigDecimal &lt;= testDouble " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="OctalNumberFmt">
+		<mapperConverterExpression>
+			<map fromExpression="0077" to="testInteger" />
+			<map fromExpression="0077" to="testLong" />
+			<map fromExpression="0077" to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	
+	<fmtDef id="HexNumberFmt">
+		<mapperConverterExpression>
+			<map fromExpression="0x7E" to="testInteger" />
+			<map fromExpression="0x7E" to="testLong" />
+			<map fromExpression="0x7E" to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="StringSpaceCenterFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'Hello World'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceLeftFmt">
+		<mapperConverterExpression>
+			<map fromExpression="' HelloWorld'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceRightFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'HelloWorld '" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceTabFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'	HelloWorld	'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceTabStringFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'\tHelloWorld\t'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceEnterFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'
+			Hello
+			World
+			'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceEnterStringFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'\nHello\nWorld\n'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceNewLineFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'HelloWorld'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="StringSpaceNewLineStringFmt">
+		<mapperConverterExpression>
+			<map fromExpression="'\rHello\rWorld\r'" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

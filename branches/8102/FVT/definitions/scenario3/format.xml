@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- ICOLL.*.ELE to ICOLL.*.ELE, while the ELE is a collection data -->
+	<fmtDef id="CollectionDataLeafFormat">
+		<mapperConverterExpression>
+			<map from="SrcExtrOneLvlIColl.*.SrcSimpleKColl" to="DestExtrOneLvlIColl.*.SimpleKColl" />
+			<map from="SrcExtrOneLvlIColl.*.SrcSimpleIColl" to="DestExtrOneLvlIColl.*.SimpleIColl" />
+			<map from="SrcExtrOneLvlIColl.*.SrcSimpleTypedRec" to="DestExtrOneLvlIColl.*.SimpleTypedRec" />
+			<map from="SrcExtrOneLvlIColl.*.SrcSimpleTypedList" to="DestExtrOneLvlIColl.*.SimpleTypedList" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="OneLvlICollFmt">
+		<mapperConverterExpression>
+			<map from="SrcOneLvlIColl.*.SrcPlainField" to="DestOneLvlIColl.*.PlainField" />
+			<map from="SrcOneLvlIColl.*.SrcStringField" to="DestOneLvlIColl.*.StringField" />
+			<map from="SrcOneLvlIColl.*.SrcBDField" to="DestOneLvlIColl.*.BDField" />
+			<map from="SrcOneLvlIColl.*.SrcBIField" to="DestOneLvlIColl.*.BIField" />
+			<map from="SrcOneLvlIColl.*.SrcXMLGCField" to="DestOneLvlIColl.*.XMLGCField" />
+			<map from="SrcOneLvlIColl.*.SrcBAField" to="DestOneLvlIColl.*.BAField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ThreeLvlICollFmt">
+		<mapperConverterExpression>
+			<map from="SrcThreeLvlIColl.*.SrcStringField" to="DestThreeLvlIColl.*.StringField" />
+			<map from="SrcThreeLvlIColl.*.SrcBDField" to="DestThreeLvlIColl.*.BDField" />
+			<map from="SrcThreeLvlIColl.*.SrcXMLGCField" to="DestThreeLvlIColl.*.XMLGCField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerStringField" to="DestThreeLvlIColl.*.NestIColl.*.InnerPlainField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerBDField" to="DestThreeLvlIColl.*.NestIColl.*.InnerBDField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerBAField" to="DestThreeLvlIColl.*.NestIColl.*.InnerBAField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcStringField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.StringField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcPlainField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.PlainField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcBDField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.BDField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcBIField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.BIField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcBAField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.BAField" />
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.SrcXMLGCField" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.XMLGCField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ThreeLvlICollKCollFmt">
+		<mapperConverterExpression>
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.TypedDataInnerKColl" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.TypedDataInnerKColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ThreeLvlICollKCollWildcardFmt">
+		<mapperConverterExpression>
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ThreeLvlICollICollFmt">
+		<mapperConverterExpression>
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*.TypedDataInnerIColl" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*.TypedDataInnerIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="ThreeLvlICollICollWildcardFmt">
+		<mapperConverterExpression>
+			<map from="SrcThreeLvlIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*" to="DestThreeLvlIColl.*.NestIColl.*.InnerNestIColl.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.*.ICOLL.*.ICOLL.*.ELE to ICOLL.*.ICOLL.*.ICOLL.*.ELE, while the ELE is a collection data -->
+	<fmtDef id="ThreeLevelICollCollectionDataLeafFormat">
+		<mapperConverterExpression>
+			<map from="SrcIColl.*.SrcXMLGCField" to="DestIColl.*.SrcXMLGCField" />
+			<map from="SrcIColl.*.SrcNestIColl.*.SrcInnerBDField" to="DestIColl.*.SrcNestIColl.*.SrcInnerBDField" />
+			<map from="SrcIColl.*.SrcNestIColl.*.SrcInnerBAField" to="DestIColl.*.SrcNestIColl.*.SrcInnerBAField" />
+			<map from="SrcIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*" to="DestIColl.*.SrcNestIColl.*.SrcInnerNestIColl.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.*.ICOLL.*.ICOLL.*.ICOLL.*.ICOLL.*.ELE to ICOLL.*.ICOLL.*.ICOLL.*.ICOLL.*.ICOLL.*.ELE -->
+	<fmtDef id="FiveLevelFieldDataLeafFormat">
+		<mapperConverterExpression>
+			<map from="SrcIColl.*.SrcStringField" to="L1IColl.*.StringField" />
+			<map from="SrcIColl.*.SrcL2IColl.*.SrcBDField" to="L1IColl.*.L2IColl.*.BDField" />
+			<map from="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcBIField" to="L1IColl.*.L2IColl.*.L3IColl.*.BIField" />
+			<map from="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcBIField" to="L1IColl.*.L2IColl.*.L3IColl.*.L4IColl.*.BIField" />
+			<map from="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcL5IColl.*.SrcPlainField" to="L1IColl.*.L2IColl.*.L3IColl.*.L4IColl.*.L5IColl.*.PlainField" />
+			<map from="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcL5IColl.*.SrcL6IColl.*" to="L1IColl.*.L2IColl.*.L3IColl.*.L4IColl.*.L5IColl.*.L6IColl.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.*.*.*.*.*.ELE to ICOLL.*.*.*.*.*.ELE -->
+	<fmtDef id="FiveDimensionalMatrixFormat">
+		<mapperConverterExpression>
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.PlainField" to="FiveDimensionalMatrix.*.*.*.*.*.PlainField" />
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.BIField" to="FiveDimensionalMatrix.*.*.*.*.*.BIField" />
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.XMLGCField" to="FiveDimensionalMatrix.*.*.*.*.*.XMLGCField" />
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.BAField" to="FiveDimensionalMatrix.*.*.*.*.*.BAField" />
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerKColl" to="FiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerKColl" />
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerIColl" to="FiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.*.ICOLL.*.ELE to ICOLL.*.ELE -->
+	<fmtDef id="USPT_WildcardNotMatchFormat">
+		<mapperConverterExpression>
+			<map from="SrcIColl.*.SrcNestIColl.*.SrcInnerBDField" to="DestIColl.*.SrcXMLGCField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.*.*.*.*.*.KCOLL to ICOLL.*.*.*.*.*.ICOLL -->
+	<fmtDef id="USPT_LeafDataNotMatchFormat">
+		<mapperConverterExpression>
+			<map from="SrcFiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerKColl" to="FiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.* to ICOLL.* while the leaf element are of different data types-->
+	<fmtDef id="USPT_LeafDataIsAstrriksButNotMatchFormat">
+		<mapperConverterExpression>
+			<map from="L1IK.*" to="L1IF.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- ICOLL.* to ICOLL.* while the leaf element are of different data types-->
+	<fmtDef id="USPT_LeafDataIsAstrriksButNotMatchFormat2">
+		<mapperConverterExpression>
+			<map from="L1IK.*" to="L1II.*" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="OneLvlICollAppendIgnoreFmt">
+		<mapperConverterExpression>
+			<map from="SrcOneLvlIColl.*.SrcPlainField" to="DestOneLvlIColl.*.PlainField" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

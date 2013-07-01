@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="oper_oneLevelFieldFmt">
+		<mapperConverterExpression>
+			<map fromExpression="oneLevelFieldIColl$* + '_concat'" to="oneLevelFieldIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_oneLevelKCollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="oneLevelKCollIColl$*$testBigInteger + 12" to="oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_oneLevelKCollFmtNested">
+		<mapperConverterExpression>
+			<map fromExpression="(oneLevelKCollIColl$*$testString + oneLevelKCollIColl$*$testKColl2$testField) + oneLevelKCollIColl$*$testBigInteger" to="oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_twoLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger + 12" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger"/>
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField + '_concat'" 
+				to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_twoLevelIColl_twoParamsFmt">
+		<mapperConverterExpression>
+			<map fromExpression="twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger + twoLevelIColl$*$oneLevelKCollIColl$*$testKColl2$testField" to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_fiveLevelICollFieldFmt">
+		<mapperConverterExpression>
+			<map fromExpression="fiveLevelIColl$*$*$testIColl$*$testIColl$*$testIColl$*$testKColl2$testField + '_concat'" to="fiveLevelIColl.*.*.testIColl.*.testIColl.*.testIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

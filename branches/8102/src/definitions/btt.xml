@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<btt.xml>
+
+	<kColl id="components">
+
+		<kColl id="settings">
+
+			<field id="initializer"
+				value="com.ibm.btt.config.impl.GlobalSettings" />
+
+			<field id="modularity" value="mixed" />
+
+			<field id="SessionMode" value="j2ee" />
+
+			<kColl id="paths">
+				<field id="entities" value="fromJAR" />
+				<field id="operations" value="/operations/" />
+				<field id="processors" value="/processors/" />
+			</kColl>
+
+			<field id="showProgressBar" value="no"
+				description="Showing the progress bar when reading the XML files. Default value is: no" />
+			<field id="bufferSize" value="200000"
+				description="The size of the buffer used to read the XML files, unitage is K bytes" />
+			<field id="queueBufferSize" value="20"
+				description="The size of the queue buffer stores the events handled by the automation, unitage is K bytes" />
+			<kColl id="globalFunctions">
+				<field id="BTTStringFunctions"
+					value="com.ibm.btt.utils.GlobalFunctions" />
+				<field id="BTTDateFunctions"
+					value="com.ibm.btt.utils.GlobalFunctions" />
+				<field id="BTTNumberFunctions"
+					value="com.ibm.btt.utils.GlobalFunctions" />
+				<field id="BTTCollectionFunctions"
+					value="com.ibm.btt.utils.GlobalFunctions" />
+				<field id="BTTFieldTargetFunctions"
+					value="com.ibm.btt.mapper.test.FieldTargetFunctions" />
+				<field id="ignoreException" value="false" />
+				<field id="BTTCustomerFunctions"
+					value="com.ibm.btt.test.fvt.scenario2.CustomerGlobalFunctions" />
+				<field id="BTTCustomTestFunction"
+					value="com.ibm.btt.test.fvt.scenario4.CustomTestFunction" />
+				<field id="BTTScenario6CollectionFunctions"
+					value="com.ibm.btt.test.fvt.scenario6.Scenario6CollectionFunctions" />
+				<field id="BTTS7PersonFunctions"
+					value="com.ibm.btt.test.fvt.scenario7.S7PersonFunctions" />
+				<field id="ConditionFunctions"
+					value="com.ibm.btt.test.conditionmapping.fvt.customglobalfunction.ConditionFunctions" />
+			</kColl>
+
+			<kColl id="initialization"
+				description="Startup Process Parameters, class and method to start the application. Used by the Startup class during the startup process. Enable cache for formatters and operations.">
+				<field id="enableFormatsCache" value="false" />
+				<field id="enableOperationsCache" value="false" />
+				<field id="sessionPersistence" value="false"
+					description="Set the session persistence of server" />
+				<field id="sessionAffinity" value="false" />
+				<field id="enableProcessorsCache" value="false" />
+				<field id="shareDataDescriptors" value="true" />
+			</kColl>
+
+			<kColl id="externalizerAccessors"
+				description="Collection for externalizer accessors, default configuration from BTT">
+				<field id="type"
+					value="com.ibm.btt.base.types.TypeExternalizerAccessor" />
+				<field id="data"
+					value="com.ibm.btt.base.DataExternalizerAccessor" />
+				<field id="context"
+					value="com.ibm.btt.base.ContextExternalizerAccessor" />
+				<field id="format"
+					value="com.ibm.btt.base.FormatExternalizerAccessor" />
+				<field id="service"
+					value="com.ibm.btt.base.ServiceExternalizerAccessor" />
+				<field id="operation"
+					value="com.ibm.btt.base.OperExternalizerAccessor" />
+				<field id="processor"
+					value="com.ibm.btt.automaton.ProcExternalizerAccessor" />
+				<!-- User can extend customerized externalizerAccessors class-->
+				<!--field id="ExtendProcessor" value="com.xxxbank.client.processor.ProcExternalizerAccessor"/-->
+			</kColl>
+			<field id="VariableResolver"
+				value="com.ibm.btt.services.ws.endpoint.DefaultVariableResolver" />
+			<kColl id="WebServices">
+				<kColl id="servers">
+					<!-- Configure server environment info consumed by default variable resolver -->
+					<!-- field id="xxxServer" value="http://127.0.0.1:9080" -->
+				</kColl>
+			</kColl>
+
+			<!-- This project map is only for Tooling part -->
+			<!-- id means the key,it will not allow to change,value means the project Mapped URL,the description means project name,when user change project name should update description -->
+			<kColl id="remoteProjectURL">
+				<field id="commonProject"
+					value="http://localhost:8080/CommonWebProject/"
+					description="CommonWebProject" />
+				<field id="globalProject"
+					value="http://localhost:8080/GLobalWebProject/"
+					description="GlobalProject" />
+			</kColl>
+
+			<kColl id="directPaginationType">
+				<field id="default"
+					value="com.ibm.btt.cs.ajax.DefaultPaginationOp"
+					description="Default pagination operation" />
+			</kColl>
+
+			<kColl id="indirectPaginationType">
+				<field id="default"
+					value="com.ibm.btt.cs.ajax.DefaultPaginationOp"
+					description="Default pagination operation" />
+			</kColl>
+		</kColl>
+
+
+		<kColl id="trace">
+			<!-- Trace -->
+			<!-- Trace can isolate problems and debug code -->
+			<!-- either during the application development phase or in runtime -->
+			<field id="initializer"
+				value="com.ibm.btt.base.TraceInitializer" />
+			<field id="traceTargetFactoryImplClass"
+				value="com.ibm.btt.base.BTTLogFactoryToCommonLoggingImp" />
+			<field id="enableTechnicalTraces" value="true"
+				description="Adapt traces to functional developer (if false) or technical developer (if true). Defaults to true if not present." />
+			<field id="traceLevels" value="INFO"
+				description="Global trace level" />
+
+			<!-- Trace detail configuration items for component of package -->
+			<kColl id="requestersComponents">
+				<!-- Recommend mode: By Package -->
+				<traceRequester id="com.ibm.btt.*" trace="yes"
+					traceLevels="INFO" />
+				<traceRequester id="com.ibm.btt.base.*" trace="yes"
+					traceLevels="INFO" />
+				<traceRequester id="com.ibm.btt.base.ContextFactory"
+					trace="yes" traceLevels="INFO" />
+				<!-- Compatible mode: By Component -->
+				<!-- 
+					<traceRequester id="#CHA" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#CORE" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#CS" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#Channel" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#SM" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#CSDW" trace="no" traceLevels="INFO" />
+					<traceRequester id="#AUTO" trace="yes" traceLevels="INFO" />
+					<traceRequester id="#EVMG" trace="no" traceLevels="INFO" />
+					<traceRequester id="#LU0" trace="no" traceLevels="INFO" />
+					<traceRequester id="#LU62" trace="no" traceLevels="INFO" />
+				-->
+				<!-- Functional data traces -->
+				<traceRequester id="#FUNC" trace="yes" functional="true"
+					traceLevels="INFO" />
+				<traceRequester id="#FUNCDATA" trace="yes"
+					functional="true" traceLevels="INFO" />
+
+			</kColl>
+		</kColl>
+
+
+		<kColl id="type">
+			<!-- Type -->
+			<!-- Typed data elements represent business objects: Date/ProductNumber/Money/... -->
+			<field id="initializer"
+				value="com.ibm.btt.base.types.TypeInitializer" />
+			<field id="extFile" value="type.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<kColl id="classTable">
+				<field id="type" value="com.ibm.btt.base.types.DSEType"
+					description="compound" />
+
+				<field id="dateConverter" />
+				<field id="dateValidator" />
+				<field id="stringConverter"></field>
+			</kColl>
+		</kColl>
+
+		<kColl id="data">
+			<!-- Data -->
+			<!-- Data elements are what the toolkit uses to hold data in a structure -->
+			<!-- that enables toolkit entities, processes, and services to add, -->
+			<!-- update, and delete the data during runtime. -->
+			<field id="extFile" value="data.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.base.DataInitializer" />
+			<kColl id="classTable">
+				<!-- Provided by BTT -->
+				<field id="field" value="com.ibm.btt.base.DataField"
+					description="A data field represents a single data item and is the only data element provided by the toolkit that has a value. " />
+				<field id="iColl"
+					value="com.ibm.btt.base.IndexedCollection"
+					description="An indexed collection contains an ordered collection (that is, an array-type collection) of instances identified by their position in the collection. All of the data elements in the indexed collection must be the same type." />
+				<field id="kColl"
+					value="com.ibm.btt.base.KeyedCollection"
+					description="A keyed collection contains an ordered collection of data elements identified by name. Because it holds key-value pairs, a keyed collection is similar to a dictionary." />
+				<field id="bColl"
+					value="com.ibm.btt.bean.BeanCollection"
+					description="A bean collection contains an ordered collection of data elements. A BeanCollection corresponds to a POJO , and the data elements in this BeanCollection correspond to the attributes of the POJO." />
+				<field id="treeModel"
+					value="com.ibm.btt.dojo.model.TreeModel"
+					description="A treeModel is used and only used to present tree item including label, value, etc, should not be used as generic collection." />
+				<field id="htmlIColl"
+					value="com.ibm.btt.automaton.html.HtmlIndexedCollection"
+					description="compound" />
+				<!-- Customer self-defined -->
+				<!--field id="sessionEntry" value="com.ibm.btt.base.SessionEntry"/-->
+				<!--field id="sessionTable" value="com.ibm.btt.base.SessionTable"/-->
+			</kColl>
+		</kColl>
+		<!-- ======================================== -->
+		<!-- 	              Service   	          -->
+		<!-- ======================================== -->
+		<!-- BTT provides service objects that enable application to complete an operation. -->
+		<kColl id="service">
+			<field id="extFile" value="service.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.base.ServiceInitializer" />
+			<kColl id="classTable">
+				<field id="CSServer"
+					value="com.ibm.btt.cs.servlet.CSServer" />
+				<!-- Jax-WS Connector to invoke Web services -->
+				<field id="JaxWsConnector"
+					value="com.ibm.btt.services.ws.jaxws.BTTJaxWsConnector" />
+			</kColl>
+		</kColl>
+
+		<kColl id="context">
+			<!-- Context -->
+			<!-- Context is object defines and encapsulates a set of resources -->
+			<!-- (data and services) for functional or business organization entity. -->
+			<field id="extFile" value="context.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.base.ContextInitializer" />
+			<kColl id="classTable">
+				<field id="context"
+					value="com.ibm.btt.base.LocalContextImpl" />
+			</kColl>
+
+		</kColl>
+
+
+		<kColl id="formatter">
+			<!-- Formatter -->
+			<!-- Formatters are what btt uses to exchange data format -->
+			<!-- between btt entities such as operations/contexts/services. -->
+			<field id="extFile" value="format.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.base.FormatInitializer" />
+			<kColl id="classTable">
+				<field id="refFmt" />
+				<!-- Constant formatter -->
+				<field id="constant"
+					value="com.ibm.btt.base.ConstantFormat" />
+				<!-- Concrete field formatter -->
+				<field id="fDate" value="com.ibm.btt.base.DateFormat" />
+				<field id="fFloat" value="com.ibm.btt.base.FloatFormat" />
+				<field id="fInteger"
+					value="com.ibm.btt.base.IntegerFormat" />
+				<field id="fBinIntString"
+					value="com.ibm.btt.base.BinaryIntegerStringFormat" />
+				<field id="fNumString"
+					value="com.ibm.btt.base.NumericStringFormat" />
+				<field id="fPacked"
+					value="com.ibm.btt.base.PackedFormat" />
+				<field id="fPackedDate"
+					value="com.ibm.btt.base.PackedDateFormat" />
+				<field id="fString"
+					value="com.ibm.btt.base.StringFormat" />
+				<field id="fTime" value="com.ibm.btt.base.TimeFormat" />
+				<!-- Indexed collection formatter -->
+				<field id="iCollF"
+					value="com.ibm.btt.base.IndexedCollectionFormat"
+					description="compound" />
+				<!-- Concrete keyed collection formatter -->
+				<field id="kCollF"
+					value="com.ibm.btt.base.KeyedCollectionFormat" />
+				<field id="record" value="com.ibm.btt.base.RecordFormat"
+					description="compound" />
+				<field id="drecord"
+					value="com.ibm.btt.base.DynamicRecordFormat" />
+				<field id="fXML" value="com.ibm.btt.base.XMLFormat"
+					description="compound" />
+				<field id="fdXML"
+					value="com.ibm.btt.base.DynamicXMLFormat" description="compound" />
+				<field id="mapperConverter"
+					value="com.ibm.btt.base.DataMapperConverterFormat" />
+				<field id="fTypedData"
+					value="com.ibm.btt.base.TypedDataElementFormat" />
+				<field id="mapper"
+					value="com.ibm.btt.base.DataMapperFormat" description="compound" />
+				<field id="fBigDecimal"
+					value="com.ibm.btt.base.BigDecimalFormat" />
+				<field id="fObject"
+					value="com.ibm.btt.base.ObjectFormat" />
+				<field id="pointer" value="com.ibm.btt.base.DataPointer"
+					description="compound" />
+				<field id="hashtable"
+					value="com.ibm.btt.base.HashtableFormat" />
+				<!-- Concrete decorator  -->
+				<field id="nullCheck"
+					value="com.ibm.btt.base.NullCheckDecorator" />
+				<field id="compress"
+					value="com.ibm.btt.base.Compressor" />
+				<field id="codeSetTrans"
+					value="com.ibm.btt.base.CodeSetTranslator" />
+				<field id="delim" value="com.ibm.btt.base.Delimiter" />
+				<field id="fixedLength"
+					value="com.ibm.btt.base.FixedLength" />
+				<field id="id" value="com.ibm.btt.base.Identifier" />
+				<field id="maxLength"
+					value="com.ibm.btt.base.MaximumLength" />
+				<field id="selfLength"
+					value="com.ibm.btt.base.SelfLength" />
+				<field id="wsMapperConverter"
+					value="com.ibm.btt.base.ws.WSMapperConverter" />
+				<field id="mapperConverterExpression"
+					value="com.ibm.btt.base.ConditionalDataMapperFormat" />
+				<field id="fJSON" value="com.ibm.btt.base.JSONFormat"
+					description="compound" />
+			</kColl>
+		</kColl>
+
+
+		<kColl id="operation">
+			<!-- Operation -->
+			<!-- Operation is the entity responsible for performing-->
+			<!-- the set of tasks needed to complete a basic financial operation. -->
+			<field id="extFile" value="operation.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.base.OperationInitializer" />
+			<kColl id="classTable">
+				<field id="compare"
+					value="com.ibm.btt.base.CompareAssertion" />
+				<field id="elements"
+					value="com.ibm.btt.base.NumOfElementsAssertion" />
+				<field id="exists"
+					value="com.ibm.btt.base.ExistsAssertion" />
+			</kColl>
+			<kColl id="files"
+				description="Self-defined operation file path">
+				<!--  operDef id="anSelfOperation"
+					value="anSelfOperation.xml" path="http://localhost:9080/UrlEarWeb/bttCfgTestFiles/ops/" /-->
+
+			</kColl>
+		</kColl>
+
+
+
+		<kColl id="processor">
+			<!-- Processor -->
+			<!-- A processor is a representation of -->
+			<!-- a particular route through a business process or business operation. -->
+			<field id="extFile" value="processor.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.automaton.ProcessorInitializer" />
+			<kColl id="classTable">
+				<field id="remoteFlowState"
+					value="com.ibm.btt.cs.html.remote.RemoteFlowState" />
+				<field id="processor"
+					value="com.ibm.btt.automaton.DSEProcessor" />
+				<field id="opProcessor"
+					value="com.ibm.btt.automaton.ext.DSEOperationProcessor" />
+				<field id="state"
+					value="com.ibm.btt.automaton.DSEState" />
+				<field id="transition"
+					value="com.ibm.btt.automaton.TransitionDescriptor" />
+				<field id="htmlProcessor"
+					value="com.ibm.btt.automaton.html.DSEHtmlProcessor" />
+				<field id="htmlState"
+					value="com.ibm.btt.automaton.html.DSEHtmlState" />
+				<field id="htmlTransition"
+					value="com.ibm.btt.automaton.html.HtmlTransitionDescriptor" />
+				<field id="operationState"
+					value="com.ibm.btt.automaton.ext.DSEOperationState" />
+				<field id="conditionState"
+					value="com.ibm.btt.automaton.ext.DSEConditionState" />
+				<field id="syncProcState"
+					value="com.ibm.btt.automaton.ext.DSESyncProcState" />
+				<field id="popupPageState"
+					value="com.ibm.btt.automaton.ext.PopupPageClientState" />
+
+				<!-- Action -->
+				<field id="check"
+					value="com.ibm.btt.automaton.ext.CheckAction" />
+				<field id="start"
+					value="com.ibm.btt.automaton.ext.StartAction" />
+				<field id="executeSubflowAct"
+					value="com.ibm.btt.automaton.ext.ExecuteSubflowAct" />
+				<field id="executeOperationAct"
+					value="com.ibm.btt.automaton.ext.ExecuteOperationAct" />
+
+				<field id="cond1"
+					value="com.ibm.btt.automaton.DSEGuardCondition" />
+			</kColl>
+			<kColl id="files"
+				description="Self-defined processor file path">
+				<!--  procDef id="selfOpProc"
+					value="selfOpProc.xml" path="procs/spec/" /-->
+
+			</kColl>
+		</kColl>
+
+		<kColl id="condition">
+			<field id="extFile" value="condition.xml"
+				description="The recommended location is under same folder of btt.xml" />
+			<field id="initializer"
+				value="com.ibm.btt.cond.ConditionInitializer" />
+			<kColl id="classTable">
+				<field id="cond" value="com.ibm.btt.cond.Condition" />
+			</kColl>
+		</kColl>
+	</kColl>
+</btt.xml>

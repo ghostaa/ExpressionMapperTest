@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- <import file="jar:///definitions/conditionmapping/import_format.xml"/> -->
+	<import file="conditionmapping\normal\import_format.xml"/>
+	
+	<fmtDef id="testNormalConditionFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &lt; 5">
+				<map fromExpression="1" to="testInteger" />
+			</mapIf>
+			<mapElseIf expression="testInteger &gt;= 5 &amp;&amp; testInteger &lt; 10">
+				<map fromExpression="2" to="testInteger" />
+			</mapElseIf>
+			<mapElse>
+				<mapIf expression="testInteger &gt;= 10 &amp;&amp; testInteger &lt; 15">
+					<map fromExpression="3" to="testInteger" />
+				</mapIf>
+				<mapElse>
+					<map fromExpression="4" to="testInteger" />
+				</mapElse>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testConditionExecutionOrederFmt">
+		<mapperConverterExpression>
+			<mapIf  expression="testInteger &lt; 5">
+				<map fromExpression="1" to="testInteger" />
+			</mapIf>
+			<mapElseIf expression="testString == 'Test'">
+				<map fromExpression="2" to="testInteger" />
+			</mapElseIf>
+			<mapElse>
+				
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testMappingInUpInnerDownFmt">
+		<mapperConverterExpression>
+			<map fromExpression="OneIColl$*$TwoIColl$*$ThreeIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.TwoIColl.*.ThreeIColl.*.conditionInnerKColl.testBigInteger" />
+			<map fromExpression="OneIColl$*$TwoIColl$*$conditionInnerKColl$testShort" to="OneIColl.*.TwoIColl.*.conditionInnerKColl.testShort" />
+			<mapIf  expression="conditionInnerKColl$testBoolean">
+				<map fromExpression="1" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapIf>
+			<mapElseIf expression="conditionInnerKColl$testBoolean !=true && conditionInnerKColl$testLong &gt; 10 ">
+				<map fromExpression="2" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="3" to="conditionInnerKColl.testInteger" />
+				<map from="conditionInnerKColl.testDate" to="conditionInnerKColl.testDate" />
+			</mapElse>
+			<map fromExpression="OneIColl$*$TwoIColl$*$ThreeIColl$*$conditionInnerKColl$testNumber" to="OneIColl.*.TwoIColl.*.ThreeIColl.*.conditionInnerKColl.testNumber" />
+			<map fromExpression="OneIColl$*$TwoIColl$*$conditionInnerKColl$testFloat" to="OneIColl.*.TwoIColl.*.conditionInnerKColl.testFloat" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testRefLocalFmt">
+		<mapperConverterExpression>
+			<refFmt refId="testMappingInUpInnerDownFmt"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="testImportFmt">
+		<mapperConverterExpression>
+			<refFmt refId="testImportTestFmt"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testGotoFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &gt; 5">
+				<map fromExpression="1" to="testInteger" />
+			</mapIf>
+			<mapElseIf expression="testInteger == 1">
+				<map fromExpression="2" to="testInteger" />
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="6" to="testInteger" />
+				<goto id="mapIf1"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testGotoMultipathFmt">
+		<mapperConverterExpression>
+			<mapIf  expression="testInteger &gt; 5">
+				<map fromExpression="testInteger" to="testInteger" />
+				<mapIf  expression="testBoolean == true">
+					<map fromExpression="testFloat * 10" to="testFloat" />
+					<mapIf id="CmapIf" expression="testDouble == 9.9">
+						<map fromExpression="testDouble * 10" to="testDouble" />
+					</mapIf>
+					<mapElse>
+						<map fromExpression="testDouble * 100" to="testDouble" />
+					</mapElse>
+				</mapIf>
+			</mapIf>
+			<mapElseIf expression="testInteger &lt; 3">
+				<map fromExpression="testInteger * 3" to="testInteger" />
+				<mapIf  expression="testBoolean == false">
+					<map fromExpression="testFloat*100" to="testFloat" />
+					<goto id="CmapIf"/>
+				</mapIf>
+			</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	
+	<fmtDef id="testNOElseFmt">
+		<mapperConverterExpression>
+			<mapIf  expression="testInteger &gt; 5">
+				<map fromExpression="testInteger" to="testInteger" />
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testNOMappingInConditionFmt">
+		<mapperConverterExpression>
+			<mapIf  expression="testInteger &gt; 5"/>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testConditionDictionaryFmt">
+		<mapperConverterExpression>
+			<mapIf expression="{cond=commonCon;&apos;k&apos;}">
+				
+				<mapIf expression="{cond=commonCon;testString}">
+					<map fromExpression="2" to="testInteger" />
+				</mapIf>
+				<mapElse>
+					<map fromExpression="3" to="testInteger" />
+				</mapElse>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="4" to="testInteger" />
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testIndexAppendFalseFmt">
+		<mapperConverterExpression>
+			<mapIf expression="dse_index &lt;  3">
+				<map fromExpression="4" to="testInteger" />
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testFloat" to="OneIColl.*.conditionInnerKColl.testFloat" append="false"/>
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testIndexAppendIgnoreFmt">
+		<mapperConverterExpression>
+			<mapIf expression="dse_index &lt;  3">
+				<map fromExpression="4" to="testInteger" />
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testFloat" to="VIPIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testDouble" to="VIPIColl.*.conditionInnerKColl.testDouble" append="ignore"/>
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testEndlessFmtA">
+		<mapperConverterExpression>
+			<refFmt refId="testEndlessFmtB"/>
+			<map from="testInteger" to="testInteger"/>
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="testEndlessFmtB">
+		<mapperConverterExpression>
+			<refFmt refId="testEndlessFmtA"/>
+			<map from="testInteger" to="testInteger"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testGlobalFunctionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_ConditionFunctions.sortByName(OneIColl, &apos;testDouble&apos;)" to="OneIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testGlobalFunctionWildcardFmt">
+		<mapperConverterExpression>
+			<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt;  5">
+				<map fromExpression="functs_BTTStringFunctions.contains(OneIColl$*$conditionInnerKColl$testString, &apos;btt&apos;)" to="OneIColl.*.conditionInnerKColl.testBoolean"/>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testGlobalFunctionConditionWildcardFmt">
+		<mapperConverterExpression>
+			<mapIf expression="functs_BTTStringFunctions.contains(OneIColl$*$conditionInnerKColl$testString, &apos;btt&apos;)">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testSameInstanceMappingFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testInteger" to="testInteger"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testSameListInstanceMappingFmt">
+		<mapperConverterExpression>
+			<map fromExpression="OneIColl" to="OneIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testSameInstanceMappingInGlobalFunctionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_ConditionFunctions.sortByName(OneIColl, &apos;testDouble&apos;)" to="OneIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testTreeModel">
+		<mapperConverterExpression>
+			<map from="root" to="root"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testConditionIsTrueOrTrue">
+		<mapperConverterExpression>
+			<mapIf expression="true == true">
+				<map fromExpression="&apos;VIP2&apos;" to="testString"/>
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<!-- ==================context======================== -->
+	<kColl id="NormalConditionRec" dynamic="true">
+		<!-- <treeModel id="root">
+		</treeModel> -->
+		<refData refId="testString" />
+		<refData refId="testInteger" />
+		<refData refId="testFloat" />
+		<refData refId="testBoolean" />
+		<refData refId="testDouble" />
+		<refData refId="conditionInnerKColl"/>
+		<refData refId="OneIColl"/>
+		<refData refId="OneIColl" alias="VIPIColl" />
+		<refData refId="OneIColl" alias="NormalIColl" />
+		<!-- <refData refId="OneIColl" alias="HaveNotSizeIColl"/>
+		<refData refId="OneIColl" alias="HaveSizeIColl" size="5"/> -->
+		<iColl id="HaveNotSizeIColl">
+			<kColl id="OneKColl">
+				<refData refId="conditionInnerKColl"/>
+			</kColl>
+		</iColl>
+		<iColl id="HaveSizeIColl" size="15">
+			<kColl id="OneKColl">
+				<refData refId="conditionInnerKColl"/>
+			</kColl>
+		</iColl>
+		
+	</kColl>
+
+	<!-- base data -->
+	<field id="testField" />
+	<data id="testBigInteger" refType="BigInteger" />
+	<data id="testString" refType="String" />
+	<data id="testDate" refType="Date" />
+	<data id="testBigDecimal" refType="BigDecimal" />
+	<data id="testInteger" refType="Integer" />
+	<data id="testBoolean" refType="Boolean" />
+	<data id="testShort" refType="Short" />
+	<data id="testLong" refType="Long" />
+	<data id="testByte" refType="Byte" />
+	<data id="testNumber" refType="Number" />
+	<data id="testFloat" refType="Float" />
+	<data id="testDouble" refType="Double" />
+	
+	<!-- IColl -->
+	<iColl id="OneIColl">
+			<kColl id="OneKColl">
+				<refData refId="testDouble" />
+				<refData refId="testInteger" />
+				<refData refId="conditionInnerKColl"/>
+				<iColl id="TwoIColl">
+					<kColl id="TwoKColl">
+						<refData refId="conditionInnerKColl"/>
+						<iColl id="ThreeIColl">
+							<kColl id="ThreeKColl">
+								<refData refId="conditionInnerKColl"/>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+	</iColl>
+	
+	
+	
+	<kColl id="conditionInnerKColl">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testDate" />
+		<refData refId="testBigDecimal" />
+		<refData refId="testInteger" />
+		<refData refId="testBoolean" />
+		<refData refId="testShort" />
+		<refData refId="testNumber" />
+		<refData refId="testFloat" />
+		<refData refId="testLong" />
+		<refData refId="testDouble" />
+		
+	</kColl>
+</data.xml>

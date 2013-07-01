@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<context id="ComputerCtxt" type="test">
+		<refKColl refId="ComputerCtxtKColl" />
+	</context>
+</context.xml>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- Append ignore with source elements not equals to target elements -->
+	<fmtDef id="AppendIgnoreWithSourceElesNEQToTargetElesFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList1$*$srcBrand" to="destComputerList1.*.destBrand" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcCpuFreq" to="destComputerList1.*.destCpuFreq" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcMemSize" to="destComputerList1.*.destMemSize" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcPrice" to="destComputerList1.*.destPrice" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcDiscount" to="destComputerList1.*.destDiscount" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcQuantity" to="destComputerList1.*.destQuantity" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcComments" to="destComputerList1.*.destComments" append="Ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Append False with source elements not equals to target elements -->
+	<fmtDef id="AppendFalseWithSourceElesNEQToTargetElesFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList1$*$srcBrand" to="destComputerList1.*.destBrand" append="False" />
+			<map fromExpression="srcComputerList1$*$srcCpuFreq" to="destComputerList1.*.destCpuFreq" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcMemSize" to="destComputerList1.*.destMemSize" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcPrice" to="destComputerList1.*.destPrice" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcDiscount" to="destComputerList1.*.destDiscount" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcQuantity" to="destComputerList1.*.destQuantity" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcComments" to="destComputerList1.*.destComments" append="Ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Append TRUE with source elements not equals to target elements -->
+	<fmtDef id="AppendTrueWithSourceElesNEQToTargetElesFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList1$*$srcBrand" to="destComputerList1.*.destBrand" append="True" />
+			<map fromExpression="srcComputerList1$*$srcCpuFreq" to="destComputerList1.*.destCpuFreq" />
+			<map fromExpression="srcComputerList1$*$srcMemSize" to="destComputerList1.*.destMemSize" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcPrice" to="destComputerList1.*.destPrice" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcDiscount" to="destComputerList1.*.destDiscount" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcQuantity" to="destComputerList1.*.destQuantity" append="Ignore" />
+			<map fromExpression="srcComputerList1$*$srcComments" to="destComputerList1.*.destComments" append="Ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Append ALL False with source elements not equals to target elements -->
+	<fmtDef id="AppendAllFalseWithSourceElesNEQToTargetElesFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList1$*$srcBrand" to="destComputerList1.*.destBrand" append="false" />
+			<map fromExpression="srcComputerList1$*$srcCpuFreq" to="destComputerList1.*.destCpuFreq" append="false" />
+			<map fromExpression="srcComputerList1$*$srcMemSize" to="destComputerList1.*.destMemSize" append="false" />
+			<map fromExpression="srcComputerList1$*$srcPrice" to="destComputerList1.*.destPrice" append="false" />
+			<map fromExpression="srcComputerList1$*$srcDiscount" to="destComputerList1.*.destDiscount" append="false" />
+			<map fromExpression="srcComputerList1$*$srcQuantity" to="destComputerList1.*.destQuantity" append="false" />
+			<map fromExpression="srcComputerList1$*$srcComments" to="destComputerList1.*.destComments" append="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+
+	<!-- Append ALL TRUE with source elements not equals to target elements -->
+	<fmtDef id="AppendAllTrueWithSourceElesNEQToTargetElesFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList1$*$srcBrand" to="destComputerList1.*.destBrand" append="true" />
+			<map fromExpression="srcComputerList1$*$srcCpuFreq" to="destComputerList1.*.destCpuFreq" append="true" />
+			<map fromExpression="srcComputerList1$*$srcMemSize" to="destComputerList1.*.destMemSize" append="true" />
+			<map fromExpression="srcComputerList1$*$srcPrice" to="destComputerList1.*.destPrice" append="true" />
+			<map fromExpression="srcComputerList1$*$srcDiscount" to="destComputerList1.*.destDiscount" append="true" />
+			<map fromExpression="srcComputerList1$*$srcQuantity" to="destComputerList1.*.destQuantity" append="true" />
+			<map fromExpression="srcComputerList1$*$srcComments" to="destComputerList1.*.destComments" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="Ignored2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcCpuFreq" to="destComputerList2.*.*.destCpuFreq" append="Ignore" />
+			<map fromExpression="srcComputerList2$*$*$srcMemSize" to="destComputerList2.*.*.destMemSize" append="I" />
+			<map fromExpression="srcComputerList2$*$*$srcPrice" to="destComputerList2.*.*.destPrice" append="IGNORE" />
+			<map fromExpression="srcComputerList2$*$*$srcDiscount" to="destComputerList2.*.*.destDiscount" append="I" />
+			<map fromExpression="srcComputerList2$*$*$srcQuantity" to="destComputerList2.*.*.destQuantity" append="i" />
+			<map fromExpression="srcComputerList2$*$*$srcComments" to="destComputerList2.*.*.destComments" append="ignore" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Multiple level with append valued IGNORE -->
+	<fmtDef id="AppendIgnore2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcBrand" to="destComputerList2.*.*.destBrand" append="Ignore" />
+			<refFmt refId="Ignored2LvlsICollMapFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Multiple level with append valued FALSE -->
+	<fmtDef id="AppendFalse2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcBrand" to="destComputerList2.*.*.destBrand" append="FALSE" />
+			<refFmt refId="Ignored2LvlsICollMapFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Multiple level with append valued TRUE -->
+	<fmtDef id="AppendTrue2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcBrand" to="destComputerList2.*.*.destBrand" append="true" />
+			<refFmt refId="Ignored2LvlsICollMapFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<fmtDef id="InfiniteAppendIgnore2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcCpuFreq" to="destComputerList2.*.*.destCpuFreq" append="Ignore" />
+			<refFmt refId="InfiniteAppendIgnore2LvlsICollMapFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- Infinite Multiple level with append valued FALSE -->
+	<fmtDef id="USPT_InfiniteAppendFalse2LvlsICollMapFmt">
+		<mapperConverterExpression>
+			<map fromExpression="srcComputerList2$*$*$srcBrand" to="destComputerList2.*.*.destBrand" append="FALSE" />
+			<refFmt refId="InfiniteAppendIgnore2LvlsICollMapFmt" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

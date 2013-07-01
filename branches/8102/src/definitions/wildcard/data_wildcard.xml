@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+
+	<kColl id="testKColl">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testKColl2" />
+	</kColl>
+
+	<kColl id="testKColl2">
+		<refData refId="testDate" />
+		<refData refId="testField" />
+	</kColl>
+
+	<iColl id="oneLevelFieldIColl" size="0" >
+		<refData refId="testField" />
+	</iColl>
+
+	<iColl id="oneLevelKCollIColl" size="0">
+		<refData refId="testKColl" />
+	</iColl>
+
+	<iColl id="twoLevelIColl" size="0">
+		<kColl id="testKColl">
+			<refData refId="testField" />
+			<refData refId="oneLevelKCollIColl" />
+		</kColl>
+	</iColl>
+
+	<iColl id="fiveLevelIColl" size="0">
+		<iColl id="testIColl" size="0">
+			<kColl id="testKColl">
+				<refData refId="testField" />
+				<iColl id="testIColl" size="0">
+					<kColl id="testKColl">
+						<refData refId="testField" />
+						<iColl id="testIColl" size="0">
+							<kColl id="testKColl">
+								<refData refId="testField" />
+								<iColl id="testIColl" size="0">
+									<refData refId="testKColl" />
+								</iColl>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+	</iColl>
+
+	<kColl id="wildcardMainKColl">
+		<refData refId="oneLevelFieldIColl" />
+		<refData refId="oneLevelKCollIColl" />
+		<refData refId="twoLevelIColl" />
+		<refData refId="fiveLevelIColl" />
+	</kColl>
+
+</data.xml>

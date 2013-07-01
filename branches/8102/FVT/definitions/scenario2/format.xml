@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<fmtDef id="func_replaceStringFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.replace(funcTestGlobalStringKColl$testString,funcTestGlobalStringKColl$testStringOld,funcTestGlobalStringKColl$testStringNew)" to="funcTestGlobalStringKColl.testString"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_naturalDaysBetweenDateFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTDateFunctions.naturalDaysBetween(funcTestGlobalDateKColl$testDateNew,funcTestGlobalDateKColl$testDateOld)" to="funcTestGlobalIntegerKColl.testInteger1"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_multiplyDoubleFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTNumberFunctions.multiply(funcTestGlobalDoubleKColl$testDouble1,funcTestGlobalDoubleKColl$testDouble2)" to="funcTestGlobalDoubleKColl.testDouble1"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_tableSizeICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.tableSize(funcTestGlobalIntegerIColl)" to="funcTestGlobalIntegerKColl.testInteger1"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="func_customer_kCollToStringFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomerFunctions.kCollToString(funcTestGlobalToStringKColl)" to="funcTestGlobalStringKColl.testString"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_datafieldToKCollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testField" to="funcTestGlobalStringKColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_datafieldToICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testField" to="funcTestGlobalIntegerIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_customerfunction_toKCollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomerFunctions.kCollToString(funcTestGlobalToStringKColl)" to="funcTestGlobalStringKColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_customerfunction_toICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomerFunctions.kCollToString(funcTestGlobalToStringKColl)" to="funcTestGlobalIntegerIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- Element type miss match format -->
+	<fmtDef id="USPT_EleTypeMissMatchFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTNumberFunctions.multiply(1048576.8192,1024)" to="funcTestGlobalIntegerIColl" />
+			<map fromExpression="functs_BTTCollectionFunctions.getRowByIndex(funcTestGlobalIntegerIColl,0)" to="funcTestGlobalIntegerIColl" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

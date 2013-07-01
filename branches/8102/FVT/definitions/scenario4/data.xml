@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<!-- context KColl -->
+	<kColl id="SrcTwoLvlICollKColl">
+		<refData refId="SrcTwoLvlIColl" />
+		<refData refId="StringField" alias="SrcStringField" />
+		<refData refId="IntegerField" alias="SrcIntegerField" />
+		<refData refId="XMLGCField" alias="SrcXMLGCField" />
+		
+	</kColl>
+
+	<kColl id="DestTwoLvlICollKColl">
+		<refData refId="DestTwoLvlIColl" />
+	</kColl>
+
+	<kColl id="S4FuncTypedDataRec">
+		<!-- for string functions -->
+		<refData alias="PlainField" refId="PlainField" />
+		<refData alias="Str1Field" refId="StringField" />
+		<refData alias="Str2Field" refId="StringField" />
+		<refData alias="Str3Field" refId="StringField" />
+
+		<!-- for date functions -->
+		<refData alias="DateStrField" refId="StringField" />
+		<data id="DateField" refType="Date" />
+
+		<!-- for number functions -->
+		<data id="MinusLongField" refType="Long" />
+		<data id="AbsDoubleField" refType="Double" />
+
+		<!-- for extending functions -->
+
+	</kColl>
+
+	<kColl id="FuncsUsedCtxtKColl" dynamic="false">
+		<iColl id="L1I" size="0">
+			<kColl id="L1K" dynamic="true">
+				<iColl id="L2I" size="0">
+					<kColl id="L2K" dynamic="true">
+						<iColl id="L3I" size="0">
+							<kColl id="L3K" dynamic="true">
+								<iColl id="L4I" size="0">
+									<kColl id="L4K" dynamic="true">
+										<iColl id="L5I" size="0">
+											<refData refId="S4FuncTypedDataRec" />
+										</iColl>
+									</kColl>
+								</iColl>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+
+		<iColl id="L1IC" size="0">
+			<kColl id="L1K" dynamic="true">
+				<iColl id="L2IC" size="0">
+					<kColl id="L2K" dynamic="true">
+						<iColl id="L3IC" size="0">
+							<kColl id="L3K" dynamic="true">
+								<iColl id="L4IC" size="0">
+									<refData alias="SelectedRow" refId="S4FuncTypedDataRec" />
+								</iColl>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+
+		<iColl id="L1ICC" size="0">
+			<kColl id="L1K" dynamic="true">
+				<iColl id="L2ICC" size="0">
+					<kColl id="L2K" dynamic="true">
+						<iColl id="L3ICC" size="0">
+							<kColl id="L3K" dynamic="true">
+								<iColl id="L4ICC" size="0">
+									<field id="FIELDDATA" />
+								</iColl>
+							</kColl>
+						</iColl>
+					</kColl>
+				</iColl>
+			</kColl>
+		</iColl>
+	</kColl>
+	<kColl id="TestPMRKColl">
+		<iColl id="List" size="10">
+			<kColl id="L1K" dynamic="true">
+				<kColl id="KCollA" dynamic="true">
+					<data id="FieldA" refType="String" />
+					<data id="BooleanA" refType="String" />
+					<kColl id="KCollB" dynamic="true">
+						<data id="FieldB" refType="String" />
+						<data id="BooleanB" refType="String" />
+					</kColl>
+				</kColl>
+			</kColl>
+		</iColl>
+	</kColl>
+</data.xml>

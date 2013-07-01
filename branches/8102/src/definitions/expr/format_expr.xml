@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<fmtDef id="oper_fieldDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="testBigInteger + 12" to="testString"/>
+			<map fromExpression="testString + '_concat'" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="oper_fieldDataFmtTwoParams">
+		<mapperConverterExpression>
+			<map fromExpression="testString + '_' + testBigInteger" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_fieldDataFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTNumberFunctions.add(testBigInteger,12)" to="testString"/>
+			<map fromExpression="functs_BTTStringFunctions.concat(testString, '_concat')" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="func_fieldDataFmtTwoParams">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(functs_BTTStringFunctions.concat(testString, '_'), testBigInteger)" to="testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

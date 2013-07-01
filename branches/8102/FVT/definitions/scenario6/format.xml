@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- CONSTANT to ICOLL0.*.DataElement -->
+	<fmtDef id="testConstantToMultiLevelICollFmt">
+		<mapperConverterExpression>
+		<map fromExpression="'aaa'" to="OperL1IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+			<map fromExpression="127" to="OperL1IColl.*.OperL2IColl.*.OperatorTypedDataRec.IntegerFieldResult" />
+			<map fromExpression="666" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.BDFieldResult" />
+			<map fromExpression="777" to="OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperL4IColl.*.OperatorTypedDataRec.BIFieldResult" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- global function within expression to wildcard mapping -->
+	<fmtDef id="FuncExprToWildcardMapFmt1">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTScenario6CollectionFunctions.getKeyedCollectionByKey(parentKC,'K.INK.TK.TypeDataDefRec')"
+				to="parentKC.TDRI.*" append="TRUE" byReference="false" />
+			<map fromExpression="functs_BTTScenario6CollectionFunctions.getKeyedCollectionByKey(parentKC,'K.INK.TK.TypeDataDefRec')"
+				to="parentKC.TDRIC.*.TypeDataDefRec" append="true" byReference="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- DataElement to ICOLL0.*.DataElement -->
+	<fmtDef id="testDataElementToMultiLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldOne" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldOne" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult"/>
+		
+			<map fromExpression="MixICollKCollDataFaildKColl$OperL1IColl$*$OperatorTypedDataRec$StringFieldOne" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperL1IColl$*$OperatorTypedDataRec$IntegerFieldOne" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperatorTypedDataRec.IntegerFieldResult"/>
+		
+			<map fromExpression="MixICollKCollDataFaildKColl$OperL1IColl$*$OperL2IColl$*" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*"/>
+		
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- Function(DataElement , DataElement…) to ICOLL0.*.DataElement -->
+	<fmtDef id="testDataElementToICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.sum(MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldOne,MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldTwo)" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult"/>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldOne,MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldTwo,MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldResult)" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<!-- DataElement Operator DataElement to  ICOLL0.*.DataElement-->
+	<fmtDef id="testDataElementOperatorToICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldOne + MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldTwo" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldOne - MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldTwo" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$BIFieldOne * MixICollKCollDataFaildKColl$OperatorTypedDataRec$BIFieldTwo" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.BIFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$BDFieldOne / MixICollKCollDataFaildKColl$OperatorTypedDataRec$BDFieldTwo" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.BDFieldResult"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	<!-- DataElement Operator DataElement Operator DataElement ... to  ICOLL0.*.DataElement-->
+	<fmtDef id="testDataElementOperatorDataElementOperatorToICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldOne + MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldTwo + MixICollKCollDataFaildKColl$OperatorTypedDataRec$StringFieldResult" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.StringFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldOne - MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldTwo + MixICollKCollDataFaildKColl$OperatorTypedDataRec$IntegerFieldResult" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.IntegerFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$BIFieldOne * MixICollKCollDataFaildKColl$OperatorTypedDataRec$BIFieldTwo / MixICollKCollDataFaildKColl$OperatorTypedDataRec$BIFieldResult" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.BIFieldResult"/>
+			<map fromExpression="MixICollKCollDataFaildKColl$OperatorTypedDataRec$BDFieldOne / MixICollKCollDataFaildKColl$OperatorTypedDataRec$BDFieldTwo + MixICollKCollDataFaildKColl$OperatorTypedDataRec$BDFieldResult" to="MixICollKCollDataFaildKColl.OperL1IColl.*.OperL2IColl.*.OperL3IColl.*.OperatorTypedDataRec.BDFieldResult"/>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- global function within expression to wildcard mapping -->
+	<fmtDef id="FuncExprToWildcardMapFmt2">
+		<mapperConverterExpression>
+			<map
+				fromExpression="functs_BTTScenario6CollectionFunctions.getSpecifiedEleOrDefaultEleFormIColl(parentKC$TDRIC,'TypeDataDefRec',parentKC$TDRIC$*$index,0)"
+				to="parentKC.TDRI.*" append="IGnore" byReference="false" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- source element type miss match target element type -->
+	<fmtDef id="USPT_SourceTypeMissMatchTargetTypeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.tableSize(parentKC$TDRIC)" to="parentKC.TDRIC.*.TypeDataDefRec"
+				byReference="true" />
+			<map fromExpression="'ILOVEBTT'" to="parentKC.TDRIC.*.TypeDataDefRec" byReference="true" />
+			<map fromExpression="Math.PI * 8192.0" to="parentKC.TDRIC.*.TypeDataDefRec" byReference="true" />
+			<map fromExpression="parentKC$K$INK$TK$TypeDataDefRec$str1 + parentKC$K$INK$TK$TypeDataDefRec$str2" to="parentKC.TDRIC.*.TypeDataDefRec"
+				byReference="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

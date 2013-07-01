@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<kColl id="S7Person" dynamic="false">
+		<data id="lastName" refType="String" />
+		<data id="extrNames" refType="String" />
+		<data id="birthDay" refType="Date">
+			<param id="pattern" value="yyyyMMdd" />
+		</data>
+		<data id="age" refType="Byte" />
+		<data id="moneyInPocket" refType="BigDecimal" />
+		<data id="activeSince" refType="Long" />
+		<data id="gender" refType="Boolean" />
+	</kColl>
+
+	<iColl id="S7PL1I" size="0">
+		<refData alias="person" refId="S7Person" />
+	</iColl>
+
+	<iColl id="S7PL2I" size="0">
+		<kColl id="K2" dynamic="true">
+			<refData alias="person" refId="S7Person" />
+			<refData alias="S7PL1I" refId="S7PL1I" />
+		</kColl>
+	</iColl>
+
+	<iColl id="S7PL3I" size="0">
+		<kColl id="K3" dynamic="true">
+			<refData alias="person" refId="S7Person" />
+			<refData alias="S7PL2I" refId="S7PL2I" />
+		</kColl>
+	</iColl>
+
+	<iColl id="S7PL4I" size="0">
+		<kColl id="K4" dynamic="true">
+			<refData alias="person" refId="S7Person" />
+			<refData alias="S7PL3I" refId="S7PL3I" />
+		</kColl>
+	</iColl>
+
+	<iColl id="S7PL5I" size="0">
+		<kColl id="K5" dynamic="true">
+			<refData alias="person" refId="S7Person" />
+			<refData alias="S7PL4I" refId="S7PL4I" />
+		</kColl>
+	</iColl>
+
+	<kColl id="groupedData" dynamic="false">
+		<data id="avgAge" refType="Integer" />
+		<data id="sumPocketMoney" refType="BigDecimal" />
+		<data id="genderSummary" refType="String" />
+		<data id="minActiveTime" refType="Long" />
+		<data id="maxBirthYear" refType="Integer" />
+		<data id="mostBirthMonth" refType="Byte" />
+		<data id="maxLastName" refType="String" />
+	</kColl>
+
+	<kColl id="WildcardToFieldCtxtKColl" dynamic="false">
+		<refData refId="groupedData" />
+		<refData refId="S7PL1I" />
+		<refData refId="S7PL2I" />
+		<refData refId="S7PL3I" />
+		<refData refId="S7PL4I" />
+		<refData refId="S7PL5I" />
+	</kColl>
+
+	<kColl id="BooksInCartCtxtKColl" dynamic="false">
+		<iColl id="booksList" size="0">
+			<kColl id="book" dynamic="false">
+				<data id="bookName" refType="String" />
+				<data id="bookBarCode" refType="String" />
+				<data id="bookPrice" refType="Currency" />
+				<data id="bookQuantity" refType="BigInteger" />
+				<data id="bookDiscount" refType="BigDecimal" />
+				<field id="comments" />
+			</kColl>
+		</iColl>
+		<data id="sumQuantity" refType="BigInteger" />
+		<data id="sumAmount" refType="BigDecimal" />
+		<data id="realSumAmount" refType="BigDecimal" />
+	</kColl>
+
+
+</data.xml>

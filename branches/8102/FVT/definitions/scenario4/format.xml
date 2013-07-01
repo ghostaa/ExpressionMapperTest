@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- Sample Format Definition -->
+	<fmtDef id="SampleFormat">
+		<mapperConverterExpression>
+			<map fromExpression="127" to="mixedRec.dateMinus" />
+			<map from="mixedRec.numberData.deepNumberData.numberDP3" to="mixedRec.numberData.deepNumberData.numberDP3" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncOneLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcOneLvlIColl$*$SrcStringField,SrcOneLvlIColl$*$SrcStringField)" to="DestOneLvlIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcOneLvlIColl$*$SrcIntegerField,SrcOneLvlIColl$*$SrcIntegerField)" to="DestOneLvlIColl.*.IntegerField" />
+			<map fromExpression="functs_BTTCustomTestFunction.compareDateToDay(SrcOneLvlIColl$*$SrcXMLGCFieldFrom,SrcOneLvlIColl$*$SrcXMLGCFieldTo)" to="DestOneLvlIColl.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncOneLevelICollConstantFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcOneLvlIColl$*$SrcStringField,'isConstant')" to="DestOneLvlIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcOneLvlIColl$*$SrcIntegerField,5)" to="DestOneLvlIColl.*.IntegerField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="FuncOneLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcOneLvlIColl$*$SrcStringField,SrcStringField)" to="DestOneLvlIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcOneLvlIColl$*$SrcIntegerField,SrcIntegerField)" to="DestOneLvlIColl.*.IntegerField" />
+			<map fromExpression="functs_BTTCustomTestFunction.compareDateToDay(SrcOneLvlIColl$*$SrcXMLGCFieldFrom,SrcXMLGCField)" to="DestOneLvlIColl.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncTwoLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcStringField,SrcTwoLvlIColl$*$SrcNestIColl$*$SrcStringField)" to="DestTwoLvlIColl.*.NestIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcIntegerField,SrcTwoLvlIColl$*$SrcNestIColl$*$SrcIntegerField)" to="DestTwoLvlIColl.*.NestIColl.*.IntegerField" />
+			<map fromExpression="functs_BTTCustomTestFunction.compareDateToDay(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcXMLGCFieldFrom,SrcTwoLvlIColl$*$SrcNestIColl$*$SrcXMLGCFieldTo)" to="DestTwoLvlIColl.*.NestIColl.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncTwoLevelICollConstantFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcStringField,'isConstant')" to="DestTwoLvlIColl.*.NestIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcIntegerField,5)" to="DestTwoLvlIColl.*.NestIColl.*.IntegerField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncTwoLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcStringField,SrcStringField)" to="DestTwoLvlIColl.*.NestIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcIntegerField,SrcIntegerField)" to="DestTwoLvlIColl.*.NestIColl.*.IntegerField" />
+			<map fromExpression="functs_BTTCustomTestFunction.compareDateToDay(SrcTwoLvlIColl$*$SrcNestIColl$*$SrcXMLGCFieldFrom,SrcXMLGCField)" to="DestTwoLvlIColl.*.NestIColl.*.PlainField" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncOneLevelICollFuncOneLevelICollFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcOneLvlIColl$*$SrcStringField,functs_BTTCustomTestFunction.concatByBar(SrcOneLvlIColl$*$SrcStringField,SrcOneLvlIColl$*$SrcStringField))" to="DestOneLvlIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcOneLvlIColl$*$SrcIntegerField,functs_BTTCustomTestFunction.sum(SrcOneLvlIColl$*$SrcIntegerField,SrcOneLvlIColl$*$SrcIntegerField))" to="DestOneLvlIColl.*.IntegerField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	
+	<fmtDef id="FuncTwoLevelICollFuncOneLevelFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.getValueInICollKoll(SrcTwoLvlIColl$*$SrcNestIColl,0,'SrcStringField')" to="DestOneLvlIColl.*.StringField" />
+			<map fromExpression="functs_BTTCustomTestFunction.getValueInICollKoll(SrcTwoLvlIColl$*$SrcNestIColl,0,'SrcIntegerField')" to="DestOneLvlIColl.*.IntegerField" />
+	
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="FuncFiveLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.concatByBar(SrcIColl$*$SrcL2IColl$*$SrcL3IColl$*$SrcL4IColl$*$SrcL5IColl$*$SrcPlainField,SrcIColl$*$SrcL2IColl$*$SrcL3IColl$*$SrcL4IColl$*$SrcL5IColl$*$SrcPlainField)" 
+				to="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcL5IColl.*.SrcPlainField" />
+	
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- CustomTestFunction.sum(int,int) -->
+	<fmtDef id="FuncSixLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcIColl$*$SrcL2IColl$*$SrcL3IColl$*$SrcL4IColl$*$SrcL5IColl$*$SrcL6IColl$*,5)" 
+				to="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcL5IColl.*.SrcL6IColl.*" />
+	
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- CustomTestFunction.sum(int,int) -->
+	<fmtDef id="FuncFourLevelICollDataElementFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCustomTestFunction.sum(SrcIColl$*$SrcL2IColl$*$SrcL3IColl$*$SrcL4IColl$*$SrcBIField,SrcIntegerField)" 
+				to="SrcIColl.*.SrcL2IColl.*.SrcL3IColl.*.SrcL4IColl.*.SrcBIField" />
+	
+		</mapperConverterExpression>
+	</fmtDef>
+	<!-- StringFunc.replace(Str,StrOld,StrNew) =>String DateFunc.parseDate(Str,pattern) => Date NumberFunc.absolute(Long) => Double -->
+	<fmtDef id="PreDefinedBttFuncsFmt">
+		<mapperConverterExpression>
+			<map
+				fromExpression="functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str2Field, L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str3Field)"
+				to="L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField" append="true" />
+			<map fromExpression="functs_BTTDateFunctions.parseDate(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DateStrField, 'yyyyMMdd')" to="L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.DateField"
+				append="I" />
+			<map fromExpression="functs_BTTNumberFunctions.absolute(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$MinusLongField)" to="L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.AbsDoubleField" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- CollectionFunc.getRowByIndex(ICOLL,Number)=>DataElement -->
+	<fmtDef id="PreDefinedBttFuncsFmt2">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)" to="L1IC.*.L2IC.*.L3IC.*.L4IC.*"
+				append="T" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- WildCardNumberNotMatch -->
+	<fmtDef id="USPT_WildCardNumberNotMatchFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)" to="L1IC.*.L2IC.*.L3IC.*"
+				append="T" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- WildCardNumberNotMatch between source expression factors -->
+	<fmtDef id="USPT_WildCardNumberNotMatchInExprFactorFmt">
+		<mapperConverterExpression>
+			<map
+				fromExpression="functs_BTTStringFunctions.replace(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$Str1Field, L1I$*$L2I$*$L3I$*$L4I$*$Str2Field, L1I$*$L2I$*$L3I$*$Str3Field)"
+				to="L1I.*.L2I.*.L3I.*.L4I.*.L5I.*.PlainField" append="true" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- LeafDataEleMissMatch -->
+	<fmtDef id="USPT_LeafDataEleMissMatchFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTCollectionFunctions.getRowByIndex(L1I$*$L2I$*$L3I$*$L4I$*$L5I, 1)" to="L1ICC.*.L2ICC.*.L3ICC.*.L4ICC.*"
+				append="T" />
+		</mapperConverterExpression>
+	</fmtDef>
+
+	<!-- function returned data miss match with target data element's type -->
+	<fmtDef id="USPT_FuncRetDataMisMatchTargetDataEleFmt">
+		<mapperConverterExpression>
+		<map fromExpression="functs_BTTDateFunctions.parseDate(L1I$*$L2I$*$L3I$*$L4I$*$L5I$*$DateStrField, 'yyyyMMdd')" to="L1I.*.L2I.*.L3I.*.L4I.*.L5I.*"
+				append="T" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- Test GlobalFunction(List.*.KCollA.KCollB.FieldA, List.*.KCollA.FieldA -->
+	<fmtDef id="USPT_KCollDifferentLevelInIColl_Fmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(List$*$KCollA$FieldA, List$*$KCollA$KCollB$FieldB)" to="List.*.KCollA.BooleanA"/>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

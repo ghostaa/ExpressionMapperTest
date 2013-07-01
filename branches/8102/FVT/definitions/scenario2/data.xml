@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<field id="testField"/>
+	
+	<kColl id="funcTestGlobalStringKColl">
+		<data id="testString" refType="String"/>
+		<data id="testStringOld" refType="String"/>
+		<data id="testStringNew" refType="String"/>
+	</kColl>
+	<kColl id="funcTestGlobalIntegerKColl">
+		<data id="testInteger1" refType="Integer"/>
+	</kColl>
+	
+	<kColl id="funcTestGlobalDateKColl">
+		<data id="testDateNew" refType="Date"/>
+		<data id="testDateOld" refType="Date"/>
+	</kColl>
+	
+	<kColl id="funcTestGlobalDoubleKColl">
+		<data id="testDouble1" refType="Double"/>
+		<data id="testDouble2" refType="Double"/>
+	</kColl>
+	<kColl id="funcTestGlobalToStringKColl">
+		<field id="testField1"/>
+		<field id="testField2"/>
+	</kColl>
+	
+	<iColl id="funcTestGlobalIntegerIColl" size="2" >
+		<refData refId="funcTestGlobalIntegerKColl" />
+	</iColl>
+	
+	<kColl id="funcTestGlobalKColl">
+		<refData refId="funcTestGlobalStringKColl"/>
+		<refData refId="funcTestGlobalDateKColl"/>
+		<refData refId="funcTestGlobalIntegerKColl"/>
+		<refData refId="funcTestGlobalDoubleKColl"/>
+		<refData refId="funcTestGlobalIntegerIColl"/>
+		<refData refId="funcTestGlobalToStringKColl"/>
+		<refData refId="testField"/>
+	</kColl>
+</data.xml>

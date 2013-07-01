@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<!-- ==================typedData======================== -->
+	<kColl id="TypeDataDefRec" dynamic="false">
+		<data id="str1" refType="String" />
+		<data id="str2" refType="String" />
+		<data id="dateSlash" refType="Date">
+			<param id="pattern" value="MM/dd/yyyy" />
+		</data>
+		<kColl id="mixedRec">
+			<data id="dateMinus" refType="Date">
+				<param id="pattern" value="yyyy-MM-dd" />
+			</data>
+			<kColl id="numberData">
+				<data id="numberDP9" refType="NfBigDecimal">
+					<param id="decimalPlaces" value="9" />
+				</data>
+				<kColl id="deepNumberData">
+					<data id="numberDP3" refType="NfBigDecimal">
+						<param id="pattern" value="##,##.000" />
+						<param id="decimalPlaces" value="3" />
+					</data>
+					<refData refId="testBigInteger" />
+					<refData refId="testString" />
+				</kColl>
+			</kColl>
+		</kColl>
+	</kColl>
+
+	<kColl id="CollectionTypeDataDefRec" dynamic="false">
+		<kColl id="KCOLLDATA">
+			<data id="ccAcctData" refType="CreditCardAccount" />
+			<data id="svAcctData" refType="SavingAccount" />
+		</kColl>
+		<kColl id="ICOLLDATA">
+			<data id="ccAcctList" refType="CreditCardAccountList" />
+			<data id="svAcctList" refType="SavingAccountList" />
+		</kColl>
+	</kColl>
+
+
+	<!-- ==================others======================== -->
+
+	<!-- base data -->
+	<field id="testField" />
+	<data id="testBigInteger" refType="BigInteger" />
+	<data id="testString" refType="String" />
+	<data id="testDate" refType="Date" />
+	<data id="testBigDecimal" refType="BigDecimal" />
+	<data id="testInteger" refType="Integer" />
+	<data id="testBoolean" refType="Boolean" />
+	<data id="testShort" refType="Short" />
+	<data id="testLong" refType="Long" />
+	<data id="testByte" refType="Byte" />
+	<data id="testNumber" refType="Number" />
+	<data id="testFloat" refType="Float" />
+	<data id="testDouble" refType="Double" />
+	<data id="testInteger1" refType="Integer" value="1"/>
+	<data id="testInteger2" refType="Integer" value="2"/>
+	<data id="testInteger3" refType="Integer" value="3"/>
+
+	<!-- contextKColl -->
+	<kColl id="MultiLevelKColl">
+		<refData refId="OneLevelKColl" />
+		<refData refId="OneLevelIColl" />
+		<refData refId="TwoLevelIColl" />
+		<refData refId="testField" />
+	</kColl>
+	<kColl id="MultiLevelKCollA">
+		<refData refId="OneLevelKCollA" />
+		<refData refId="OneLevelKCollAA" />
+	</kColl>
+	<kColl id="MultiLevelKCollB">
+		<refData refId="OneLevelKCollB" />
+		<refData refId="OneLevelKCollBB" />
+	</kColl>
+	<kColl id="MultiLevelICollKColl">
+		<refData refId="testOneLevelIColl" />
+		<refData refId="testOneLevelIColl" alias="NewIColl" />
+	</kColl>
+	<kColl id="ThreeICollsInKColl1">
+		<refData refId="testOneLevelIColl" alias="IColl1" />
+		<refData refId="testOneLevelIColl" alias="IColl2" />
+		<refData refId="testOneLevelIColl" alias="IColl3" />
+	</kColl>
+	<kColl id="ThreeICollsInKColl2">
+		<refData refId="testOneLevelIColl" alias="IColl4" />
+		<refData refId="testOneLevelIColl" alias="IColl5" />
+		<refData refId="testOneLevelIColl" alias="IColl6" />
+	</kColl>
+	<kColl id="PartOfAICollKColl">
+		<refData refId="testPartOfAIColl" />
+	</kColl>
+	<kColl id="PartOfBICollKColl">
+		<refData refId="testPartOfBIColl" />
+	</kColl>
+
+	<!-- MultiLevel IColl -->
+	<iColl id="OneLevelIColl" size="1">
+		<refData refId="TwoLevelIColl" />
+	</iColl>
+	<iColl id="TwoLevelIColl" size="1">
+		<refData refId="testField" />
+	</iColl>
+
+
+
+	<!-- MultiLevel KColl -->
+	<kColl id="OneLevelKColl">
+		<refData refId="TwoLevelKColl" />
+	</kColl>
+	<kColl id="TwoLevelKColl">
+		<refData refId="ThirdLevelKColl" />
+	</kColl>
+	<kColl id="ThirdLevelKColl">
+		<refData refId="FourthLevelKColl" />
+	</kColl>
+	<kColl id="FourthLevelKColl">
+		<refData refId="testBigInteger" />
+		<refData refId="testString" />
+		<refData refId="testField" />
+		<refData refId="testInteger" />
+		<refData refId="testBoolean" />
+		<refData refId="testShort" />
+		<refData refId="testLong" />
+		<refData refId="testDate" />
+		<refData refId="testByte" />
+		<refData refId="testNumber" />
+		<refData refId="testFloat" />
+		<refData refId="testDouble" />
+		<refData refId="testBigDecimal" />
+
+	</kColl>
+
+	<!-- different data in KCollA -->
+	<kColl id="OneLevelKCollA">
+		<refData refId="testInteger1" />
+		<refData refId="testInteger2" />
+	</kColl>
+
+
+	<!-- different data in KCollB -->
+	<kColl id="OneLevelKCollB">
+		<refData refId="testInteger1" />
+		<refData refId="testInteger3" />
+	</kColl>
+
+	<!-- same element in KCollAA -->
+	<kColl id="OneLevelKCollAA">
+		<refData refId="testInteger1" />
+		<refData refId="testInteger2" />
+	</kColl>
+
+
+	<!-- same element data in KCollBB -->
+	<kColl id="OneLevelKCollBB">
+		<refData refId="testInteger1" />
+		<refData refId="testInteger2" />
+	</kColl>
+
+	<!-- IColl -->
+	<iColl id="testOneLevelIColl" size="1">
+		<refData refId="OneLevelKCollAA" />
+	</iColl>
+	<iColl id="testPartOfAIColl" size="1">
+		<refData refId="OneLevelKCollA" />
+	</iColl>
+	<iColl id="testPartOfBIColl" size="1">
+		<refData refId="OneLevelKCollB" />
+	</iColl>
+</data.xml>

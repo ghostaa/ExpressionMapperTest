@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	
+	<!-- wildcard append -->
+	<fmtDef id="wildcardAppendTrueNotSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveNotSizeIColl" append="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardAppendFalseNotSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveNotSizeIColl" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardAppendIgnoreNotSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveNotSizeIColl" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardAppendTrueSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveSizeIColl" append="true"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardAppendFalseSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveSizeIColl" append="false"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardAppendIgnoreSizeFmt">
+		<mapperConverterExpression>
+			<map fromExpression="HaveNotSizeIColl" to="HaveSizeIColl" append="ignore"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	<fmtDef id="appendDefaultFmt">
+		<mapperConverterExpression>
+			<map fromExpression="OneIColl" to="OneIColl" />
+			<map fromExpression="OneIColl$*" to="VIPIColl.*" />
+			<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testMultiAppendFalseFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testMultiAppendIgnoreFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testSameBlockAppendFmt">
+		<mapperConverterExpression>
+				<mapIf expression="(HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt; 10) ">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testSameBlockAppendExecutionOrderFmt">
+		<mapperConverterExpression>
+				<mapIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt; 10 ">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="true"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testAppendEntranceFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="true"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testInnerAppendFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 0">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					<mapIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt; 1 &amp;&amp; HaveNotSizeIColl$*$conditionInnerKColl$testInteger &lt; 3">
+						<map fromExpression="HaveNotSizeIColl$*$conditionInnerKColl$testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					</mapIf>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testInteger == 1">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>

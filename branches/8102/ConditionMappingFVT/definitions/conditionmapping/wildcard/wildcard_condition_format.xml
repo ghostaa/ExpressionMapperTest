@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<import file="conditionmapping\wildcard\wildcard_append_condition_format.xml"/>
+	<import file="conditionmapping\wildcard\wildcard_index_condition_format.xml"/>
+	<import file="conditionmapping\wildcard\wildcard_common_condition_format.xml"/>
+	<fmtDef id="normalConditionToDifferentListFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionFromDifferentListFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="testInteger &gt; 10000">
+				<map fromExpression="VIPIColl$*" to="OneIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="NormalIColl$*" to="OneIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionAndWildcardMixedUseFmt1">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+				<mapIf expression="testInteger &gt; 3">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="normalConditionAndWildcardMixedUseFmt3">
+		<mapperConverterExpression>
+			<mapIf expression="testInteger &gt; 3">
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 10000">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+			</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionUseFromFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
+				<map from="OneIColl.*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElse>
+				<map from="OneIColl.*" to="NormalIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionIgnoreFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 5">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionFmt2">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" />
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionFmt22">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 20000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="toDifferentICollConditionFmt3">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &gt; 2000">
+				<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+			</mapIf>
+			<mapElseIf expression="(OneIColl$*$conditionInnerKColl$testInteger &lt;= 2000) &amp;&amp;  (OneIColl$*$conditionInnerKColl$testInteger &gt;= 500)">
+				<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*" to="HaveNotSizeIColl.*" append="false"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="wildcardGlobalConditionFmt">
+		<mapperConverterExpression>
+			<mapIf expression="{cond=commonConNumber;OneIColl$*$conditionInnerKColl$testInteger}">
+				<map fromExpression="2" to="testInteger" />
+			</mapIf>
+			<mapElse>
+				<map fromExpression="4" to="testInteger" />
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	
+	<fmtDef id="wildcardToWildcardFmt">
+		<mapperConverterExpression>
+				<map from="*" to="*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="conditionWildcardToWildcardFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 100">
+					<map from="*" to="*"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="4" to="testInteger" />
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromDifferentICollConditionFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="VIPIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger"/>
+				</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromDifferentConditionFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt;= 70">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromDifferentConditionFmt2">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger"/>
+				</mapIf>
+				<mapElseIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testInteger &gt;= 70">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromSameListConditionFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 2000">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElseIf expression="OneIColl$*$conditionInnerKColl$testFloat == 1000">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromSameListConditionVarietyFmt">
+		<mapperConverterExpression>
+				<mapIf expression="(OneIColl$*$conditionInnerKColl$testInteger &lt; 2000) || (OneIColl$*$conditionInnerKColl$testFloat == 1000)">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="fromSameMappingFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*" to="NormalIColl.*" append="false"/>
+				</mapIf>
+				<mapElseIf expression="testInteger &lt; 10">
+					<map fromExpression="OneIColl$*" to="VIPIColl.*" append="false"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*" to="HaveNotSizeIColl.*" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testAppendIgnoreSameGroupMappingFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testDouble" to="VIPIColl.*.conditionInnerKColl.testDouble" append="ignore"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testFloat" to="VIPIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testDouble" to="NormalIColl.*.conditionInnerKColl.testDouble" append="ignore"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="innerConditionFromSameConditionFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 3">
+						<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					</mapIf>
+					<mapElse>
+						<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					</mapElse>
+				</mapIf>
+				<mapElse>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="HaveNotSizeIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="innerConditionFromSameConditionFmtDefectFromLST">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="OneIColl.*.conditionInnerKColl.testInteger" append="false"/>
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testString" to="OneIColl.*.conditionInnerKColl.testString" append="ignore"/>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testFloat == 3.0">
+						<map fromExpression="3.3" to="OneIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+					</mapIf>
+					<mapIf expression="OneIColl$*$conditionInnerKColl$testFloat == 2.0">
+						<map fromExpression="2.2" to="OneIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+					</mapIf>
+				</mapIf>
+				
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testUseCaseCM1Fmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testString != ''">
+					<map from="OneIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+				</mapIf>
+				<mapElseIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testString != ''">
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+				</mapElseIf>
+				<mapElse>
+					<map fromExpression="&apos;&apos;" to="NormalIColl.*.conditionInnerKColl.testString" append="ignore"/>
+				</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testDoubleIfFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testString != ''">
+					<map from="OneIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					<map from="OneIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+				<mapIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testString != ''">
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testDoubleIfAppendIgnoreFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testString != ''">
+					<map from="OneIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					<map from="OneIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+				<mapIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testString != ''">
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="ignore"/>
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testIfElseIfAppendIgnoreFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testString != ''">
+					<map from="OneIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="false"/>
+					<map from="OneIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapIf>
+				<mapElseIf expression="HaveNotSizeIColl$*$conditionInnerKColl$testString != ''">
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testString" to="NormalIColl.*.conditionInnerKColl.testString" append="ignore"/>
+					<map from="HaveNotSizeIColl.*.conditionInnerKColl.testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+				</mapElseIf>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testConditonListSizeFmt">
+		<mapperConverterExpression>
+				<mapIf expression="OneIColl$*$conditionInnerKColl$testInteger == 2">
+					<map from="NormalIColl.*.conditionInnerKColl.testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="ignore"/>
+				</mapIf>
+				
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="testGotoWildcardFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+			</mapIf>
+			<mapElseIf expression="false">
+				<mapIf id="mapIf2" expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 7">
+					<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="VIPIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				</mapIf>
+			</mapElseIf>
+			<mapElse>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				<goto id="mapIf2"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="testListFmt">
+		<mapperConverterExpression>
+			<mapIf id="mapIf1" expression="OneIColl$*$conditionInnerKColl$testInteger &lt; 5">
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				<map fromExpression="OneIColl$*$conditionInnerKColl$testFloat" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+			</mapIf>
+			<mapElse>
+				<map fromExpression="VIPIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testInteger" append="false"/>
+				<map fromExpression="VIPIColl$*$conditionInnerKColl$testInteger" to="NormalIColl.*.conditionInnerKColl.testFloat" append="ignore"/>
+			</mapElse>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>

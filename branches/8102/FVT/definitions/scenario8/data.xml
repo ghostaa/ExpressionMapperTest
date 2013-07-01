@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data.xml>
+	<data id="brand" refType="String" />
+	<data id="cpuFreq" refType="Integer" />
+	<data id="memSize" refType="BigInteger" />
+	<data id="comPrice" refType="BigDecimal" />
+	<data id="comDiscount" refType="Double" />
+	<data id="comQuantity" refType="Long" />
+	<field id="comComments" />
+
+	<kColl id="srcComputer" dynamic="false">
+		<refData alias="srcBrand" refId="brand" />
+		<refData alias="srcCpuFreq" refId="cpuFreq" />
+		<refData alias="srcMemSize" refId="memSize" />
+		<refData alias="srcPrice" refId="comPrice" />
+		<refData alias="srcDiscount" refId="comDiscount" />
+		<refData alias="srcQuantity" refId="comQuantity" />
+		<refData alias="srcComments" refId="comComments" />
+	</kColl>
+
+	<kColl id="destComputer" dynamic="false">
+		<refData alias="destBrand" refId="brand" />
+		<refData alias="destCpuFreq" refId="cpuFreq" />
+		<refData alias="destMemSize" refId="memSize" />
+		<refData alias="destPrice" refId="comPrice" />
+		<refData alias="destDiscount" refId="comDiscount" />
+		<refData alias="destQuantity" refId="comQuantity" />
+		<refData alias="destComments" refId="comComments" />
+	</kColl>
+
+	<kColl id="SrcComputerCtxtKColl" dynamic="false">
+		<iColl id="srcComputerList1" size="0">
+			<refData refId="srcComputer" />
+		</iColl>
+
+		<iColl id="srcComputerList2" size="0">
+			<iColl id="srcComputerList1" size="0">
+				<refData refId="srcComputer" />
+			</iColl>
+		</iColl>
+	</kColl>
+
+	<kColl id="DestComputerCtxtKColl" dynamic="false">
+		<iColl id="destComputerList1" size="0">
+			<refData refId="destComputer" />
+		</iColl>
+
+		<iColl id="destComputerList2" size="0">
+			<iColl id="destComputerList1" size="0">
+				<refData refId="destComputer" />
+			</iColl>
+		</iColl>
+	</kColl>
+</data.xml>

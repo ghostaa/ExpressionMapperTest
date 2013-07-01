@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<context.xml>
+	<!-- context file for basic mapping scenarios -->
+	<import file="jar:///definitions/basic/context_basic.xml"/>
+	<import file="jar:///definitions/wildcard/context_wildcard.xml"/>
+	<import file="jar:///definitions/type/context_type.xml"/>
+	<import file="jar:///definitions/conditional/context_conditional.xml"/>
+	
+	<!-- ============Scenario1========== -->
+	<import file="jar:///definitions/scenario1/context.xml"/>
+	<!-- ============Scenario2========== -->
+	<import file="jar:///definitions/scenario2/context.xml"/>
+	<!-- ============Scenario2Appendix========== -->
+	<import file="jar:///definitions/scenario2Appendix/context.xml"/>
+	<!-- ============Scenario3========== -->
+	<import file="jar:///definitions/scenario3/context.xml"/>
+	<!-- ============Scenario4========== -->
+	<import file="jar:///definitions/scenario4/context.xml"/>
+	<!-- ============Scenario5========== -->
+	<import file="jar:///definitions/scenario5/context.xml"/>
+	<!-- ============Scenario6========== -->
+	<import file="jar:///definitions/scenario6/context.xml"/>
+	<!-- ============Scenario7========== -->
+	<import file="jar:///definitions/scenario7/context.xml"/>
+	<!-- ============Scenario8========== -->
+	<import file="jar:///definitions/scenario8/context.xml"/>
+	<!-- ============Scenario9========== -->
+	<import file="jar:///definitions/scenario9/context.xml"/>
+	
+	
+	<!-- ============Condition mapping========== -->
+	<import file="jar:///definitions/conditionmapping/normal/normal_condition_context.xml"/>
+	<import file="jar:///definitions/conditionmapping/wildcard/wildcard_condition_context.xml"/>
+	<import file="jar:///definitions/conditionmapping/index/index_condition_context.xml"/>
+	
+	
+</context.xml>

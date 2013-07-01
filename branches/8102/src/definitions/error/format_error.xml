@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<fmtDef id="incompatibleTypeFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.0.testBigInteger" to="oneLevelKCollIColl.0.testKColl2.testDate"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="incompatibleElementFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelFieldIColl.0" to="oneLevelFieldIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="dataElementNotFoundFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.0.testBigInteger2" to="oneLevelKCollIColl.0.testKColl2.testDate2"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="invalidExpressionFmt">
+		<mapperConverterExpression>
+			<map fromExpression="Funcs_oneLevelKCollIColl.0.testBigInteger" to="oneLevelKCollIColl.0.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="invalidWildcardTargetFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*" to="oneLevelKCollIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardTargetNotFoundFmt">
+		<mapperConverterExpression>
+			<map from="oneLevelKCollIColl.*" to="oneLevelKCollIColl2.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="inconsistentWildcardNumberFmt">
+		<mapperConverterExpression>
+			<map from="twoLevelIColl.*.oneLevelKCollIColl.*.testBigInteger" to="twoLevelIColl.*.oneLevelKCollIColl"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="inconsistentPathFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(twoLevelIColl$*$oneLevelKCollIColl$*$testBigInteger, fiveLevelIColl$*$*$testIColl$*$testField)" to="twoLevelIColl.*.oneLevelKCollIColl.*.testKColl2.testField"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="wildcardCharErrorFmt">
+		<mapperConverterExpression>
+			<map fromExpression="functs_BTTStringFunctions.concat(oneLevelFieldIColl.*, '_concat')" to="oneLevelFieldIColl.*"/>
+		</mapperConverterExpression>
+	</fmtDef>
+	
+</format.xml>
