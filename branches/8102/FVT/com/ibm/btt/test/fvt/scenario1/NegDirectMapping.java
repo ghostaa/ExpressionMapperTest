@@ -74,7 +74,7 @@ public class NegDirectMapping extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'dateMinus' with element type 'DataField' to 'numberData' with element type 'KeyedCollection'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"mixedRec.dateMinus\" to=\"mixedRec.numberData\" />] from context [TypeDataCtxt] to [TypeDataCtxt]:From data element [dateMinus](DataField) is not match with the To data element [numberData](KeyedCollection).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"mixedRec.dateMinus\" to=\"mixedRec.numberData\" />] from context [TypeDataCtxt] to [TypeDataCtxt]:From data element [dateMinus](DataField) is not match with the To data element [numberData](KeyedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -141,7 +141,7 @@ public class NegDirectMapping extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'ccAcctData' with element type 'KeyedCollection' to 'ccAcctList' with element type 'IndexedCollection'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"KCOLLDATA.ccAcctData\" to=\"ICOLLDATA.ccAcctList\" />] from context [CollectionTypeDataCtxt] to [CollectionTypeDataCtxt]:From data element [ccAcctData](KeyedCollection) is not match with the To data element [ccAcctList](IndexedCollection).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"KCOLLDATA.ccAcctData\" to=\"ICOLLDATA.ccAcctList\" />] from context [CollectionTypeDataCtxt] to [CollectionTypeDataCtxt]:From data element [ccAcctData](KeyedCollection) is not match with the To data element [ccAcctList](IndexedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -185,7 +185,7 @@ public class NegDirectMapping extends CommonTestCase {
 			fmt.mapContents(from, to);
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'testField' with element type 'DataField' to 'OneLevelKColl' with element type 'KeyedCollection'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"testField\" to=\"OneLevelKColl\" />] from context [testMultiLevelKCollCtx] to [testMultiLevelKCollCtx]:From data element [testField](DataField) is not match with the To data element [OneLevelKColl](KeyedCollection).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"testField\" to=\"OneLevelKColl\" />] from context [testMultiLevelKCollCtx] to [testMultiLevelKCollCtx]:From data element [testField](DataField) is not match with the To data element [OneLevelKColl](KeyedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 			

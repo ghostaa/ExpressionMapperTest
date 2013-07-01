@@ -46,7 +46,7 @@ public class NegAsteriskToAsteriskMapping extends CommonTestCase {
 
 			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Can not map a wildcard source to non-wildcard target.";
 			String line1 = "<map from=\"ComputerKColl.*\" to=\"*\" />";
-			String line2 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"ComputerKColl.*\" to=\"*\" />] from context [ComputerCtxt] to [ComputerCtxt]:Can not map a wildcard source to non-wildcard target.";
+			String line2 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"ComputerKColl.*\" to=\"*\" />] from context [ComputerCtxt] to [ComputerCtxt]:Can not map a wildcard source to non-wildcard target.";
 			String line3 = "<map from=\"ComputerKColl.*\" to=\"*\" />";
 
 			String[] lines = getLogContentsInLines();
@@ -83,9 +83,9 @@ public class NegAsteriskToAsteriskMapping extends CommonTestCase {
 			fmt.mapContents(source, target);
 
 			String line0 = "#FUNC [ERROR]BTT-E006: data element 'ComputerKColl.brand1' not found in context 'ComputerCtxt' while performing data mapping.";
-			String line1 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"brand\" to=\"ComputerKColl.brand1\" />] from context [ComputerCtxt] to [ComputerCtxt]:An element \"ComputerKColl.brand1\" has not been found in target context \"ComputerCtxt\".";
+			String line1 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"brand\" to=\"ComputerKColl.brand1\" />] from context [ComputerCtxt] to [ComputerCtxt]:An element \"ComputerKColl.brand1\" has not been found in target context \"ComputerCtxt\".";
 			String line2 = "#FUNC [ERROR]BTT-E006: data element 'ComputerKColl1brand' not found in context 'ComputerCtxt' while performing data mapping.";
-			String line3 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"ComputerKColl1brand\" to=\"brand\" />] from context [ComputerCtxt] to [ComputerCtxt]:An element \"ComputerKColl1brand\" has not been found in source context \"ComputerCtxt\".";
+			String line3 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"ComputerKColl1brand\" to=\"brand\" />] from context [ComputerCtxt] to [ComputerCtxt]:An element \"ComputerKColl1brand\" has not been found in source context \"ComputerCtxt\".";
 
 			String[] lines = getLogContentsInLines();
 
@@ -120,7 +120,7 @@ public class NegAsteriskToAsteriskMapping extends CommonTestCase {
 
 			fmt.mapContents(source, target);
 
-			String line0 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Non-DataMapperFmt can not be nested in DataMapperFmt:";
+			String line0 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Non-DataMapperFmt can not be nested in DataMapperFmt:";
 			String line1 = "<fmtDef id=\"StringFmt\" >";
 
 			String[] lines = getLogContentsInLines();
@@ -154,7 +154,7 @@ public class NegAsteriskToAsteriskMapping extends CommonTestCase {
 
 			fmt.mapContents(source, target);
 
-			String line0 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from1=\"brand\" to2=\"brand\" byReference3=\"true\" />] from context [ComputerCtxt] to [ComputerCtxt]:Mapper is not valid, should at least contain \"to\" and \"fromExpression\" or \"from\" attributes.";
+			String line0 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from1=\"brand\" to2=\"brand\" byReference3=\"true\" />] from context [ComputerCtxt] to [ComputerCtxt]:Mapper is not valid, should at least contain \"to\" and \"fromExpression\" or \"from\" attributes.";
 			String line1 = "<map from1=\"brand\" to2=\"brand\" byReference3=\"true\" />";
 
 			String[] lines = getLogContentsInLines();
@@ -184,7 +184,7 @@ public class NegAsteriskToAsteriskMapping extends CommonTestCase {
 
 			fmt.mapContents(source, target);
 
-			String line0 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"comComments\" to=\"comComments\" byReference=\"false\" />] from context [ComputerCtxt] to [ComputerCtxt]:Cannot clone untyped data comComments when using byReference=false.";
+			String line0 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"comComments\" to=\"comComments\" byReference=\"false\" />] from context [ComputerCtxt] to [ComputerCtxt]:Cannot clone untyped data comComments when using byReference=false.";
 
 			String[] lines = getLogContentsInLines();
 

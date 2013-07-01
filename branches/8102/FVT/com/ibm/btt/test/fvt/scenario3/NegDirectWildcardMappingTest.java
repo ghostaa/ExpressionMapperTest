@@ -50,7 +50,7 @@ public class NegDirectWildcardMappingTest extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E014: invalid wildcard mapping: Invalid mapping configuration, wildcard number in source [SrcIColl.*.SrcNestIColl.*.SrcInnerBDField] and target [DestIColl.*.SrcXMLGCField] are not consistent.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"SrcIColl.*.SrcNestIColl.*.SrcInnerBDField\" to=\"DestIColl.*.SrcXMLGCField\" />] from context [ThreeLevelICollCtxt] to [ThreeLevelICollCtxt]:Invalid mapping configuration, wildcard number in source [SrcIColl.*.SrcNestIColl.*.SrcInnerBDField] and target [DestIColl.*.SrcXMLGCField] are not consistent.";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"SrcIColl.*.SrcNestIColl.*.SrcInnerBDField\" to=\"DestIColl.*.SrcXMLGCField\" />] from context [ThreeLevelICollCtxt] to [ThreeLevelICollCtxt]:Invalid mapping configuration, wildcard number in source [SrcIColl.*.SrcNestIColl.*.SrcInnerBDField] and target [DestIColl.*.SrcXMLGCField] are not consistent.";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -78,7 +78,7 @@ public class NegDirectWildcardMappingTest extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'TypedDataInnerKColl' with element type 'KeyedCollection' to 'TypedDataInnerIColl' with element type 'IndexedCollection'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"SrcFiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerKColl\" to=\"FiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerIColl\" />] from context [FiveDimensionalMatrixCtxt] to [FiveDimensionalMatrixCtxt]:From data element [TypedDataInnerKColl](KeyedCollection) is not match with the To data element [TypedDataInnerIColl](IndexedCollection).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"SrcFiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerKColl\" to=\"FiveDimensionalMatrix.*.*.*.*.*.TypedDataInnerIColl\" />] from context [FiveDimensionalMatrixCtxt] to [FiveDimensionalMatrixCtxt]:From data element [TypedDataInnerKColl](KeyedCollection) is not match with the To data element [TypedDataInnerIColl](IndexedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -105,7 +105,7 @@ public class NegDirectWildcardMappingTest extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'KC1' with element type 'KeyedCollection' to 'F1' with element type 'DataField'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1IF.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [F1](DataField).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1IF.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [F1](DataField).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 
@@ -118,7 +118,7 @@ public class NegDirectWildcardMappingTest extends CommonTestCase {
 			// DEMAND
 			logContents = getLogContentsInLines();
 			line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'KC1' with element type 'KeyedCollection' to 'F1' with element type 'DataField'.";
-			lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1IF.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [F1](DataField).";
+			lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1IF.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [F1](DataField).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
@@ -145,7 +145,7 @@ public class NegDirectWildcardMappingTest extends CommonTestCase {
 			// DEMAND
 			String[] logContents = getLogContentsInLines();
 			String line0 = "#FUNC [ERROR]BTT-E013: incompatible data element mapping: cannot map from 'KC1' with element type 'KeyedCollection' to 'L2IF' with element type 'IndexedCollection'.";
-			String lin11 = "com.ibm.btt.base.ConditionalDataMapperFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1II.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [L2IF](IndexedCollection).";
+			String lin11 = "com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map from=\"L1IK.*\" to=\"L1II.*\" />] from context [LeafDataNotMatchCtxt] to [LeafDataNotMatchCtxt]:From data element [KC1](KeyedCollection) is not match with the To data element [L2IF](IndexedCollection).";
 			Assert.assertEquals(line0, logContents[0]);
 			Assert.assertEquals(lin11, logContents[1]);
 		} catch (Exception e) {
