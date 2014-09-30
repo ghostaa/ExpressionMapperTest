@@ -15,8 +15,16 @@ import com.ibm.btt.base.FormatElement;
 import com.ibm.btt.base.IndexedCollection;
 import com.ibm.btt.base.KeyedCollection;
 import com.ibm.btt.test.fvt.common.CommonTestCase;
+import com.ibm.btt.test.fvt.common.TestingVerificationLogImpl;
 
 public class ExpressionMapperTest extends CommonTestCase {
+	
+	protected boolean isLogVerificationEnabled() {
+		return true;
+	}
+	protected void setDefaultTraceLevel() {
+		setTraceLevel(TestingVerificationLogImpl.INFO);
+	}
 	/**
 	 * 
 	 * TODO Scenario1 DataField to DataField -- under KColl

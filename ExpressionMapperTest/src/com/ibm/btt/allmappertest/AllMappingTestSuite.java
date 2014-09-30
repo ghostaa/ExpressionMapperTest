@@ -14,7 +14,7 @@ import com.ibm.btt.test.fvt.PositiveTestsSuite;
 @Suite.SuiteClasses({
 		//Wildcard test
 		//mapping test
-		NegativeTestsSuite.class,
+		//NegativeTestsSuite.class,
 		PositiveTestsSuite.class,
 		//conditional mapping test
 		TestConditionalSuite.class 
