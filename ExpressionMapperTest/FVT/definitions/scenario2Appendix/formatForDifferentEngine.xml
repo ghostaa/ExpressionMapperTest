@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+
+	<fmtDef id="frontStringSimpleTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="'abc' + testString" to="testString1" />
+			<map fromExpression="'abc' - testString" to="testString2" />
+			<map fromExpression="'abc' * testString" to="testString3" />
+			<map fromExpression="'abc' / testString" to="testString4" />
+			
+			<map fromExpression="'abc' + testString" to="testNumber1" />
+			<map fromExpression="'abc' - testString" to="testNumber2" />
+			<map fromExpression="'abc' * testString" to="testNumber3" />
+			<map fromExpression="'abc' / testString" to="testNumber4" />
+			
+			<map fromExpression="'abc' + testString" to="testBoolean1" />
+			<map fromExpression="'abc' - testString" to="testBoolean2" />
+			<map fromExpression="'abc' * testString" to="testBoolean3" />
+			<map fromExpression="'abc' / testString" to="testBoolean4" />
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+		<fmtDef id="rearStringSimpleTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testString + 'abc'" to="testString1" />
+			<map fromExpression="testString - 'abc'" to="testString2" />
+			<map fromExpression="testString * 'abc'" to="testString3" />
+			<map fromExpression="testString / 'abc'" to="testString4" />
+			
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+</format.xml>

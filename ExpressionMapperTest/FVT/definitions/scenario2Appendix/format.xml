@@ -288,4 +288,128 @@
 			<map fromExpression="'\rHello\rWorld\r'" to="testString" />
 		</mapperConverterExpression>
 	</fmtDef>
+	
+	
+	<fmtDef id="Number*100">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber*100" to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Number">
+		<mapperConverterExpression>
+			<map fromExpression="1+testNumber" to="testNumber" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="Integer*100">
+		<mapperConverterExpression>
+			<map fromExpression="testInteger*100" to="testInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Integer">
+		<mapperConverterExpression>
+			<map fromExpression="1+testInteger" to="testInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="Byte*100">
+		<mapperConverterExpression>
+			<map fromExpression="testByte*100" to="testByte" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Byte">
+		<mapperConverterExpression>
+			<map fromExpression="1+testByte" to="testByte" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="Short*100">
+		<mapperConverterExpression>
+			<map fromExpression="testShort*100" to="testShort" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Short">
+		<mapperConverterExpression>
+			<map fromExpression="1+testShort" to="testShort" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="Long*100">
+		<mapperConverterExpression>
+			<map fromExpression="testLong*100" to="testLong" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Long">
+		<mapperConverterExpression>
+			<map fromExpression="1+testLong" to="testLong" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="Float*100">
+		<mapperConverterExpression>
+			<map fromExpression="testFloat*100" to="testFloat" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Float">
+		<mapperConverterExpression>
+			<map fromExpression="1+testFloat" to="testFloat" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="Double*100">
+		<mapperConverterExpression>
+			<map fromExpression="testDouble*100" to="testDouble" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+Double">
+		<mapperConverterExpression>
+			<map fromExpression="1+testDouble" to="testDouble" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="BigInteger*100">
+		<mapperConverterExpression>
+			<map fromExpression="testBigInteger*100" to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+BigInteger">
+		<mapperConverterExpression>
+			<map fromExpression="1+testBigInteger" to="testBigInteger" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="BigDecimal*100">
+		<mapperConverterExpression>
+			<map fromExpression="testBigDecimal*100" to="testBigDecimal" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="1+BigDecimal">
+		<mapperConverterExpression>
+			<map fromExpression="1+testBigDecimal" to="testBigDecimal" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	
+	
+	<fmtDef id="TrueAndBoolean">
+		<mapperConverterExpression>
+			<map fromExpression="true && testBoolean" to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<fmtDef id="abc+String">
+		<mapperConverterExpression>
+			<map fromExpression="'abc' + testString" to="testString" />
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- <fmtDef id="gt">
+		<mapperConverterExpression>
+			<map fromExpression="'' &gt; 2 " to="testBoolean" />
+		</mapperConverterExpression>
+	</fmtDef> -->
 </format.xml>

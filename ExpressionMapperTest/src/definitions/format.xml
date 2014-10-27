@@ -20,6 +20,7 @@
 	<import file="jar:///definitions/scenario2/format.xml"/>
 	<!-- ============Scenario2Appendix========== -->
 	<import file="jar:///definitions/scenario2Appendix/format.xml"/>
+	<import file="jar:///definitions/scenario2Appendix/formatForDifferentEngine.xml"/>
 	<!-- ============Scenario3========== -->
 	<import file="jar:///definitions/scenario3/format.xml"/>
 	<!-- ============Scenario4========== -->
@@ -41,4 +42,7 @@
 	<import file="jar:///definitions/conditionmapping/normal/normal_condition_format.xml"/>
 	<import file="jar:///definitions/conditionmapping/wildcard/wildcard_condition_format.xml"/>
 	<import file="jar:///definitions/conditionmapping/index/index_condition_format.xml"/>
+	
+	
+	
 </format.xml>

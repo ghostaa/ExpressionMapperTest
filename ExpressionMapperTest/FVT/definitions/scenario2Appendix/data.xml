@@ -53,14 +53,26 @@
 	<kColl id="fieldData">
 		<refData refId="testBigInteger" />
 		<refData refId="testString" />
+		<refData refId="testString" alias="testString1"/>
+		<refData refId="testString" alias="testString2"/>
+		<refData refId="testString" alias="testString3"/>
+		<refData refId="testString" alias="testString4"/>
 		<refData refId="testField" />
 		<refData refId="testInteger" />
 		<refData refId="testBoolean" />
+		<refData refId="testBoolean" alias="testBoolean1"/>
+		<refData refId="testBoolean" alias="testBoolean2"/>
+		<refData refId="testBoolean" alias="testBoolean3"/>
+		<refData refId="testBoolean" alias="testBoolean4"/>
 		<refData refId="testShort" />
 		<refData refId="testLong" />
 		<refData refId="testDate" />
 		<refData refId="testByte" />
 		<refData refId="testNumber" />
+		<refData refId="testNumber" alias="testNumber1"/>
+		<refData refId="testNumber" alias="testNumber2"/>
+		<refData refId="testNumber" alias="testNumber3"/>
+		<refData refId="testNumber" alias="testNumber4"/>
 		<refData refId="testFloat" />
 		<refData refId="testDouble" />
 		<refData refId="testBigDecimal" />
