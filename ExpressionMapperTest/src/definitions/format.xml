@@ -20,7 +20,9 @@
 	<import file="jar:///definitions/scenario2/format.xml"/>
 	<!-- ============Scenario2Appendix========== -->
 	<import file="jar:///definitions/scenario2Appendix/format.xml"/>
-	<import file="jar:///definitions/scenario2Appendix/formatForDifferentEngine.xml"/>
+	<import file="jar:///definitions/scenario2Appendix/formatForDifferentEngineString.xml"/>
+	<import file="jar:///definitions/scenario2Appendix/formatForDifferentEngineNumber.xml"/>
+	<import file="jar:///definitions/scenario2Appendix/formatForDifferentEngineBoolean.xml"/>
 	<!-- ============Scenario3========== -->
 	<import file="jar:///definitions/scenario3/format.xml"/>
 	<!-- ============Scenario4========== -->

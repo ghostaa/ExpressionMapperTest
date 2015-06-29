@@ -16,7 +16,7 @@ import com.ibm.btt.test.fvt.PositiveTestsSuite;
 		//mapping test
 		//NegativeTestsSuite.class,
 		PositiveTestsSuite.class,
-		//conditional mapping test
+		//conditional mapping test 
 		TestConditionalSuite.class 
 		
 })
