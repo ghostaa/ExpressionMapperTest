@@ -57,6 +57,8 @@
 		<refData refId="testString" alias="testString2"/>
 		<refData refId="testString" alias="testString3"/>
 		<refData refId="testString" alias="testString4"/>
+		<refData refId="testString" alias="testString5"/>
+		<refData refId="testString" alias="testString6"/>
 		<refData refId="testField" />
 		<refData refId="testInteger" />
 		<refData refId="testBoolean" />
@@ -64,6 +66,8 @@
 		<refData refId="testBoolean" alias="testBoolean2"/>
 		<refData refId="testBoolean" alias="testBoolean3"/>
 		<refData refId="testBoolean" alias="testBoolean4"/>
+		<refData refId="testBoolean" alias="testBoolean5"/>
+		<refData refId="testBoolean" alias="testBoolean6"/>
 		<refData refId="testShort" />
 		<refData refId="testLong" />
 		<refData refId="testDate" />
@@ -73,6 +77,8 @@
 		<refData refId="testNumber" alias="testNumber2"/>
 		<refData refId="testNumber" alias="testNumber3"/>
 		<refData refId="testNumber" alias="testNumber4"/>
+		<refData refId="testNumber" alias="testNumber5"/>
+		<refData refId="testNumber" alias="testNumber6"/>
 		<refData refId="testFloat" />
 		<refData refId="testDouble" />
 		<refData refId="testBigDecimal" />

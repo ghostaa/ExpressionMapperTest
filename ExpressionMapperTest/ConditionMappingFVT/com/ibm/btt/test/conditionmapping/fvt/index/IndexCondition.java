@@ -205,7 +205,7 @@ public class IndexCondition extends CommonTestCase {
 			for(int i = 0; i < logContents.length; i++){
 			 sb. append(logContents[i]);
 			}
-			String line = "#FUNC [INFO]    => Begin mapping from context 'WildcardConditionCtx' to context 'WildcardConditionCtx'#FUNC [INFO]    Mapping from 'dse_index' to 'VIPIColl.*.conditionInnerKColl.testInteger'com.ibm.btt.base.DataMapperExpressionConverterFormat [ERROR]Error when process mapping: [<map fromExpression=\"dse_index\" to=\"VIPIColl.*.conditionInnerKColl.testInteger\" append=\"false\" />] from context [WildcardConditionCtx] to [WildcardConditionCtx]:Script Exception from ExpressionEval dse_index#FUNC [INFO]    <= End of mapping";
+			String line = "#FUNC [INFO]    => Begin mapping from context 'WildcardConditionCtx' to context 'WildcardConditionCtx'#FUNC [INFO]    Mapping from 'dse_index' to 'VIPIColl.*.conditionInnerKColl.testInteger'";
 			System.out.println("==="+sb+"===");
 			Assert.assertEquals(true,sb.toString().contains(line));
 			for (int i = 0; i < 10; i++) {

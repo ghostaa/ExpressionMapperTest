@@ -9,7 +9,12 @@ import org.junit.runners.Suite;
 import com.ibm.btt.test.fvt.scenario1.ExpressionMapperTest;
 import com.ibm.btt.test.fvt.scenario1.TypedDataMappingTest;
 import com.ibm.btt.test.fvt.scenario2.GlobalFuncTest;
-import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngine;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineBoolean;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineBooleanMvel;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineNumber;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineNumberMvel;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineString;
+import com.ibm.btt.test.fvt.scenario2Appendix.CompareDifferentEngineStringMvel;
 import com.ibm.btt.test.fvt.scenario2Appendix.ExpressionTest;
 import com.ibm.btt.test.fvt.scenario2Appendix.ExpressionWithOctHexNumberTest;
 import com.ibm.btt.test.fvt.scenario3.DirectWildcardMappingTest1;
@@ -36,7 +41,18 @@ import com.ibm.btt.test.fvt.scenario9.AsteriskToAsteriskMapping;
 			GlobalFuncTest.class,
 			ExpressionTest.class,
 			ExpressionWithOctHexNumberTest.class,
-			CompareDifferentEngine.class,
+			//to test different from js engine and Mvel engine
+			//js engine
+			CompareDifferentEngineString.class,
+			CompareDifferentEngineNumber.class,
+			CompareDifferentEngineBoolean.class,
+			//mvel engine
+			/*CompareDifferentEngineStringMvel.class,
+			CompareDifferentEngineNumberMvel.class,
+			CompareDifferentEngineBooleanMvel.class,*/
+			
+			
+			
 			
 			// scenario 3
 			DirectWildcardMappingTest1.class,

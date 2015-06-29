@@ -105,6 +105,7 @@ public class ExpressionTest extends CommonTestCase {
 
 	}
 
+	//js engine,now it has changed to mvel,so ignore this case
 	@Test
 	public void testFuncBooleanDoubleEqualSignOper() {
 		try {
@@ -116,9 +117,9 @@ public class ExpressionTest extends CommonTestCase {
 			fmt.mapContents(from, to);
 			Assert.assertTrue((Boolean) to.getValueAt("testBoolean"));
 			//js engine case
-			//Assert.assertFalse((Boolean) to.getValueAt("testField"));
+			Assert.assertFalse((Boolean) to.getValueAt("testField"));
 			//mvel engine case
-			Assert.assertTrue((Boolean) to.getValueAt("testField"));
+//			Assert.assertTrue((Boolean) to.getValueAt("testField"));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
@@ -156,7 +157,8 @@ public class ExpressionTest extends CommonTestCase {
 
 	}
 	//js engine,now it has changed to mvel,so ignore this case
-	@Ignore
+	//@Ignore
+	@Test
 	public void testFuncBooleanAndAndOper() {
 		try {
 
@@ -176,7 +178,8 @@ public class ExpressionTest extends CommonTestCase {
 
 	}
 	//js engine,now it has changed to mvel,so ignore this case
-	@Ignore
+	//@Ignore
+	@Test
 	public void testFuncBooleanOrOrOper() {
 		try {
 
@@ -283,7 +286,8 @@ public class ExpressionTest extends CommonTestCase {
 	}
 
 	//js engine,now it has changed to mvel,so ignore this case
-	@Ignore
+	//@Ignore
+	@Test
 	public void testFuncByteAddtionOper() {
 		try {
 			Context from = composeSourceContext();
@@ -659,6 +663,318 @@ public class ExpressionTest extends CommonTestCase {
 			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("StringSpaceNewLineStringFmt");
 			fmt.mapContents(source, target);
 			Assert.assertEquals("\rHello\rWorld\r", target.getValueAt("testString"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	
+
+	@Test
+	public void testNumberMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Number*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigDecimal(0).setScale(3), target.getValueAt("testNumber"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusNumber() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Number");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigDecimal(1).setScale(3), target.getValueAt("testNumber"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testByteMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Byte*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals((byte)0, target.getValueAt("testByte"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusByte() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Byte");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals((byte)1, target.getValueAt("testByte"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testShortMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Short*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Short.valueOf("0"), target.getValueAt("testShort"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusShort() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Short");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Short.valueOf("1"), target.getValueAt("testShort"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testLongMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Long*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Long.valueOf("0"), target.getValueAt("testLong"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusLong() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Long");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Long.valueOf("1"), target.getValueAt("testLong"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testFloatMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Float*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Float.valueOf("0"), target.getValueAt("testFloat"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusFloat() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Float");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Float.valueOf("1"), target.getValueAt("testFloat"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testDoubleMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Double*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Double.valueOf("0"), target.getValueAt("testDouble"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusDouble() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Double");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(Double.valueOf("1"), target.getValueAt("testDouble"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testBigIntegerMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("BigInteger*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigInteger("0"), target.getValueAt("testBigInteger"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusBigInteger() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+BigInteger");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigInteger("1"), target.getValueAt("testBigInteger"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testBigDecimalMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("BigDecimal*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigDecimal("0").setScale(9), target.getValueAt("testBigDecimal"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	@Test
+	public void testOnePlusBigDecimal() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+BigDecimal");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new BigDecimal("1").setScale(9), target.getValueAt("testBigDecimal"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	
+	@Test
+	public void testIntegerMultiplyHundred() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("Integer*100");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new Integer(0), target.getValueAt("testInteger"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testOnePlusInteger() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("1+Integer");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(new Integer(1), target.getValueAt("testInteger"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	
+
+	
+	@Test
+	public void testTrueAndBoolean() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("TrueAndBoolean");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals(null, target.getValueAt("testBoolean"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Test
+	public void testAbcPlusString() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("abc+String");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals("abcnull", target.getValueAt("testString"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);
+		}
+	}
+	
+	@Ignore
+	public void testGt() {
+		try {
+			Context source = getContextByName("funcFieldDataCtx");
+			Context target = getContextByName("funcFieldDataCtx");
+			DataMapperExpressionConverterFormat fmt = (DataMapperExpressionConverterFormat) FormatElement.readObject("gt");
+			
+			fmt.mapContents(source, target);
+			Assert.assertEquals("abcnull", target.getValueAt("testBoolean"));
 		} catch (Exception e) {
 			e.printStackTrace();
 			Assert.fail("Exception encountered while testing, detailed exception messages are: " + e);

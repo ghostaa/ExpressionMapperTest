@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<format.xml>
+	<!-- Number and 'abc' -->	
+	<fmtDef id="rearNumberAndABCSimpleTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber + 'abc'" to="testString1" />
+			<map fromExpression="testNumber - 'abc'" to="testString2" />
+			<map fromExpression="testNumber * 'abc'" to="testString3" />
+			<map fromExpression="testNumber / 'abc'" to="testString4" />
+			
+			<map fromExpression="testNumber + 'abc'" to="testNumber1" />
+			<map fromExpression="testNumber - 'abc'" to="testNumber2" />
+			<map fromExpression="testNumber * 'abc'" to="testNumber3" />
+			<map fromExpression="testNumber / 'abc'" to="testNumber4" />
+			
+			<map fromExpression="testNumber + 'abc'" to="testBoolean1" />
+			<map fromExpression="testNumber - 'abc'" to="testBoolean2" />
+			<map fromExpression="testNumber * 'abc'" to="testBoolean3" />
+			<map fromExpression="testNumber / 'abc'" to="testBoolean4" />
+			
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAndABCComparisonOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber == 'abc'" to="testString1" />
+			<map fromExpression="testNumber != 'abc'" to="testString2" />
+			<map fromExpression="testNumber &gt; 'abc'" to="testString3" />
+			<map fromExpression="testNumber &lt; 'abc'" to="testString4" />
+			<map fromExpression="testNumber &gt;= 'abc'" to="testString5" />
+			<map fromExpression="testNumber &lt;= 'abc'" to="testString6" />
+			
+			
+			<map fromExpression="testNumber == 'abc'" to="testNumber1" />
+			<map fromExpression="testNumber != 'abc'" to="testNumber2" />
+			<map fromExpression="testNumber &gt; 'abc'" to="testNumber3" />
+			<map fromExpression="testNumber &lt; 'abc'" to="testNumber4" />
+			<map fromExpression="testNumber &gt;= 'abc'" to="testNumber5" />
+			<map fromExpression="testNumber &lt;= 'abc'" to="testNumber6" />
+			
+			<map fromExpression="testNumber == 'abc'" to="testBoolean1" />
+			<map fromExpression="testNumber != 'abc'" to="testBoolean2" />
+			<map fromExpression="testNumber &gt; 'abc'" to="testBoolean3" />
+			<map fromExpression="testNumber &lt; 'abc'" to="testBoolean4" />
+			<map fromExpression="testNumber &gt;= 'abc'" to="testBoolean5" />
+			<map fromExpression="testNumber &lt;= 'abc'" to="testBoolean6" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAndABCLogicalOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber && 'abc'" to="testString1" />
+			<map fromExpression="testNumber || 'abc'" to="testString2" />
+			<map fromExpression="! testNumber  " to="testString3" />
+			
+			<map fromExpression="testNumber && 'abc'" to="testNumber1" />
+			<map fromExpression="testNumber || 'abc'" to="testNumber2" />
+			<map fromExpression="! testNumber  " to="testNumber3" />
+			
+			<map fromExpression="testNumber && 'abc'" to="testBoolean1" />
+			<map fromExpression="testNumber || 'abc'" to="testBoolean2" />
+			<map fromExpression="! testNumber  " to="testBoolean3" />
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<!-- Number and 123 -->
+	<fmtDef id="rearNumberAnd123SimpleTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber + 123" to="testString1" />
+			<map fromExpression="testNumber - 123" to="testString2" />
+			<map fromExpression="testNumber * 123" to="testString3" />
+			<map fromExpression="testNumber / 123" to="testString4" />
+			
+			<map fromExpression="testNumber + 123" to="testNumber1" />
+			<map fromExpression="testNumber - 123" to="testNumber2" />
+			<map fromExpression="testNumber * 123" to="testNumber3" />
+			<map fromExpression="testNumber / 123" to="testNumber4" />
+			
+			<map fromExpression="testNumber + 123" to="testBoolean1" />
+			<map fromExpression="testNumber - 123" to="testBoolean2" />
+			<map fromExpression="testNumber * 123" to="testBoolean3" />
+			<map fromExpression="testNumber / 123" to="testBoolean4" />
+			
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAnd123ComparisonOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber == 123" to="testString1" />
+			<map fromExpression="testNumber != 123" to="testString2" />
+			<map fromExpression="testNumber &gt; 123" to="testString3" />
+			<map fromExpression="testNumber &lt; 123" to="testString4" />
+			<map fromExpression="testNumber &gt;= 123" to="testString5" />
+			<map fromExpression="testNumber &lt;= 123" to="testString6" />
+			
+			
+			<map fromExpression="testNumber == 123" to="testNumber1" />
+			<map fromExpression="testNumber != 123" to="testNumber2" />
+			<map fromExpression="testNumber &gt; 123" to="testNumber3" />
+			<map fromExpression="testNumber &lt; 123" to="testNumber4" />
+			<map fromExpression="testNumber &gt;= 123" to="testNumber5" />
+			<map fromExpression="testNumber &lt;= 123" to="testNumber6" />
+			
+			<map fromExpression="testNumber == 123" to="testBoolean1" />
+			<map fromExpression="testNumber != 123" to="testBoolean2" />
+			<map fromExpression="testNumber &gt; 123" to="testBoolean3" />
+			<map fromExpression="testNumber &lt; 123" to="testBoolean4" />
+			<map fromExpression="testNumber &gt;= 123" to="testBoolean5" />
+			<map fromExpression="testNumber &lt;= 123" to="testBoolean6" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAnd123LogicalOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber && 123" to="testString1" />
+			<map fromExpression="testNumber || 123" to="testString2" />
+			<map fromExpression="! testNumber  " to="testString3" />
+			
+			<map fromExpression="testNumber && 123" to="testNumber1" />
+			<map fromExpression="testNumber || 123" to="testNumber2" />
+			<map fromExpression="! testNumber  " to="testNumber3" />
+			
+			<map fromExpression="testNumber && 123" to="testBoolean1" />
+			<map fromExpression="testNumber || 123" to="testBoolean2" />
+			<map fromExpression="! testNumber  " to="testBoolean3" />
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	
+	<!-- Number and true -->
+	<fmtDef id="rearNumberAndTrueSimpleTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber + true" to="testString1" />
+			<map fromExpression="testNumber - true" to="testString2" />
+			<map fromExpression="testNumber * true" to="testString3" />
+			<map fromExpression="testNumber / true" to="testString4" />
+			
+			<map fromExpression="testNumber + true" to="testNumber1" />
+			<map fromExpression="testNumber - true" to="testNumber2" />
+			<map fromExpression="testNumber * true" to="testNumber3" />
+			<map fromExpression="testNumber / true" to="testNumber4" />
+			
+			<map fromExpression="testNumber + true" to="testBoolean1" />
+			<map fromExpression="testNumber - true" to="testBoolean2" />
+			<map fromExpression="testNumber * true" to="testBoolean3" />
+			<map fromExpression="testNumber / true" to="testBoolean4" />
+			
+			
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAndTrueComparisonOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber == true" to="testString1" />
+			<map fromExpression="testNumber != true" to="testString2" />
+			<map fromExpression="testNumber &gt; true" to="testString3" />
+			<map fromExpression="testNumber &lt; true" to="testString4" />
+			<map fromExpression="testNumber &gt;= true" to="testString5" />
+			<map fromExpression="testNumber &lt;= true" to="testString6" />
+			
+			
+			<map fromExpression="testNumber == true" to="testNumber1" />
+			<map fromExpression="testNumber != true" to="testNumber2" />
+			<map fromExpression="testNumber &gt; true" to="testNumber3" />
+			<map fromExpression="testNumber &lt; true" to="testNumber4" />
+			<map fromExpression="testNumber &gt;= true" to="testNumber5" />
+			<map fromExpression="testNumber &lt;= true" to="testNumber6" />
+			
+			<map fromExpression="testNumber == true" to="testBoolean1" />
+			<map fromExpression="testNumber != true" to="testBoolean2" />
+			<map fromExpression="testNumber &gt; true" to="testBoolean3" />
+			<map fromExpression="testNumber &lt; true" to="testBoolean4" />
+			<map fromExpression="testNumber &gt;= true" to="testBoolean5" />
+			<map fromExpression="testNumber &lt;= true" to="testBoolean6" />
+		</mapperConverterExpression>
+	</fmtDef>
+	<fmtDef id="NumberAndTrueLogicalOperatorsTo3types">
+		<mapperConverterExpression>
+			<map fromExpression="testNumber && true" to="testString1" />
+			<map fromExpression="testNumber || true" to="testString2" />
+			<map fromExpression="! testNumber  " to="testString3" />
+			
+			<map fromExpression="testNumber && true" to="testNumber1" />
+			<map fromExpression="testNumber || true" to="testNumber2" />
+			<map fromExpression="! testNumber  " to="testNumber3" />
+			
+			<map fromExpression="testNumber && true" to="testBoolean1" />
+			<map fromExpression="testNumber || true" to="testBoolean2" />
+			<map fromExpression="! testNumber  " to="testBoolean3" />
+			
+		</mapperConverterExpression>
+	</fmtDef>
+</format.xml>
